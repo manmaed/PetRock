@@ -1,0 +1,47 @@
+{
+  "homepage": "https://www.curseforge.com/minecraft/mc-mods/petrock-mod",
+  "1.16.5": {
+    "0.7.9": "Stoneium is now tagged with #forge/ores & Made it so my hats are disabled when iChun Hats mod is instaled",
+    "0.7.8": "Fixed Care Guide Spooling Errors when Patchouli isn't installed",
+    "0.7.7": "Fixed Debug Logs",
+    "0.7.6": "Added Documentation via Patchouli",
+    "0.7.5": "Port Fully to 1.16.5"
+  },
+  "1.16.1": {
+    "0.7.1": "Port to 1.16.1"
+  },
+  "1.15.2":{
+    "0.6.5": "Fixed Item Order Form Not giving A PetRock",
+    "0.6.2": "Port to 1.15.2"
+  },
+  "1.14.4": {
+    "0.5.0": "Port to 1.14.4"
+  },
+  "1.12.2": {
+    "0.3.1": "You can now name a petrock, untame petrocks now have 1 heart insead of half & fixed commands when not op on server",
+    "0.3.0": "Slowpoke hat, Fix Slowpoke101 Crash on startup, Added tooltip for Stoneium, Lowerd follow radius, PetRock will now wander around, Added command to test hats & moved hat reload command to client side",
+    "0.2.8": "Removed Old Code & Changed the way hats are rendered on petrock",
+    "0.2.7": "Added Rock Kibble (Heals Damaged Rocks)",
+    "0.2.6": "Changed the way mod gets hat data to json & Added command to reload hat list data",
+    "0.2.5": "Added hats for Christmas and Bithdays",
+    "0.2.4": "Added config for world gen, Fixed missing textures & Fixed textures that where not rendering",
+    "0.2.2": "Port to 1.12.2 & PetRocks Can sit"
+  },
+  "1.12": {
+    "0.2.0": "Port to 1.12 & Compressed Stoneium Block"
+  },
+  "1.10.2": {
+    "0.1.0": "ReCode of Mod"
+  },
+  "promos": {
+    "1.16.5-latest": "0.7.9",
+    "1.16.5-recommended": "0.7.9",
+    "1.16.1-latest": "0.7.1",
+    "1.15.2-latest": "0.6.5",
+    "1.14.4-latest": "0.5.0",
+    "1.12.2-latest": "0.3.1",
+    "1.12.2-recommended": "0.3.1",
+    "1.12-latest": "0.2.0",
+    "1.10.2-latest": "0.1.0"
+  }
+}
