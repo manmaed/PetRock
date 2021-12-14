@@ -1,4 +1,4 @@
-name: Build & Release For Minecraft 1.16.5 
+name: Build & Release For Minecraft 1.18.1 
 
 on:
   push:
