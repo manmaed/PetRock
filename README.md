@@ -1,7 +1,3 @@
-Pet Rock v2
+Pet Rock
 ====================
 For all your Pet Rock needs!
-
-Authors: 
-- manmaed:  *Owner*
-- UnRealdinnerbone *Code Wizard*
