@@ -1,52 +1,33 @@
 package net.manmaed.petrock.items;
 
 import net.manmaed.petrock.PetRock;
-import net.manmaed.petrock.libs.Refs;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
-import net.minecraftforge.registries.ObjectHolder;
+import net.minecraft.world.item.Item;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
 
 /**
  * Created by manmaed on 25/11/2019.
  */
 public class PRItems {
 
-    @ObjectHolder(Refs.Register + "orderform")
-    public static Item orderform;
+    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, PetRock.MOD_ID);
 
-    @ObjectHolder(Refs.Register + "petrock_spawn_egg")
-    public static Item petrockspawnegg;
-
-    @ObjectHolder(Refs.Register + "petrockbox")
-    public static Item petrockbox;
-
-    @ObjectHolder(Refs.Register + "stoneium")
-    public static Item stoneium;
-
-    @ObjectHolder(Refs.Register + "kibble")
-    public static Item kibble;
+    /**
+     * Example Item:
+     * public static final RegistryObject<Item> EXAMPLE_ITEM = ITEMS.register("example_item", () -> new Item(new Item.Properties().tab(PetRock.itemGroup)));
+     **/
+    public static final RegistryObject<Item> STONEIUM = ITEMS.register("stoneium", () -> new Stoneium(new Item.Properties().tab(PetRock.itemGroup)));
+    public static final RegistryObject<Item> KIBBLE = ITEMS.register("kibble", () -> new Kibble(new Item.Properties().tab(PetRock.itemGroup)));
+    public static final RegistryObject<Item> ORDER_FORM = ITEMS.register("orderform", () -> new OrderForm(new Item.Properties().tab(PetRock.itemGroup)));
+    public static final RegistryObject<Item> PETROCKBOX = ITEMS.register("petrockbox", () -> new PetRockBox(new Item.Properties().tab(PetRock.itemGroup)));
+}
+/*
 
 
     public static void load() {
 
-        orderform = new OrderForm(new Item.Properties().group(PetRock.itemGroup).maxStackSize(1), "orderform");
+
         petrockbox = new PetRockBox(new Item.Properties().group(PetRock.itemGroup), "petrockbox");
-        stoneium = new Stoneium(new Item.Properties().group(PetRock.itemGroup), "stoneium");
-        kibble = new Kibble(new Item.Properties().group(PetRock.itemGroup), "kibble");
         petrockspawnegg = new PetRockSpawnEgg(new Item.Properties().group(ItemGroup.MISC), "petrock_spawn_egg",0xdcd5d5, 0x686565);
-
-
-        /*orderform.setRegistryName("orderform");
-        //petrockspawn.setRegistryName("petrockspawn");
-        stoneium.setRegistryName("stoneium");
-        kibble.setRegistryName("kibble");*/
-
-        //registerItem(orderform);
-
-        PetRock.getRegisteryHandler().registerItem(orderform);
-        PetRock.getRegisteryHandler().registerItem(petrockbox);
-        PetRock.getRegisteryHandler().registerItem(stoneium);
-        PetRock.getRegisteryHandler().registerItem(kibble);
-        PetRock.getRegisteryHandler().registerItem(petrockspawnegg);
-    }
-}
+*/

@@ -1,37 +1,28 @@
 package net.manmaed.petrock.items;
 
-import net.manmaed.petrock.entitys.PREntityTypes;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
-import net.minecraft.entity.SpawnReason;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemUseContext;
-import net.minecraft.tileentity.MobSpawnerTileEntity;
-import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.util.Direction;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
-import net.minecraft.world.server.ServerWorld;
-import net.minecraft.world.spawner.AbstractSpawner;
-
-import java.util.Objects;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
 
 /**
  * Created by manmaed on 28/11/2019.
  */
 public class PetRockBox extends Item {
-    public PetRockBox(Properties properties, String name) {
+    public PetRockBox(Properties properties) {
         super(properties);
-        setRegistryName(name);
         //PREntitys.petrock, 0xdcd5d5, 0x686565
     }
-    /**
-     * Called when this item is used when targetting a Block
-     */
-    public ActionResultType onItemUse(ItemUseContext context) {
+
+    @Override
+    public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
+        return super.use(level, player, hand);
+    }
+}
+
+   /* public ActionResultType onItemUse(ItemUseContext context) {
         World world = context.getWorld();
         if (world.isRemote) {
             return ActionResultType.SUCCESS;
@@ -66,5 +57,4 @@ public class PetRockBox extends Item {
 
             return ActionResultType.SUCCESS;
         }
-    }
-}
+    }*/
