@@ -1,12 +1,13 @@
 modLoader="javafml" #mandatory
-loaderVersion="[36,)" #mandatory This is typically bumped every Minecraft version by Forge. See our download page for lists of versions.
+loaderVersion="[39,)" #mandatory This is typically bumped every Minecraft version by Forge. See our download page for lists of versions.
 license="All rights reserved"
+issueTrackerURL = "https://github.com/manmaed/petrock/issues"
 [[mods]] #mandatory
-version="${version}" #mandatory
-authors="manmaed" #optional
-#Change Below Here
 modId="petrock" #mandatory
+version = "${file.jarVersion}" #mandatory
 displayName="PetRock" #mandatory
+updateJSONURL = "https://raw.githubusercontent.com/manmaed/petrock/main/update.json"
+authors = "manmaed" #optional
 description='''
 A Mod that adds PetRocks!
 '''
