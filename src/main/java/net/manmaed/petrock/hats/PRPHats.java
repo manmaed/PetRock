@@ -30,7 +30,7 @@ public class PRPHats {
     public static void load() {
         PlayerHatData playerHatData = null;
         try {
-            playerHatData = playerHatData.getHatData(new URL("https://raw.githubusercontent.com/manmaed/Pet-Rock/master/players.json"));
+            playerHatData = playerHatData.getHatData(new URL("https://raw.githubusercontent.com/manmaed/PetRock/main/players.json"));
             //playerHatData = playerHatData.getHatData(new URL("file:///G:/Modding/Forge/1_16_1/PetRock/run/test/players.json"));
             String hashat = playerHatData.PlayerHasHat();
             uuid = playerHatData.getUuid();
