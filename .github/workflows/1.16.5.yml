@@ -1,9 +1,9 @@
 name: Build & Release For Minecraft 1.16.5 
 
 on:
-  create:
+  push:
     tags:
-      - v*
+      - 'v*'
 
 jobs:
   build:
