@@ -8,11 +8,12 @@ import org.apache.logging.log4j.Logger;
  * Created by manmaed on 25/11/2019.
  */
 public class LogHelper {
+    public static final String LOG = ":[PetRock]:";
 
     private static final Logger LOGGER = LogManager.getLogger();
 
     private static void log(Level loglvl, Object object) {
-        LOGGER.log(loglvl, "[" + loglvl + "]:" + "-" + Refs.LOG + " " + String.valueOf(object));
+        LOGGER.log(loglvl, "[" + loglvl + "]:" + "-" + LOG + " " + String.valueOf(object));
     }
 
     public static void info(Object object) {
