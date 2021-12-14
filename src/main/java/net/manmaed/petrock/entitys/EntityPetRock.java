@@ -1,22 +1,27 @@
 package net.manmaed.petrock.entitys;
 
 import net.manmaed.petrock.items.PRItems;
-import net.minecraft.block.BlockState;
-import net.minecraft.entity.AgeableEntity;
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.MobEntity;
-import net.minecraft.entity.ai.attributes.AttributeModifierMap;
-import net.minecraft.entity.ai.attributes.Attributes;
-import net.minecraft.entity.ai.goal.*;
-import net.minecraft.entity.passive.TameableEntity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.DyeItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
-import net.minecraft.world.server.ServerWorld;
-import net.minecraftforge.event.ForgeEventFactory;
+import net.minecraft.core.BlockPos;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.entity.AgeableMob;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.TamableAnimal;
+import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.ai.goal.*;
+import net.minecraft.world.entity.ai.goal.target.*;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.DyeItem;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.state.BlockState;
 
 import javax.annotation.Nullable;
 import java.util.UUID;
@@ -24,60 +29,62 @@ import java.util.UUID;
 /**
  * Created by manmaed on 07/03/2021.
  */
-public class EntityPetRock extends TameableEntity {
-    protected EntityPetRock(EntityType<? extends TameableEntity> type, World worldIn) {
+public class EntityPetRock extends TamableAnimal {
+    protected EntityPetRock(EntityType<? extends TamableAnimal> type, Level worldIn) {
         super(type, worldIn);
-        this.setTamed(false);
+        this.setTame(false);
     }
 
     protected void registerGoals() {
         //Goal Selectors
-        this.goalSelector.addGoal(1, new SwimGoal(this));
-        this.goalSelector.addGoal(2, new SitGoal(this));
+        this.goalSelector.addGoal(1, new FloatGoal(this));
+        this.goalSelector.addGoal(2, new SitWhenOrderedToGoal(this));
         this.goalSelector.addGoal(3, new FollowOwnerGoal(this, 1.0D, 10.0F, 2.0F, false));
         this.goalSelector.addGoal(4, new BreedGoal(this, 1.0D));
-        this.goalSelector.addGoal(5, new WaterAvoidingRandomWalkingGoal(this, 1.0D));
-        this.goalSelector.addGoal(6, new LookAtGoal(this, PlayerEntity.class, 8.0F));
+        this.goalSelector.addGoal(5, new WaterAvoidingRandomStrollGoal(this, 1.0D));
+        this.goalSelector.addGoal(6, new LookAtPlayerGoal(this, Player.class, 8.0F));
         //Target Selectors
         this.targetSelector.addGoal(1, new OwnerHurtByTargetGoal(this));
         this.targetSelector.addGoal(2, new OwnerHurtTargetGoal(this));
-        this.targetSelector.addGoal(3, new HurtByTargetGoal(this).setCallsForHelp());
+        this.targetSelector.addGoal(3, (new HurtByTargetGoal(this)).setAlertOthers());
     }
 
-    public static AttributeModifierMap.MutableAttribute setCustomAttributes() {
-        return MobEntity.func_233666_p_()
-                .createMutableAttribute(Attributes.MAX_HEALTH, 2.0D)
-                .createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.25D);
+    public static AttributeSupplier.Builder createAttributes() {
+        return Mob.createMobAttributes()
+                .add(Attributes.MAX_HEALTH, 2.0D)
+                .add(Attributes.MOVEMENT_SPEED, 0.25D);
+    }
+
+
+    //Sounds
+    @Override
+    protected void playStepSound(BlockPos p_20135_, BlockState p_20136_) {
+        this.playSound(SoundEvents.STONE_STEP, 0.15F, 1.0F);
+    }
+
+    @Nullable
+    @Override
+    protected SoundEvent getHurtSound(DamageSource damageSource) {
+        return SoundEvents.STONE_BREAK;
+    }
+
+    @Nullable
+    @Override
+    protected SoundEvent getDeathSound() {
+        return SoundEvents.STONE_BREAK;
     }
 
     @Override
-    protected void playStepSound(BlockPos pos, BlockState blockIn) {
-        this.playSound(SoundEvents.BLOCK_STONE_STEP, 0.15F, 1.0F);
-    }
-
-    protected SoundEvent getHurtSound(DamageSource damageSourceIn) {
-        return SoundEvents.BLOCK_STONE_BREAK;
-    }
-
-    protected SoundEvent getDeathSound() {
-        return SoundEvents.BLOCK_STONE_BREAK;
-    }
-
-    /**
-     * Returns the volume for the sounds this mob makes.
-     */
     protected float getSoundVolume() {
         return 0.4F;
     }
+    //End Of Sounds
 
-    public boolean getPRSitting() {
-        return this.navigator.hasPath();
-    }
 
     @Override
-    public void setTamed(boolean tamed) {
-        super.setTamed(tamed);
-        if (tamed) {
+    public void setTame(boolean tame) {
+        super.setTame(tame);
+        if (tame) {
             this.getAttribute(Attributes.MAX_HEALTH).setBaseValue(20.0D);
             this.setHealth(20.0F);
         } else {
@@ -86,60 +93,60 @@ public class EntityPetRock extends TameableEntity {
     }
 
     @Override
-    public ActionResultType func_230254_b_(PlayerEntity playerEntity, Hand hand) {
-        ItemStack itemStack = playerEntity.getHeldItem(hand);
+    public InteractionResult mobInteract(Player player, InteractionHand hand) {
+        ItemStack itemStack = player.getItemInHand(hand);
         Item item = itemStack.getItem();
-        if (this.world.isRemote) {
-            boolean flag = this.isOwner(playerEntity) || this.isTamed() || item == PRItems.stoneium && !this.isTamed();
-            return flag ? ActionResultType.CONSUME : ActionResultType.PASS;
+        if (this.level.isClientSide) {
+            boolean flag = this.isOwnedBy(player) || this.isTame() || item == PRItems.STONEIUM.get() && !this.isTame();
+            return flag ? InteractionResult.CONSUME : InteractionResult.PASS;
         } else {
-            if (this.isTamed()) {
-                if (item == PRItems.kibble && this.getHealth() < this.getMaxHealth()) {
-                    if (!playerEntity.abilities.isCreativeMode) {
+            if (this.isTame()) {
+                if (item == PRItems.KIBBLE.get() && this.getHealth() < this.getMaxHealth()) {
+                    if (!player.getAbilities().instabuild) {
                         itemStack.shrink(1);
                     }
                     this.heal(3.0F);
-                    return ActionResultType.SUCCESS;
+                    return InteractionResult.SUCCESS;
                 }
                 if (!(item instanceof DyeItem)) {
-                    ActionResultType actionresulttype = super.func_230254_b_(playerEntity, hand);
-                    if ((!actionresulttype.isSuccessOrConsume() || this.isChild()) && this.isOwner(playerEntity)) {
+                    InteractionResult interactionresult = super.mobInteract(player, hand);
+                    if ((!interactionresult.consumesAction() || this.isBaby()) && this.isOwnedBy(player)) {
                         /*LogHelper.warn("before setting sit " + this.isSitting());*/
-                        this.func_233687_w_(!this.isSitting());
+                        this.setOrderedToSit(!this.isOrderedToSit());
                         /*LogHelper.warn("after setting sit " + this.isSitting());*/
-                        this.isJumping = false;
-                        this.navigator.clearPath();
-                        return ActionResultType.SUCCESS;
+                        this.jumping = false;
+                        this.navigation.stop();
+                        return InteractionResult.SUCCESS;
                     }
 
-                    return actionresulttype;
+                    return interactionresult;
                 }
-            } else if (item == PRItems.stoneium) {
-                if (!playerEntity.abilities.isCreativeMode) {
+            } else if (item == PRItems.STONEIUM.get()) {
+                if (!player.getAbilities().instabuild) {
                     itemStack.shrink(1);
                 }
-                if (this.rand.nextInt(3) == 0 && !ForgeEventFactory.onAnimalTame(this, playerEntity)) {
-                    this.setTamedBy(playerEntity);
-                    this.navigator.clearPath();
-                    this.func_233687_w_(true);
-                    this.world.setEntityState(this, (byte)7);
+                if (this.random.nextInt(3) == 0 && !net.minecraftforge.event.ForgeEventFactory.onAnimalTame(this, player)) {
+                    this.tame(player);
+                    this.navigation.stop();
+                    this.setOrderedToSit(true);
+                    this.level.broadcastEntityEvent(this, (byte)7);
                 } else {
-                    this.world.setEntityState(this, (byte)6);
+                    this.level.broadcastEntityEvent(this, (byte)6);
                 }
-                return ActionResultType.SUCCESS;
+                return InteractionResult.SUCCESS;
+                }
+            return super.mobInteract(player, hand);
             }
-            return super.func_230254_b_(playerEntity, hand);
         }
-    }
 
     @Nullable
     @Override
-    public AgeableEntity func_241840_a(ServerWorld world, AgeableEntity entity) {
-        EntityPetRock petRock = new EntityPetRock((PREntityTypes.PETROCK.get()), world);
-        UUID uuid = this.getOwnerId();
+    public AgeableMob getBreedOffspring(ServerLevel serverLevel, AgeableMob ageableMob) {
+        EntityPetRock petRock = new EntityPetRock((PREntityTypes.PETROCK.get()), serverLevel);
+        UUID uuid = this.getOwnerUUID();
         if (uuid != null) {
-            petRock.setOwnerId(uuid);
-            petRock.setTamed(true);
+            petRock.setOwnerUUID(uuid);
+            petRock.setTame(true);
         }
         return petRock;
     }
