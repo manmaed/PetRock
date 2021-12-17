@@ -9,5 +9,4 @@ displayName="PetRock" #mandatory
 updateJSONURL = "https://raw.githubusercontent.com/manmaed/petrock/main/update.json"
 authors = "manmaed" #optional
 description='''
-A Mod that adds PetRocks!
-'''
+A Mod that adds PetRocks!'''

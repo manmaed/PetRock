@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "petrock:stoneiumblock"
+          "name": "petrock:stoneium_block"
         }
       ],
       "conditions": [

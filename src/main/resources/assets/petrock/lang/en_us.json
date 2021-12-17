@@ -10,9 +10,8 @@
   "item.petrock.petrock_spawn_egg" : "PetRock Spawn Egg",
 
   "petrock.comment.2" : "Block Stuff",
-  "block.petrock.stoneiumore" : "Stoneium Ore",
-  "block.petrock.stoneiumblock" : "Stoneium Block",
-  "block.petrock.stoneiumblock.tooltip" : "Compressed Stoneium",
+  "block.petrock.stoneium_ore" : "Stoneium Ore",
+  "block.petrock.stoneium_block" : "Stoneium Block",
 
   "petrock.comment.3" : "Entity Stuff",
   "entity.petrock.petrock" : "PetRock",
