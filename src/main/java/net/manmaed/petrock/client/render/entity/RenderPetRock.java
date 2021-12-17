@@ -2,17 +2,12 @@ package net.manmaed.petrock.client.render.entity;
 
 
 import net.manmaed.petrock.PetRock;
-import net.manmaed.petrock.client.render.layers.*;
+import net.manmaed.petrock.client.model.entity.PRModels;
 import net.manmaed.petrock.client.render.model.ModelPetRock;
 import net.manmaed.petrock.entitys.EntityPetRock;
-import net.manmaed.petrock.libs.Refs;
-import net.minecraft.client.model.geom.ModelLayerLocation;
-import net.minecraft.client.model.geom.ModelLayers;
-import net.minecraft.client.renderer.entity.EntityRendererManager;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.util.ResourceLocation;
 
 /**
  * Created by manmaed on 30/08/2019.
@@ -25,7 +20,7 @@ public class RenderPetRock extends MobRenderer<EntityPetRock, ModelPetRock<Entit
 
     //TODO: Fix this
     public RenderPetRock(EntityRendererProvider.Context context) {
-        super(context, new ModelPetRock<>(context.bakeLayer(this))), 0.25F);
+        super(context, new ModelPetRock<>(context.bakeLayer(PRModels.PETROCK)), 0.25F);
 
         //TODO: ReAdd layers
         /*this.addLayer(new BirthdayFeatureRenderer(this));

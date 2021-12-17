@@ -1,23 +1,11 @@
 package net.manmaed.petrock.client.render.layers;
 
-import com.mojang.blaze3d.matrix.MatrixStack;
-import com.mojang.blaze3d.vertex.IVertexBuilder;
-import net.manmaed.petrock.client.render.model.ModelCageHat;
-import net.manmaed.petrock.client.render.model.ModelPetRock;
-import net.manmaed.petrock.entitys.EntityPetRock;
-import net.manmaed.petrock.hats.PRHats;
-import net.manmaed.petrock.libs.Refs;
-import net.minecraft.client.renderer.IRenderTypeBuffer;
-import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.entity.IEntityRenderer;
-import net.minecraft.client.renderer.entity.layers.LayerRenderer;
-import net.minecraft.client.renderer.texture.OverlayTexture;
-import net.minecraft.util.ResourceLocation;
 
 /**
  * Created by manmaed on 30/08/2019.
  */
-public class CageFeatureRenderer extends LayerRenderer<EntityPetRock, ModelPetRock<EntityPetRock>> {
+public class CageFeatureRenderer {} //TODO: Implement
+/*public class CageFeatureRenderer extends RenderLayer<EntityPetRock, ModelPetRock<EntityPetRock>> {
 
     private final ModelCageHat hat = new ModelCageHat();
     private static final ResourceLocation skin = new ResourceLocation(Refs.id, "textures/entity/event/cage.png");
@@ -36,4 +24,9 @@ public class CageFeatureRenderer extends LayerRenderer<EntityPetRock, ModelPetRo
             matrixStackIn.pop();
         }
     }
-}
+
+    @Override
+    public void render(PoseStack p_117349_, MultiBufferSource p_117350_, int p_117351_, EntityPetRock p_117352_, float p_117353_, float p_117354_, float p_117355_, float p_117356_, float p_117357_, float p_117358_) {
+
+    }
+}*/

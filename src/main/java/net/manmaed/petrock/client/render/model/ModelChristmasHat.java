@@ -1,20 +1,11 @@
 package net.manmaed.petrock.client.render.model;
 
-/**
- * Created by manmaed on 26/02/2017.
+ /**
+ * ModelChristmasHat - manmaed
+ * Created using Tabula 7.0.0
  */
-
-import com.google.common.collect.ImmutableList;
-import com.mojang.blaze3d.matrix.MatrixStack;
-import com.mojang.blaze3d.vertex.IVertexBuilder;
-import net.minecraft.client.renderer.entity.model.SegmentedModel;
-import net.minecraft.client.renderer.model.ModelRenderer;
-import net.minecraft.entity.Entity;
-
-/**
- * PetRock - manmaed
- * Created using Tabula 5.1.0
- */
+public class ModelChristmasHat {} //TODO: Implement
+/*
 public class ModelChristmasHat<T extends Entity> extends SegmentedModel<T> {
     public ModelRenderer ballball;
     public ModelRenderer hatp1;
@@ -82,7 +73,8 @@ public class ModelChristmasHat<T extends Entity> extends SegmentedModel<T> {
         this.hatp5.render(matrixStackIn, bufferIn, packedLightIn, packedOverlayIn);
     }
 
-    /*public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
+    */
+/*public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
 
         HatBottem,
         ballball,
@@ -91,14 +83,17 @@ public class ModelChristmasHat<T extends Entity> extends SegmentedModel<T> {
         hatp3,
         hatp4,
         hatp5,
-    }*/
+    }*//*
 
-    /**
+
+    */
+/**
      * This is a helper function from Tabula to set the rotation of model parts
-     */
+     *//*
+
     public void setRotateAngle(ModelRenderer model, float x, float y, float z) {
         model.rotateAngleX  = x;
         model.rotateAngleY  = y;
         model.rotateAngleZ  = z;
     }
-}
+}*/

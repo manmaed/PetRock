@@ -1,17 +1,11 @@
 package net.manmaed.petrock.client.render.model;
 
-import com.google.common.collect.ImmutableList;
-import com.mojang.blaze3d.matrix.MatrixStack;
-import com.mojang.blaze3d.vertex.IVertexBuilder;
-import net.minecraft.client.renderer.entity.model.SegmentedModel;
-import net.minecraft.client.renderer.model.ModelRenderer;
-import net.minecraft.entity.Entity;
-
 /**
- * (MPH) Honeydew.tc2 - TechneToTabulaImporter
+ * ModelSlowpokeHat - manmaed
  * Created using Tabula 7.0.0
  */
-public class ModelSlowpokeHat<T extends Entity> extends SegmentedModel<T> {
+public class ModelSlowpokeHat {} //TODO: Implement
+/*public class ModelSlowpokeHat<T extends Entity> extends SegmentedModel<T> {
     public ModelRenderer Shape1;
     public ModelRenderer Shape1_1;
     public ModelRenderer Shape1_2;
@@ -79,12 +73,12 @@ public class ModelSlowpokeHat<T extends Entity> extends SegmentedModel<T> {
         this.Shape1_3.render(matrixStackIn, bufferIn, packedLightIn, packedOverlayIn);
     }
 
-    /**
+    *//**
      * This is a helper function from Tabula to set the rotation of model parts
-     */
+     *//*
     public void setRotateAngle(ModelRenderer model, float x, float y, float z) {
         model.rotateAngleX  = x;
         model.rotateAngleY  = y;
         model.rotateAngleZ  = z;
     }
-}
+}*/

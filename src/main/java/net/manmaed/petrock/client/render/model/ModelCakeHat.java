@@ -1,17 +1,12 @@
 package net.manmaed.petrock.client.render.model;
 
-import com.google.common.collect.ImmutableList;
-import com.mojang.blaze3d.matrix.MatrixStack;
-import com.mojang.blaze3d.vertex.IVertexBuilder;
-import net.minecraft.client.renderer.entity.model.SegmentedModel;
-import net.minecraft.client.renderer.model.ModelRenderer;
-import net.minecraft.entity.Entity;
-
 /**
- * ModelPetRock - Either Mojang or a mod author
+ * ModelCakeHat - manmaed
  * Created using Tabula 7.0.0
  */
-public class ModelCakeHat<T extends Entity> extends SegmentedModel<T> {
+
+public class ModelCakeHat {} //TODO: Implement
+/*public class ModelCakeHat<T extends Entity> extends SegmentedModel<T> {
     public ModelRenderer cake;
 
     public ModelCakeHat() {
@@ -38,12 +33,12 @@ public class ModelCakeHat<T extends Entity> extends SegmentedModel<T> {
         this.cake.render(matrixStackIn, bufferIn, packedLightIn, packedOverlayIn);
     }
 
-    /**
+    *//**
      * This is a helper function from Tabula to set the rotation of model parts
-     */
+     *//*
     public void setRotateAngle(ModelRenderer model, float x, float y, float z) {
         model.rotateAngleX  = x;
         model.rotateAngleY  = y;
         model.rotateAngleZ  = z;
     }
-}
+}*/

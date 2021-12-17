@@ -7,15 +7,14 @@ package net.manmaed.petrock.client.render.model;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.model.EntityModel;
-import net.minecraft.client.model.HierarchicalModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.world.entity.Entity;
 
 /**
- * PetRock - manmaed
- * Created using Tabula 5.1.0
+ * ModelPetRock - manmaed
+ * Created using Tabula 7.0.0
  */
 
 public class ModelPetRock<T extends Entity> extends EntityModel<T> {

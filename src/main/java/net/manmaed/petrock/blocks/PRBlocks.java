@@ -3,12 +3,10 @@ package net.manmaed.petrock.blocks;
 
 import net.manmaed.petrock.PetRock;
 import net.manmaed.petrock.items.PRItems;
-import net.manmaed.petrock.worldgen.StoneiumOreFeature;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;

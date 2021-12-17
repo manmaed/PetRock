@@ -4,54 +4,41 @@ package net.manmaed.petrock.client.render.model;
  * Created by manmaed on 26/02/2017.
  */
 
-import com.google.common.collect.ImmutableList;
-import com.mojang.blaze3d.matrix.MatrixStack;
-import com.mojang.blaze3d.vertex.IVertexBuilder;
-import net.minecraft.client.renderer.entity.model.SegmentedModel;
-import net.minecraft.client.renderer.model.ModelRenderer;
-import net.minecraft.entity.Entity;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
+import com.mojang.blaze3d.vertex.PoseStack;
+import com.mojang.blaze3d.vertex.VertexConsumer;
+import net.minecraft.client.model.EntityModel;
+import net.minecraft.client.model.geom.ModelPart;
+import net.minecraft.client.model.geom.PartPose;
+import net.minecraft.client.model.geom.builders.*;
+import net.minecraft.world.entity.Entity;
 
 /**
- * PetRock - manmaed
- * Created using Tabula 5.1.0
+ * ModelPetRock - manmaed
+ * Created using Tabula 7.0.0
  */
 
-@OnlyIn(Dist.CLIENT)
-public class ModelPetRockHat<T extends Entity> extends SegmentedModel<T> {
-    public ModelRenderer shape1;
+public class ModelPetRockHat<T extends Entity> extends EntityModel<T> {
+    private final ModelPart main;
 
-    public ModelPetRockHat() {
-        this.textureWidth = 64;
-        this.textureHeight = 32;
-        this.shape1 = new ModelRenderer(this, 0, 0);
-        this.shape1.setRotationPoint(0.0F, 24.0F, 0.0F);
-        this.shape1.addBox(-4.5F, -9.0F, -4.5F, 9, 9, 9, 0.0F);
+    public ModelPetRockHat(ModelPart root) {
+        this.main = root.getChild("main");
+    }
+
+    public static LayerDefinition createBodyLayer() {
+        MeshDefinition meshdefinition = new MeshDefinition();
+        PartDefinition partdefinition = meshdefinition.getRoot();
+
+        PartDefinition main = partdefinition.addOrReplaceChild("main", CubeListBuilder.create().texOffs(0, 0).addBox(-4.5F, -9.0F, -4.5F, 9.0F, 9.0F, 9.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 24.0F, 0.0F));
+
+        return LayerDefinition.create(meshdefinition, 64, 32);
+    }
+    @Override
+    public void setupAnim(T p_102618_, float p_102619_, float p_102620_, float p_102621_, float p_102622_, float p_102623_) {
 
     }
 
     @Override
-    public void setRotationAngles(T entityIn, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
-
-    }
-
-    @Override
-    public Iterable<ModelRenderer> getParts() {
-        return ImmutableList.of(shape1);
-    }
-
-
-    /**
-     * This is a helper function from Tabula to set the rotation of model parts
-     */
-    public void setRotateAngle(ModelRenderer model, float x, float y, float z) {
-        model.rotateAngleX  = x;
-        model.rotateAngleY  = y;
-        model.rotateAngleZ  = z;
-    }
-
-    public void render(MatrixStack matrixStackIn, IVertexBuilder ivertexbuilder, int packedLightIn, int packedOverlayIn) {
-        this.shape1.render(matrixStackIn, ivertexbuilder, packedLightIn, packedOverlayIn);
+    public void renderToBuffer(PoseStack poseStack, VertexConsumer buffer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
+        main.render(poseStack, buffer, packedLight, packedOverlay);
     }
 }

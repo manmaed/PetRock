@@ -1,24 +1,15 @@
 package net.manmaed.petrock;
 
 import net.manmaed.petrock.blocks.PRBlocks;
-import net.manmaed.petrock.config.PRConfig;
 import net.manmaed.petrock.entitys.EntityPetRock;
 import net.manmaed.petrock.entitys.PREntityTypes;
 import net.manmaed.petrock.items.PRItems;
-import net.manmaed.petrock.worldgen.WorldGenHandler;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
-import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.fml.DeferredWorkQueue;
-import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.config.ModConfig;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import org.openjdk.nashorn.internal.objects.Global;
 
 /**
  * Created by manmaed on 25/11/2019.

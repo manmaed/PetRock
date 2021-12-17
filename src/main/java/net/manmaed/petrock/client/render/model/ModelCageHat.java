@@ -1,16 +1,16 @@
 package net.manmaed.petrock.client.render.model;
 
-import com.google.common.collect.ImmutableList;
-import com.mojang.blaze3d.matrix.MatrixStack;
-import com.mojang.blaze3d.vertex.IVertexBuilder;
-import net.minecraft.client.renderer.entity.model.SegmentedModel;
-import net.minecraft.client.renderer.model.ModelRenderer;
-import net.minecraft.entity.Entity;
-
 /**
  * Created by manmaed on 29/11/2019.
  */
-public class ModelCageHat<T extends Entity> extends SegmentedModel<T> {
+/**
+ * ModelCageHat - manmaed
+ * Created using Tabula 7.0.0
+ */
+public class ModelCageHat {} //TODO: Implement
+
+//CODE:
+/*public class ModelCageHat<T extends Entity> extends SegmentedModel<T> {
 
     private ModelRenderer FB1;
     private ModelRenderer FB2;
@@ -221,12 +221,12 @@ public class ModelCageHat<T extends Entity> extends SegmentedModel<T> {
                 this.nib4.render(matrixStackIn, bufferIn, packedLightIn, packedOverlayIn);
                 this.nib8.render(matrixStackIn, bufferIn, packedLightIn, packedOverlayIn);
     }
-    /**
+    *//**
      * This is a helper function from Tabula to set the rotation of model parts
-     */
+     *//*
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;
         modelRenderer.rotateAngleZ = z;
     }
-}
+}*/

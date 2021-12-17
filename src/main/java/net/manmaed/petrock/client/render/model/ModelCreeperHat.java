@@ -1,18 +1,13 @@
 package net.manmaed.petrock.client.render.model;
 
 
-import com.google.common.collect.ImmutableList;
-import com.mojang.blaze3d.matrix.MatrixStack;
-import com.mojang.blaze3d.vertex.IVertexBuilder;
-import net.minecraft.client.renderer.entity.model.SegmentedModel;
-import net.minecraft.client.renderer.model.ModelRenderer;
-import net.minecraft.entity.Entity;
-
 /**
- * PetRock - manmaed
+ * ModelCreeperHat - manmaed
  * Created using Tabula 7.0.0
  */
-public class ModelCreeperHat<T extends Entity> extends SegmentedModel<T> {
+
+public class ModelCreeperHat {} //TODO: Implement
+/*public class ModelCreeperHat<T extends Entity> extends SegmentedModel<T> {
     public ModelRenderer foot1F;
     public ModelRenderer foot2F;
     public ModelRenderer foot1B;
@@ -69,12 +64,12 @@ public class ModelCreeperHat<T extends Entity> extends SegmentedModel<T> {
         this.CreepsBody.render(matrixStackIn, bufferIn, packedLightIn, packedOverlayIn);
     }
 
-    /**
+    *//**
      * This is a helper function from Tabula to set the rotation of model parts
-     */
+     *//*
     public void setRotateAngle(ModelRenderer model, float x, float y, float z) {
         model.rotateAngleX  = x;
         model.rotateAngleY  = y;
         model.rotateAngleZ  = z;
     }
-}
+}*/

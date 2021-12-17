@@ -1,11 +1,7 @@
 package net.manmaed.petrock;
 
-import net.manmaed.petrock.client.render.entity.RenderPetRock;
-import net.manmaed.petrock.entitys.PREntityTypes;
 import net.manmaed.petrock.hats.PRHats;
-import net.manmaed.petrock.hats.PRPHats;
 import net.minecraft.client.Minecraft;
-import net.minecraftforge.client.ClientRegistry;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 
@@ -19,7 +15,7 @@ public class PetRockClient {
         if(Minecraft.getInstance().getUser().getUuid().replace("-","").equals(slow_uuid)){
             PRHats.slowisplaying();
         }
-        ClientRegistry.registerEntityShader(PREntityTypes.PETROCK.get(), RenderPetRock::new);
+        /*ClientRegistry.registerEntityShader(PREntityTypes.PETROCK.get());*/
         /*RenderingRegistry.registerEntityRenderingHandler(PREntityTypes.PETROCK.get(), RenderPetRock::new);*/
         /*
          * LatvianModder Improved!

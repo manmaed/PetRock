@@ -16,6 +16,7 @@ public class PetRockBox extends Item {
         //PREntitys.petrock, 0xdcd5d5, 0x686565
     }
 
+    //TODO: Make Petrock spawn on right click
     @Override
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
         return super.use(level, player, hand);
