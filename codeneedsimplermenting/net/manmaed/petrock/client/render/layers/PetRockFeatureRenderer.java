@@ -1,5 +1,8 @@
 package net.manmaed.petrock.client.render.layers;
 
+import net.minecraft.client.model.PlayerModel;
+import net.minecraft.client.renderer.entity.layers.RenderLayer;
+
 public class PetRockFeatureRenderer {} //TODO: Implement
 /*public class PetRockFeatureRenderer extends LayerRenderer<AbstractClientPlayerEntity, PlayerModel<AbstractClientPlayerEntity>> {
 

@@ -1,10 +1,64 @@
 package net.manmaed.petrock.client.render.model;
 
+import net.manmaed.petrock.PetRock;
+import net.minecraft.client.model.HierarchicalModel;
+import net.minecraft.client.model.geom.ModelPart;
+import net.minecraft.client.model.geom.PartPose;
+import net.minecraft.client.model.geom.builders.CubeListBuilder;
+import net.minecraft.client.model.geom.builders.LayerDefinition;
+import net.minecraft.client.model.geom.builders.MeshDefinition;
+import net.minecraft.client.model.geom.builders.PartDefinition;
+import net.minecraft.world.entity.Entity;
+
 /**
  * ModelSlowpokeHat - manmaed
  * Created using Tabula 7.0.0
  */
-public class ModelSlowpokeHat {} //TODO: Implement
+public class ModelSlowpokeHat<T extends Entity> extends HierarchicalModel<T> {
+
+    public ModelPart root;
+    public ModelPart Shape1;
+    public ModelPart Shape1_1;
+    public ModelPart Shape1_2;
+    public ModelPart head_hat;
+    public ModelPart Shape1_3;
+    public ModelPart Shape1_4;
+    public ModelPart Shape1_5;
+
+    public ModelSlowpokeHat(ModelPart part) {
+        this.root = part;
+        this.Shape1 = part.getChild("shape1"); //TODO RENAME
+        this.Shape1_1 = part.getChild("shape1_1"); //TODO RENAME
+        this.Shape1_2 = part.getChild("shape1_2"); //TODO RENAME
+        this.head_hat = part.getChild("head_hat");
+        this.Shape1_3 = part.getChild("shape1_3"); //TODO RENAME
+        this.Shape1_4 = part.getChild("shape1_4"); //TODO RENAME
+        this.Shape1_5 = part.getChild("shape1_5"); //TODO RENAME
+    }
+
+    public static LayerDefinition createBodyLayer(){
+        MeshDefinition meshdefinition = new MeshDefinition();
+        PartDefinition partdef = meshdefinition.getRoot();
+        partdef.addOrReplaceChild("shape1",
+                CubeListBuilder.create()
+                        .texOffs(32 ,1)
+                        .addBox(-1.5F, 10.0F, -1.5F, 2, 4, 3),
+                PartPose.offset(0.0F, -1.0F, 0.0F));
+        return LayerDefinition.create(meshdefinition, 64, 32);
+    }
+
+    @Override
+    public ModelPart root() {
+        return this.root;
+    }
+
+    @Override
+    public void setupAnim(T p_102618_, float p_102619_, float p_102620_, float p_102621_, float p_102622_, float p_102623_) {
+
+    }
+}
+
+//TODO: Implement
 /*public class ModelSlowpokeHat<T extends Entity> extends SegmentedModel<T> {
     public ModelRenderer Shape1;
     public ModelRenderer Shape1_1;

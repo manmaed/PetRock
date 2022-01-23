@@ -1,6 +1,7 @@
 package net.manmaed.petrock.entitys;
 
 import net.manmaed.petrock.items.PRItems;
+import net.manmaed.petrock.libs.LogHelper;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
@@ -32,11 +33,15 @@ import java.util.UUID;
  * Created by manmaed on 07/03/2021.
  */
 public class EntityPetRock extends TamableAnimal {
+    private static boolean isSittingDown;
     protected EntityPetRock(EntityType<? extends TamableAnimal> type, Level worldIn) {
         super(type, worldIn);
         this.setTame(false);
     }
 
+    public boolean isSittingDown() {
+        return isSittingDown;
+    }
     protected void registerGoals() {
         //Goal Selectors
         this.goalSelector.addGoal(1, new FloatGoal(this));
@@ -113,9 +118,9 @@ public class EntityPetRock extends TamableAnimal {
                 if (!(item instanceof DyeItem)) {
                     InteractionResult interactionresult = super.mobInteract(player, hand);
                     if ((!interactionresult.consumesAction() || this.isBaby()) && this.isOwnedBy(player)) {
-                        /*LogHelper.warn("before setting sit " + this.isSitting());*/
+                        LogHelper.warn("before setting sit " + this.isOrderedToSit());
                         this.setOrderedToSit(!this.isOrderedToSit());
-                        /*LogHelper.warn("after setting sit " + this.isSitting());*/
+                        LogHelper.warn("after setting sit " + this.isOrderedToSit());
                         this.jumping = false;
                         this.navigation.stop();
                         return InteractionResult.SUCCESS;

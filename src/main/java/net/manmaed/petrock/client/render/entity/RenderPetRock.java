@@ -2,25 +2,27 @@ package net.manmaed.petrock.client.render.entity;
 
 
 import net.manmaed.petrock.PetRock;
+import net.manmaed.petrock.PetRockClient;
 import net.manmaed.petrock.client.model.entity.PRModels;
 import net.manmaed.petrock.client.render.model.ModelPetRock;
 import net.manmaed.petrock.entitys.EntityPetRock;
+import net.manmaed.petrock.libs.LogHelper;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.resources.ResourceLocation;
+import org.jline.utils.Log;
 
 /**
  * Created by manmaed on 30/08/2019.
  */
 public class RenderPetRock extends MobRenderer<EntityPetRock, ModelPetRock<EntityPetRock>> {
 
-    private static final ResourceLocation skinuntame = new ResourceLocation(PetRock.MOD_ID, "textures/entity/petrock.png");
-    private static final ResourceLocation skintame = new ResourceLocation(PetRock.MOD_ID, "textures/entity/petrock_tame.png");
-    private static final ResourceLocation skintamesit = new ResourceLocation(PetRock.MOD_ID, "textures/entity/petrocktamesit.png");
+    private static final ResourceLocation UNTAME = new ResourceLocation(PetRock.MOD_ID, "textures/entity/petrock.png");
+    private static final ResourceLocation TAMED = new ResourceLocation(PetRock.MOD_ID, "textures/entity/petrock_tame.png");
+    private static final ResourceLocation SITTING = new ResourceLocation(PetRock.MOD_ID, "textures/entity/petrocktamesit.png");
 
-    //TODO: Fix this
     public RenderPetRock(EntityRendererProvider.Context context) {
-        super(context, new ModelPetRock<>(context.bakeLayer(PRModels.PETROCK)), 0.25F);
+        super(context, new ModelPetRock<EntityPetRock>(context.bakeLayer(PetRockClient.PETROCK)), 0.25F);
 
         //TODO: ReAdd layers
         /*this.addLayer(new BirthdayFeatureRenderer(this));
@@ -33,14 +35,14 @@ public class RenderPetRock extends MobRenderer<EntityPetRock, ModelPetRock<Entit
 
     @Override
     public ResourceLocation getTextureLocation(EntityPetRock petRock) {
-        if (petRock.isTame()) {
-            if (petRock.isOrderedToSit()) {
-                return skintamesit;
+       if (petRock.isTame()) {
+            if (petRock.isInSittingPose()) {
+                return SITTING;
             } else {
-                return skintame;
+                return TAMED;
             }
         } else {
-            return skinuntame;
+            return UNTAME;
         }
     }
 }

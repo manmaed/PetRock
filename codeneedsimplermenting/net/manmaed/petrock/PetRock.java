@@ -47,8 +47,7 @@ public class PetRock {
 
         event.addListener(this::AttributeCreation);
 
-        event.addListener(PetRockClient::doEntityRendering);
-        event.addListener(PetRockClient::registerLayerDefinitions);
+        event.addListener(PetRockClient::doClientStuff);
         /*PRBlocks.FEATURES.register(event);
 
         event.addListener(this::init);
