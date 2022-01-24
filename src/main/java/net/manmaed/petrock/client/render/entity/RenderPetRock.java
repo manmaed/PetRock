@@ -2,15 +2,14 @@ package net.manmaed.petrock.client.render.entity;
 
 
 import net.manmaed.petrock.PetRock;
-import net.manmaed.petrock.PetRockClient;
-import net.manmaed.petrock.client.model.entity.PRModels;
+import net.manmaed.petrock.client.model.PRModels;
+import net.manmaed.petrock.client.render.layers.BirthdayFeatureRenderer;
+import net.manmaed.petrock.client.render.model.ModelCakeHat;
 import net.manmaed.petrock.client.render.model.ModelPetRock;
 import net.manmaed.petrock.entitys.EntityPetRock;
-import net.manmaed.petrock.libs.LogHelper;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.resources.ResourceLocation;
-import org.jline.utils.Log;
 
 /**
  * Created by manmaed on 30/08/2019.
@@ -22,9 +21,10 @@ public class RenderPetRock extends MobRenderer<EntityPetRock, ModelPetRock<Entit
     private static final ResourceLocation SITTING = new ResourceLocation(PetRock.MOD_ID, "textures/entity/petrocktamesit.png");
 
     public RenderPetRock(EntityRendererProvider.Context context) {
-        super(context, new ModelPetRock<EntityPetRock>(context.bakeLayer(PetRockClient.PETROCK)), 0.25F);
+        super(context, new ModelPetRock<EntityPetRock>(context.bakeLayer(PRModels.PETROCK)), 0.25F);
 
         //TODO: ReAdd layers
+        this.addLayer(new BirthdayFeatureRenderer(this));
         /*this.addLayer(new BirthdayFeatureRenderer(this));
         this.addLayer(new ChristmasFeatureRenderer(this));
         this.addLayer(new HalloweenFeatureRenderer(this));

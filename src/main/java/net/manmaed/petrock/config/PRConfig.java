@@ -19,7 +19,6 @@ public class PRConfig {
     public static ForgeConfigSpec.IntValue STONEIUM_ORE_YMIN;
     public static ForgeConfigSpec.IntValue STONEIUM_ORE_YMAX;
 
-
     static {
         COMMON_BUILDER.comment("WorldGen Settings").push(CATEGORY_WORLDGEN);
         setupWorldGenConfig();

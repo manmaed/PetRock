@@ -7,8 +7,11 @@ import net.manmaed.petrock.items.PRItems;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
+import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.minecraftforge.fml.event.lifecycle.FMLDedicatedServerSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
 /**
@@ -46,37 +49,23 @@ public class PetRock {
         PREntityTypes.ENTITY_TYPES.register(event);
 
         event.addListener(this::AttributeCreation);
-
         event.addListener(PetRockClient::doEntityRendering);
         event.addListener(PetRockClient::registerLayerDefinitions);
         /*PRBlocks.FEATURES.register(event);
 
-        event.addListener(this::init);
         event.addListener(PetRockClient::doClientStuff);
-
-        PREntityTypes.ENTITY_TYPES.register(FMLJavaModLoadingContext.get().getModEventBus());
         DistExecutor.runWhenOn(Dist.CLIENT, () -> () -> {
             MinecraftForge.EVENT_BUS.addListener(EventPriority.HIGH, PetRockClient::doPlayerStuff);
         });
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, PRConfig.COMMON_CONFIG);
         ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, PRConfig.CLIENT_CONFIG);
         MinecraftForge.EVENT_BUS.addListener(this::serverLoad);
-        MinecraftForge.EVENT_BUS.register(this);
         MinecraftForge.EVENT_BUS.addListener(EventPriority.HIGH, WorldGenHandler::addStuffToBiomes);*/
     }
 
     private void AttributeCreation(EntityAttributeCreationEvent event) {
         event.put(PREntityTypes.PETROCK.get(), EntityPetRock.createAttributes().build());
     }
-
-    /*private void init(final FMLCommonSetupEvent event) {*/
-        // some preinit code;
-        /*DeferredWorkQueue.runLater(() -> {
-            GlobalEntityTypeAttributes.put(PREntityTypes.PETROCK.get(), EntityPetRock.setCustomAttributes().create());
-        });*/
-        /*event.enqueueWork(WorldGenHandler::registerConfiguredFeatures);*/
-    /*}*/
-
 
     /*private void serverLoad(ServerStartedEvent event) {
         PRCommands.register(event.getServer().getCommandManager().getDispatcher());
