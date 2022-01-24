@@ -15,6 +15,10 @@ public class PRModels {
 
     //Layers
     public static final ModelLayerLocation CAKE = makeModelLayerLocation("cake");
+    public static final ModelLayerLocation CREEPER = makeModelLayerLocation("creeper");
+    public static final ModelLayerLocation SANTA = makeModelLayerLocation("santa");
+    public static final ModelLayerLocation SLOWPOKE = makeModelLayerLocation("slowpoke");
+
 
     /*public static final ModelLayerLocation PETROCK = new ModelLayerLocation(new ResourceLocation(PetRock.MOD_ID, "petrock"), "petrock");*/
 

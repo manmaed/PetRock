@@ -21,27 +21,25 @@ import net.minecraftforge.client.model.pipeline.IVertexConsumer;
 /**
  * Created by manmaed on 24/01/2022.
  */
-public class BirthdayFeatureRenderer<T extends EntityPetRock, M extends ModelCakeHat<T>> extends RenderLayer<T, M> {
+public class BirthdayFeatureRenderer extends RenderLayer<EntityPetRock, ModelPetRock<EntityPetRock>> {
 
-    //private ModelCakeHat hat = new ModelCakeHat;
-    private final M hat;
+    private ModelCakeHat hat;
     private static final ResourceLocation skin = new ResourceLocation(PetRock.MOD_ID, "textures/entity/event/cake.png");
 
-    public BirthdayFeatureRenderer(RenderLayerParent<T, M> layerParent) {
-        super(layerParent, new ModelCakeHat<EntityPetRock>());
-        this.hat = new ModelCakeHat<T>(layerParent.getModel().);
+    public BirthdayFeatureRenderer(RenderLayerParent layerParent) {
+        super(layerParent);
 
     }
 
     @Override
-    public void render(PoseStack poseStack, MultiBufferSource multiBufferSource, int packedLight, T entityPetRock, float p_117353_, float p_117354_, float p_117355_, float p_117356_, float p_117357_, float p_117358_) {
+    public void render(PoseStack poseStack, MultiBufferSource multiBufferSource, int packedLight, EntityPetRock entityPetRock, float p_117353_, float p_117354_, float p_117355_, float p_117356_, float p_117357_, float p_117358_) {
         //TODO: Add birthday feature form Hat class
         if(true) {
 
             poseStack.pushPose();
             VertexConsumer vertexConsumer = multiBufferSource.getBuffer(RenderType.entityCutoutNoCull(skin));
             //TODO Fix Rendering
-            hat.renderToBuffer(poseStack, vertexConsumer, packedLight, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
+            /*hat.renderToBuffer(poseStack, vertexConsumer, packedLight, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);*/
             poseStack.popPose();
         }
     }
