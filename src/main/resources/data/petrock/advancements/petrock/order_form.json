@@ -12,12 +12,14 @@
   },
   "parent": "petrock:petrock/root",
   "criteria": {
-    "order_form": {
+    "requirement": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
-            "item": "petrock:orderform"
+            "items": [
+              "petrock:orderform"
+            ]
           }
         ]
       }

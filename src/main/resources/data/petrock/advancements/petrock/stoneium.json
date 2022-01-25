@@ -12,12 +12,14 @@
   },
   "parent": "petrock:petrock/root",
   "criteria": {
-    "get_stoneium": {
+    "requirement": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
-            "item": "petrock:stoneium"
+            "items": [
+              "petrock:stoneium"
+            ]
           }
         ]
       }

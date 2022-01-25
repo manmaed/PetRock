@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:diamond_sword"
+    },
+    "title": {
+      "translate": "advancements.petrock.warranty_void.title"
+    },
+    "description": {
+      "translate": "advancements.petrock.warranty_void.description"
+    },
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "petrock:petrock/petrockbox",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:player_hurt_entity",
+      "conditions": {
+        "entity": {
+          "type": "petrock:petrock"
+        }
+      }
+    }
+  }
+}

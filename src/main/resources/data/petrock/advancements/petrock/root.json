@@ -14,12 +14,14 @@
     "announce_to_chat": false
   },
   "criteria": {
-    "iron_tools": {
+    "requirement": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
-            "item": "petrock:petrockbox"
+            "items": [
+              "minecraft:iron_pickaxe"
+            ]
           }
         ]
       }

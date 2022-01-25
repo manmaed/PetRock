@@ -10,14 +10,16 @@
       "translate": "advancements.petrock.kibble.description"
     }
   },
-  "parent": "petrock:petrock/petrockbox",
+  "parent": "petrock:petrock/warranty_void",
   "criteria": {
-    "petrockbox": {
+    "requirement": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
-            "item": "petrock:kibble"
+            "items": [
+              "petrock:kibble"
+            ]
           }
         ]
       }
