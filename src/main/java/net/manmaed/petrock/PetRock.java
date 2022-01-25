@@ -7,16 +7,11 @@ import net.manmaed.petrock.entitys.EntityPetRock;
 import net.manmaed.petrock.entitys.PREntityTypes;
 import net.manmaed.petrock.items.PRItems;
 import net.manmaed.petrock.worldgen.ores.PROres;
-import net.minecraft.data.worldgen.features.FeatureUtils;
-import net.minecraft.data.worldgen.features.OreFeatures;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
-import net.minecraft.world.level.levelgen.feature.Feature;
-import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.RegisterCommandsEvent;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
-import net.minecraftforge.event.server.ServerStartedEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModLoadingContext;
@@ -31,10 +26,6 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 @Mod(PetRock.MOD_ID)
 public class PetRock {
 
-    /*
-    TODO: World Generation
-    TODO: World Generation Config
-     */
     public static final String MOD_ID = "petrock";
     public static final CreativeModeTab itemGroup = new CreativeModeTab(PetRock.MOD_ID) {
         @Override
@@ -56,6 +47,7 @@ public class PetRock {
         event.addListener(PetRockClient::doClientStuff);
         MinecraftForge.EVENT_BUS.addListener(EventPriority.HIGH, PROres::onBiomeLoadingEvent);
         event.addListener(this::init);
+        MinecraftForge.EVENT_BUS.addListener(EventPriority.HIGH, this::registerCommands);
     }
 
     public void init(final FMLCommonSetupEvent event) {
@@ -66,7 +58,7 @@ public class PetRock {
         event.put(PREntityTypes.PETROCK.get(), EntityPetRock.createAttributes().build());
     }
 
-    private void serverLoad(ServerStartedEvent event) {
-        PRCommands.register(event.getServer().getCommands().getDispatcher());
+    private void registerCommands(RegisterCommandsEvent event) {
+        PRCommands.register(event.getDispatcher());
     }
 }
