@@ -121,7 +121,7 @@ if (ENV.CURSE_DEPLOY) {
             addGameVersion "Forge"
             addGameVersion "${minecraft_version}"
             mainArtifact(jar) {
-                displayName = "BedrockPlus Version ${version}"
+                displayName = "Petrock v${version} - ${minecraft_version}"
                 relations {
                 optionalDependency 'patchouli'
                 }
