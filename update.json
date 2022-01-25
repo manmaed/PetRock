@@ -1,7 +1,7 @@
 {
   "homepage": "https://www.curseforge.com/minecraft/mc-mods/petrock-mod",
   "1.18.1": {
-    "0.8.2": "Fixed Blocks non minable",
+    "0.8.2": "Fixed Blocks non  & Advancements",
     "0.8.1": "Port to 1.18.1"
   },
   "1.16.5": {
