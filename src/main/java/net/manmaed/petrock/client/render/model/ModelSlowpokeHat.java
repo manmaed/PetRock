@@ -5,6 +5,7 @@ package net.manmaed.petrock.client.render.model;// Made with Blockbench 4.1.3
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
+import net.manmaed.petrock.entitys.EntityPetRock;
 import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.Model;
 import net.minecraft.client.model.geom.ModelLayerLocation;
@@ -15,9 +16,8 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Entity;
 
-public class ModelSlowpokeHat extends Model {
-	// This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
-	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation("modid", "custom_model"), "main");
+public class ModelSlowpokeHat<T extends EntityPetRock> extends Model {
+
 	private final ModelPart LeftArm;
 	private final ModelPart RightArm;
 	private final ModelPart Body;

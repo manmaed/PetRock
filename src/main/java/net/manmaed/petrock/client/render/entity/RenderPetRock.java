@@ -3,8 +3,7 @@ package net.manmaed.petrock.client.render.entity;
 
 import net.manmaed.petrock.PetRock;
 import net.manmaed.petrock.client.model.PRModels;
-import net.manmaed.petrock.client.render.layers.BirthdayFeatureRenderer;
-import net.manmaed.petrock.client.render.model.ModelCakeHat;
+import net.manmaed.petrock.client.render.layers.*;
 import net.manmaed.petrock.client.render.model.ModelPetRock;
 import net.manmaed.petrock.entitys.EntityPetRock;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
@@ -22,15 +21,12 @@ public class RenderPetRock extends MobRenderer<EntityPetRock, ModelPetRock<Entit
 
     public RenderPetRock(EntityRendererProvider.Context context) {
         super(context, new ModelPetRock<EntityPetRock>(context.bakeLayer(PRModels.PETROCK)), 0.25F);
-
-        //TODO: ReAdd layers
-        this.addLayer(new BirthdayFeatureRenderer(this));
-        /*this.addLayer(new BirthdayFeatureRenderer(this));
-        this.addLayer(new ChristmasFeatureRenderer(this));
-        this.addLayer(new HalloweenFeatureRenderer(this));
-        this.addLayer(new SlowpokeFeatureRenderer(this));
-        this.addLayer(new CageFeatureRenderer(this));
-        this.addLayer(new SignFeatureRenderer(this));*/
+        this.addLayer(new BirthdayLayer(this, context.getModelSet()));
+        this.addLayer(new ChristmasLayer<>(this, context.getModelSet()));
+        this.addLayer(new HalloweenLayer<>(this, context.getModelSet()));
+        this.addLayer(new SlowpokeLayer<>(this, context.getModelSet()));
+        this.addLayer(new CageLayer<>(this, context.getModelSet()));
+        this.addLayer(new SignLayer<>(this, context.getModelSet()));
     }
 
     @Override

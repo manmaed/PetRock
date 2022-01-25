@@ -27,20 +27,12 @@ public class PetRock {
     TODO: World Generation Config
      */
     public static final String MOD_ID = "petrock";
-    private static boolean ishatsloaded = false;
     public static final CreativeModeTab itemGroup = new CreativeModeTab(PetRock.MOD_ID) {
         @Override
         public ItemStack makeIcon() {
             return new ItemStack(PRItems.PETROCKBOX.get());
         }
     };
-
-    public static boolean getHatsLoaded() {
-        return ishatsloaded;
-    }
-    public static void setHatsLoaded() {
-        ishatsloaded = true;
-    }
 
     public PetRock() {
         IEventBus event = FMLJavaModLoadingContext.get().getModEventBus();

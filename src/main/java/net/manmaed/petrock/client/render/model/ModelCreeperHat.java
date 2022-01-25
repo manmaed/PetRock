@@ -17,7 +17,7 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Entity;
 
-public class ModelCreeperHat extends Model {
+public class ModelCreeperHat<T extends EntityPetRock> extends Model {
 	private final ModelPart foot2F;
 	private final ModelPart foot1B;
 	private final ModelPart CreepsHead;
