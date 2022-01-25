@@ -1,5 +1,8 @@
 {
   "homepage": "https://www.curseforge.com/minecraft/mc-mods/petrock-mod",
+  "1.18.1": {
+    "0.8.1": "Port to 1.18.1"
+  },
   "1.16.5": {
     "0.7.9": "Stoneium is now tagged with #forge/ores & Made it so my hats are disabled when iChun Hats mod is instaled",
     "0.7.8": "Fixed Care Guide Spooling Errors when Patchouli isn't installed",
@@ -34,6 +37,8 @@
     "0.1.0": "ReCode of Mod"
   },
   "promos": {
+    "1.18.1-latest": "0.8.1",
+    "1.18.1-recommended": "0.8.1",
     "1.16.5-latest": "0.7.9",
     "1.16.5-recommended": "0.7.9",
     "1.16.1-latest": "0.7.1",
