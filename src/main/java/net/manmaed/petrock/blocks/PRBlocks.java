@@ -24,8 +24,8 @@ public class PRBlocks {
              * public static final RegistryObject<Item> EXAMPLE_BLOCK_ITEM = PRItems.ITEMS.register("example_block", () -> new BlockItem(EXAMPLE_BLOCK.get(), new Item.Properties().tab(PetRock.itemGroup)));
              **/
 
-    public static final RegistryObject<Block> STONEIUM_ORE = BLOCKS.register("stoneium_ore", () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(3.0F)));
-    public static final RegistryObject<Block> STONEIUM_BLOCK = BLOCKS.register("stoneium_block", () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(3.0F)));
+    public static final RegistryObject<Block> STONEIUM_ORE = BLOCKS.register("stoneium_ore", () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(3.0F).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> STONEIUM_BLOCK = BLOCKS.register("stoneium_block", () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(3.0F).requiresCorrectToolForDrops()));
 
     public static final RegistryObject<Item> STONEIUM_ORE_ITEM = PRItems.ITEMS.register("stoneium_ore", () -> new BlockItem(STONEIUM_ORE.get(), new Item.Properties().tab(PetRock.itemGroup)));
     public static final RegistryObject<Item> STONEIUM_BLOCK_ITEM = PRItems.ITEMS.register("stoneium_block", () -> new BlockItem(STONEIUM_BLOCK.get(), new Item.Properties().tab(PetRock.itemGroup)));
