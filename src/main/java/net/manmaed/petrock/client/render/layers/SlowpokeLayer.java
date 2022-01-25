@@ -4,7 +4,6 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.manmaed.petrock.PetRock;
 import net.manmaed.petrock.client.model.PRModels;
-import net.manmaed.petrock.client.render.model.ModelCreeperHat;
 import net.manmaed.petrock.client.render.model.ModelPetRock;
 import net.manmaed.petrock.client.render.model.ModelSlowpokeHat;
 import net.manmaed.petrock.entitys.EntityPetRock;

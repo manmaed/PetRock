@@ -1,16 +1,6 @@
 package net.manmaed.petrock.worldgen;
 
 
-import net.manmaed.petrock.blocks.PRBlocks;
-import net.manmaed.petrock.config.PRConfig;
-import net.minecraft.core.Registry;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.biome.Biome;
-import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
-import net.minecraft.world.level.levelgen.feature.Feature;
-import net.minecraftforge.common.BiomeDictionary;
-import net.minecraftforge.event.world.BiomeLoadingEvent;
-
 public class WorldGenHandler {
     /*public static ConfiguredFeature<?, ?> PR_UNDERGROUND;
 

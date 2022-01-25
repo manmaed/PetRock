@@ -6,7 +6,6 @@ import net.manmaed.petrock.PetRock;
 import net.manmaed.petrock.client.model.PRModels;
 import net.manmaed.petrock.client.render.model.ModelCreeperHat;
 import net.manmaed.petrock.client.render.model.ModelPetRock;
-import net.manmaed.petrock.client.render.model.ModelSantaHat;
 import net.manmaed.petrock.entitys.EntityPetRock;
 import net.manmaed.petrock.hats.PRHats;
 import net.minecraft.client.model.geom.EntityModelSet;
@@ -43,7 +42,6 @@ public class HalloweenLayer<T extends EntityPetRock, M extends ModelPetRock<T>> 
                 poseStack.translate(0F, -0.5626F, 0F);
             }
             VertexConsumer vertexConsumer = multiBufferSource.getBuffer(RenderType.entityCutoutNoCull(skin));
-            //TODO Fix Rendering
             hat.renderToBuffer(poseStack, vertexConsumer, packedLight, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
             poseStack.popPose();
         }

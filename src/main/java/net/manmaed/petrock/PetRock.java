@@ -7,11 +7,8 @@ import net.manmaed.petrock.items.PRItems;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
-import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.fml.event.lifecycle.FMLDedicatedServerSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
 /**
@@ -21,8 +18,6 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 public class PetRock {
 
     /*
-    TODO: Entity Rendering
-    TODO: Entity Hat Rendering
     TODO: World Generation
     TODO: World Generation Config
      */
@@ -43,12 +38,8 @@ public class PetRock {
         event.addListener(this::AttributeCreation);
         event.addListener(PetRockClient::doEntityRendering);
         event.addListener(PetRockClient::registerLayerDefinitions);
-        /*PRBlocks.FEATURES.register(event);
-
         event.addListener(PetRockClient::doClientStuff);
-        DistExecutor.runWhenOn(Dist.CLIENT, () -> () -> {
-            MinecraftForge.EVENT_BUS.addListener(EventPriority.HIGH, PetRockClient::doPlayerStuff);
-        });
+        /*PRBlocks.FEATURES.register(event);
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, PRConfig.COMMON_CONFIG);
         ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, PRConfig.CLIENT_CONFIG);
         MinecraftForge.EVENT_BUS.addListener(this::serverLoad);

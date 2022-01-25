@@ -69,6 +69,10 @@ public class PRHats {
                     halloween = false;
                     birthday = false;*/
                     }
+                    if (hat.equalsIgnoreCase("halloween")) {
+                        halloween = true;
+                        LogHelper.info("Happy Halloween Slowpoke101");
+                    }
                 }
             }
         } catch (Exception e) {
@@ -79,14 +83,18 @@ public class PRHats {
     public static void slowisplaying() {
         slowpoke = true;
         userslow = true;
-        /*if (birthday & usernames.equalsIgnoreCase("Slowpoke101")) {
+        if (birthday & usernames.equalsIgnoreCase("Slowpoke101")) {
             //    bday = true;
             LogHelper.info("Happy Birthday Slowpoke101");
         }
         if (christmas) {
             //    christmas = true;
             LogHelper.info("Happy Christmas Slowpoke101");
-        }*/
+        }
+        if (halloween) {
+            //halloween = true;
+            LogHelper.info("Happy Halloween Slowpoke101");
+        }
         LogHelper.info("Slowpoke101 Hat Enabled!");
     }
 

@@ -8,7 +8,6 @@ import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionResultHolder;
-import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
@@ -37,8 +36,6 @@ public class PetRockBox extends Item {
         super(properties);
         //PREntitys.petrock, 0xdcd5d5, 0x686565
     }
-
-    //TODO: Make Petrock spawn on right click
 
     @Override
     public InteractionResult useOn(UseOnContext context) {

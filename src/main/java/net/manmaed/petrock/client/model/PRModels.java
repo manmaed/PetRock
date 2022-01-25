@@ -1,10 +1,8 @@
 package net.manmaed.petrock.client.model;
 
 import net.manmaed.petrock.PetRock;
-import net.manmaed.petrock.client.render.model.ModelPetRock;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraftforge.client.event.EntityRenderersEvent;
 
 /**
  * Created by manmaed on 17/12/2021.
