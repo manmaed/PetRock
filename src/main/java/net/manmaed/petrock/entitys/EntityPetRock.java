@@ -118,9 +118,9 @@ public class EntityPetRock extends TamableAnimal {
                 if (!(item instanceof DyeItem)) {
                     InteractionResult interactionresult = super.mobInteract(player, hand);
                     if ((!interactionresult.consumesAction() || this.isBaby()) && this.isOwnedBy(player)) {
-                        LogHelper.warn("before setting sit " + this.isOrderedToSit());
+                        //LogHelper.warn("before setting sit " + this.isOrderedToSit());
                         this.setOrderedToSit(!this.isOrderedToSit());
-                        LogHelper.warn("after setting sit " + this.isOrderedToSit());
+                        //LogHelper.warn("after setting sit " + this.isOrderedToSit());
                         this.jumping = false;
                         this.navigation.stop();
                         return InteractionResult.SUCCESS;
