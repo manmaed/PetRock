@@ -1,4 +1,7 @@
 {
+  "lang.file.name": "English US",
+  "lang.author.name": "manmaed",
+
   "petrock.comment.1" : "Item Stuff",
   "itemGroup.petrock"  : "PetRock's Tab",
   "item.petrock.kibble" : "Rock Kibble",
@@ -11,6 +14,7 @@
 
   "petrock.comment.2" : "Block Stuff",
   "block.petrock.stoneium_ore" : "Stoneium Ore",
+  "block.petrock.deepslate_stoneium_ore" : "Deepslate Stoneium Ore",
   "block.petrock.stoneium_block" : "Stoneium Block",
 
   "petrock.comment.3" : "Entity Stuff",

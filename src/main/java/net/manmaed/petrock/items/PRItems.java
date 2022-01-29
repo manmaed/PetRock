@@ -21,13 +21,5 @@ public class PRItems {
     public static final RegistryObject<Item> KIBBLE = ITEMS.register("kibble", () -> new Kibble(new Item.Properties().tab(PetRock.itemGroup)));
     public static final RegistryObject<Item> ORDER_FORM = ITEMS.register("orderform", () -> new OrderForm(new Item.Properties().tab(PetRock.itemGroup)));
     public static final RegistryObject<Item> PETROCKBOX = ITEMS.register("petrockbox", () -> new PetRockBox(new Item.Properties().tab(PetRock.itemGroup)));
+
 }
-/*
-
-
-    public static void load() {
-
-
-        petrockbox = new PetRockBox(new Item.Properties().group(PetRock.itemGroup), "petrockbox");
-        petrockspawnegg = new PetRockSpawnEgg(new Item.Properties().group(ItemGroup.MISC), "petrock_spawn_egg",0xdcd5d5, 0x686565);
-*/

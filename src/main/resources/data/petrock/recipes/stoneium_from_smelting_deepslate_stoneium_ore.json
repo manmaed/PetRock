@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "group": "stoneium_ingot",
+  "ingredient": {
+    "item": "petrock:deepslate_stoneium_ore"
+  },
+  "result": "petrock:stoneium",
+  "experience": 0.7,
+  "cookingtime": 200
+}

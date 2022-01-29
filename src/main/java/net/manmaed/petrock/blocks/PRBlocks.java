@@ -6,8 +6,10 @@ import net.manmaed.petrock.items.PRItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
+import net.minecraft.world.level.material.MaterialColor;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -25,9 +27,13 @@ public class PRBlocks {
              **/
 
     public static final RegistryObject<Block> STONEIUM_ORE = BLOCKS.register("stoneium_ore", () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(3.0F).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> DEEPSLATE_STONEIUM_ORE = BLOCKS.register("deepslate_stoneium_ore", () -> new Block(BlockBehaviour.Properties.copy(STONEIUM_ORE.get()).color(MaterialColor.DEEPSLATE).strength(4.5F, 3.0F).sound(SoundType.DEEPSLATE).requiresCorrectToolForDrops()));
+
     public static final RegistryObject<Block> STONEIUM_BLOCK = BLOCKS.register("stoneium_block", () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(3.0F).requiresCorrectToolForDrops()));
 
     public static final RegistryObject<Item> STONEIUM_ORE_ITEM = PRItems.ITEMS.register("stoneium_ore", () -> new BlockItem(STONEIUM_ORE.get(), new Item.Properties().tab(PetRock.itemGroup)));
+    public static final RegistryObject<Item> DEEPSLATESTONEIUM_ORE_ITEM = PRItems.ITEMS.register("deepslate_stoneium_ore", () -> new BlockItem(DEEPSLATE_STONEIUM_ORE.get(), new Item.Properties().tab(PetRock.itemGroup)));
+
     public static final RegistryObject<Item> STONEIUM_BLOCK_ITEM = PRItems.ITEMS.register("stoneium_block", () -> new BlockItem(STONEIUM_BLOCK.get(), new Item.Properties().tab(PetRock.itemGroup)));
 
 }
