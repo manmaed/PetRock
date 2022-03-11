@@ -26,6 +26,10 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 @Mod(PetRock.MOD_ID)
 public class PetRock {
 
+    /*
+    TODO: Reimperment World Generation
+     */
+
     public static final String MOD_ID = "petrock";
     public static final CreativeModeTab itemGroup = new CreativeModeTab(PetRock.MOD_ID) {
         @Override

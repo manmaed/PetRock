@@ -33,8 +33,8 @@ public class PRConfig {
                 .define("worldgen_enabled", true);
        STONEIUM_ORE_VAIN_SIZE = COMMON_BUILDER.comment("Size of a Vain [DEFAULT: 10]")
                 .defineInRange("stoneium_ore_vain_size", 10, 1, 50);
-        STONEIUM_ORE_VAIN_AMOUNT = COMMON_BUILDER.comment("The Amount of Vains for a chunk [DEFAULT: 20]")
-                .defineInRange("stoneium_ore_vain_amount", 20, 0, 100);
+        STONEIUM_ORE_VAIN_AMOUNT = COMMON_BUILDER.comment("The Amount of Vains for a chunk [DEFAULT: 30]")
+                .defineInRange("stoneium_ore_vain_amount", 30, 0, 100);
         DEEPSLATE_STONEIUM_ORE_VAIN_SIZE = COMMON_BUILDER.comment("Size of a Vain [DEFAULT: 10]")
                 .defineInRange("deepslate_stoneium_ore_vain_size", 10, 1, 50);
         DEEPSLATE_STONEIUM_ORE_VAIN_AMOUNT = COMMON_BUILDER.comment("The Amount of Vains for a chunk [DEFAULT: 15]")
