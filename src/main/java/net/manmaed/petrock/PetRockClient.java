@@ -5,12 +5,14 @@ import net.manmaed.petrock.blocks.PRBlocks;
 import net.manmaed.petrock.client.model.PRModels;
 import net.manmaed.petrock.client.render.entity.RenderPetRock;
 import net.manmaed.petrock.client.render.model.*;
+import net.manmaed.petrock.commands.PRCommands;
 import net.manmaed.petrock.entitys.PREntityTypes;
 import net.manmaed.petrock.hats.PRHats;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraftforge.client.event.EntityRenderersEvent;
+import net.minecraftforge.client.event.RegisterClientCommandsEvent;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 
@@ -21,6 +23,10 @@ public class PetRockClient {
 
     public static void doEntityRendering(final EntityRenderersEvent.RegisterRenderers event) {
         event.registerEntityRenderer(PREntityTypes.PETROCK.get(), RenderPetRock::new);
+    }
+
+    public static void registerClientCommands(RegisterClientCommandsEvent event) {
+        PRCommands.register(event.getDispatcher());
     }
 
     public static void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {

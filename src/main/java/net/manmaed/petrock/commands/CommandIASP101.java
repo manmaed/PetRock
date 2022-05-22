@@ -6,6 +6,7 @@ import net.manmaed.petrock.hats.PRHats;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
 import net.minecraft.network.chat.TextComponent;
+import net.minecraft.network.chat.TranslatableComponent;
 
 /**
  * Created by manmaed on 29/11/2019.
@@ -17,9 +18,9 @@ public class CommandIASP101 {
                 .executes(ctx -> run(ctx.getSource()));
     }
 
-    private static int run(CommandSourceStack source) throws CommandSyntaxException {
+    private static int run(CommandSourceStack source) {
         PRHats.iamslowpoke101();
-        source.getEntity().sendMessage(new TextComponent("Slowpoke101 Hat Enabled!"), source.getPlayerOrException().getUUID());
+        source.sendSuccess(new TranslatableComponent("petrock.command.iamslowpoke101.feedback"), true);
         return 0;
     }
 }

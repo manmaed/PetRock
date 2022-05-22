@@ -34,7 +34,7 @@ public class PROres {
 
     public static final List<OreConfiguration.TargetBlockState> ORE_STONEIUM_TARGET_LIST = List.of(OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, PRBlocks.STONEIUM_ORE.get().defaultBlockState()), OreConfiguration.target(DEEPSLATE_ORE_REPLACEABLES, PRBlocks.DEEPSLATE_STONEIUM_ORE.get().defaultBlockState()));
     public static Holder<ConfiguredFeature<OreConfiguration, ?>> FEATURE_ORE_STONEIUM;
-    public static  Holder<ConfiguredFeature<OreConfiguration, ?>> FEATURE_ORE_STONEIUM_DEEPSLATE;
+    public static Holder<ConfiguredFeature<OreConfiguration, ?>> FEATURE_ORE_STONEIUM_DEEPSLATE;
     public static Holder<PlacedFeature> ORE_STONEIUM;
     public static Holder<PlacedFeature> ORE_STONEIUM_DEEPSLATE;
 

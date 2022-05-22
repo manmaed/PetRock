@@ -1,26 +1,22 @@
 package net.manmaed.petrock.commands;
 
-
 import com.mojang.brigadier.builder.ArgumentBuilder;
-import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import net.manmaed.petrock.hats.PRHats;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
 import net.minecraft.network.chat.TranslatableComponent;
 
 /**
- * Created by manmaed on 29/11/2019.
+ * Created by manmaed on 22/05/2022.
  */
-public class CommandSHBirthday {
+public class CommandHATRELOAD {
     public static ArgumentBuilder<CommandSourceStack, ?> register() {
-        return Commands.literal("birthday")
-                .requires(cs -> cs.hasPermission(0))
-                .executes(ctx -> run(ctx.getSource()));
+        return Commands.literal("reload").requires(cs -> cs.hasPermission(0)).executes(ctx -> run(ctx.getSource()));
     }
 
     private static int run(CommandSourceStack source) {
-        PRHats.setHat("birthday");
-        source.sendSuccess(new TranslatableComponent("petrock.command.sethat.brithday.feedback"), true);
+        PRHats.load();
+        source.sendSuccess(new TranslatableComponent("petrock.command.reload"), true);
         return 0;
     }
 }

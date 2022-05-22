@@ -7,6 +7,7 @@ import net.manmaed.petrock.hats.PRHats;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
 import net.minecraft.network.chat.TextComponent;
+import net.minecraft.network.chat.TranslatableComponent;
 
 /**
  * Created by manmaed on 29/11/2019.
@@ -18,9 +19,9 @@ public class CommandSHChristmas {
             .executes(ctx -> run(ctx.getSource()));
 }
 
-    private static int run(CommandSourceStack source) throws CommandSyntaxException {
+    private static int run(CommandSourceStack source) {
         PRHats.setHat("christmas");
-        source.getEntity().sendMessage(new TextComponent("Happy Christmas!"), source.getPlayerOrException().getUUID());
+        source.sendSuccess(new TranslatableComponent("petrock.command.sethat.christmas.feedback"), true);
         return 0;
     }
 }

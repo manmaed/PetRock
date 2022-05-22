@@ -16,14 +16,7 @@ public class PRCommands {
                 Commands.literal(PetRock.MOD_ID)
                         .then(CommandIASP101.register())
                         .then(CommandSetHat.register())
+                        .then(CommandHATRELOAD.register())
         );
-        /*LiteralCommandNode<CommandSource> cmdpr = dispatcher.register(Commands.literal(PetRock.MOD_ID)
-                //how to add new commad to /petrock
-                //.then(CommadA.register(dispatcher)
-                .then(CommandSetHat.register(dispatcher))
-                .then(CommandIASP101.register(dispatcher))
-        );
-        dispatcher.register(Commands.literal(PetRock.MOD_ID).redirect(cmdpr));
-    }*/
     }
 }

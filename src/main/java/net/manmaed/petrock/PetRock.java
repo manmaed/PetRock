@@ -51,7 +51,7 @@ public class PetRock {
         event.addListener(PetRockClient::doClientStuff);
         MinecraftForge.EVENT_BUS.addListener(EventPriority.HIGH, PROres::onBiomeLoadingEvent);
         event.addListener(this::init);
-        MinecraftForge.EVENT_BUS.addListener(EventPriority.HIGH, this::registerCommands);
+        MinecraftForge.EVENT_BUS.addListener(EventPriority.HIGH, PetRockClient::registerClientCommands);
     }
 
     public void init(final FMLCommonSetupEvent event) {
@@ -60,9 +60,5 @@ public class PetRock {
 
     private void AttributeCreation(EntityAttributeCreationEvent event) {
         event.put(PREntityTypes.PETROCK.get(), EntityPetRock.createAttributes().build());
-    }
-
-    private void registerCommands(RegisterCommandsEvent event) {
-        PRCommands.register(event.getDispatcher());
     }
 }

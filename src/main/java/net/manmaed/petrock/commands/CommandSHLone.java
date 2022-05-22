@@ -7,6 +7,7 @@ import net.manmaed.petrock.hats.PRHats;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
 import net.minecraft.network.chat.TextComponent;
+import net.minecraft.network.chat.TranslatableComponent;
 
 /**
  * Created by manmaed on 29/11/2019.
@@ -18,12 +19,12 @@ public class CommandSHLone {
                 .executes(ctx -> run(ctx.getSource()));
     }
 
-    private static int run(CommandSourceStack source) throws CommandSyntaxException {
+    private static int run(CommandSourceStack source) {
         if (PRHats.slowpoke) {
-            source.getEntity().sendMessage(new TextComponent("No custom hat set with Slowpoke mode enabled"), source.getPlayerOrException().getUUID());
+            source.sendFailure(new TranslatableComponent("petrock.command.sethat.loneztar.failure"));
         } else {
             PRHats.setHat("loneztar");
-            source.getEntity().sendMessage(new TextComponent("Happy Brithday Loneztar!"), source.getPlayerOrException().getUUID());
+            source.sendSuccess(new TranslatableComponent("petrock.command.sethat.loneztar.success"), true);
         }
         return 0;
     }

@@ -34,6 +34,16 @@
   "advancements.petrock.kibble.title" : "Petrock Healing!",
   "advancements.petrock.kibble.description" : "Heal the PetRock! You monster!",
 
-  "petrock.comment.5" : "Other Random Junk",
+  "petrock.comment.5": "Command Feedback",
+  "petrock.command.iamslowpoke101.feedback": "Slowpoke101 Hat Enabled!",
+  "petrock.command.sethat.none.feedback": "Hats cleared!",
+  "petrock.command.sethat.brithday.feedback": "Birthday mode enabled!",
+  "petrock.command.sethat.christmas.feedback": "Happy Christmas!",
+  "petrock.command.sethat.halloween.feedback": "Happy Halloween!",
+  "petrock.command.sethat.loneztar.failure": "No custom hat set with Slowpoke mode enabled",
+  "petrock.command.sethat.loneztar.success": "Happy Brithday Loneztar!",
+  "petrock.command.reload.feedback": "Hats Reloaded!",
+
+  "petrock.comment.6" : "Other Random Junk",
   "":""
 }
