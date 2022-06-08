@@ -1,7 +1,6 @@
 package net.manmaed.petrock;
 
 import net.manmaed.petrock.blocks.PRBlocks;
-import net.manmaed.petrock.commands.PRCommands;
 import net.manmaed.petrock.config.PRConfig;
 import net.manmaed.petrock.entitys.EntityPetRock;
 import net.manmaed.petrock.entitys.PREntityTypes;
@@ -10,7 +9,6 @@ import net.manmaed.petrock.worldgen.ores.PROres;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.RegisterCommandsEvent;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -55,7 +53,7 @@ public class PetRock {
     }
 
     public void init(final FMLCommonSetupEvent event) {
-        event.enqueueWork(PROres::registerConfigerdFeatures);
+        event.enqueueWork(PROres::init);
     }
 
     private void AttributeCreation(EntityAttributeCreationEvent event) {

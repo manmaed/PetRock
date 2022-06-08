@@ -1,7 +1,6 @@
 package net.manmaed.petrock.entitys;
 
 import net.manmaed.petrock.items.PRItems;
-import net.manmaed.petrock.libs.LogHelper;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
