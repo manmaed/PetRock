@@ -1,6 +1,7 @@
 {
   "homepage": "https://www.curseforge.com/minecraft/mc-mods/petrock-mod",
   "1.18.2": {
+    "0.9.3": "World Gen Seems OK now",
     "0.9.2": "fix commands on server and forge updates",
     "0.9.1": "Port to 1.18.2"
   },
@@ -43,8 +44,8 @@
     "0.1.0": "ReCode of Mod"
   },
   "promos": {
-    "1.18.2-latest": "0.9.2",
-    "1.18.2-recommended": "0.9.2",
+    "1.18.2-latest": "0.9.3",
+    "1.18.2-recommended": "0.9.3",
     "1.18.1-latest": "0.8.4",
     "1.18.1-recommended": "0.8.4",
     "1.16.5-latest": "0.7.9",
