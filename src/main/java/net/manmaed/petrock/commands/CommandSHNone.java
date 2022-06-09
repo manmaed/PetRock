@@ -5,7 +5,7 @@ import com.mojang.brigadier.builder.ArgumentBuilder;
 import net.manmaed.petrock.hats.PRHats;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
-import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.network.chat.Component;
 
 /**
  * Created by manmaed on 29/11/2019.
@@ -19,7 +19,7 @@ public class CommandSHNone {
 
     private static int run(CommandSourceStack source) {
         PRHats.setHat("none");
-        source.sendSuccess(new TranslatableComponent("petrock.command.sethat.none.feedback"),true);
+        source.sendSuccess(Component.translatable("petrock.command.sethat.none.feedback"),true);
         return 0;
     }
 }

@@ -4,7 +4,7 @@ import com.mojang.brigadier.builder.ArgumentBuilder;
 import net.manmaed.petrock.hats.PRHats;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
-import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.network.chat.Component;
 
 /**
  * Created by manmaed on 22/05/2022.
@@ -16,7 +16,7 @@ public class CommandHATRELOAD {
 
     private static int run(CommandSourceStack source) {
         PRHats.load();
-        source.sendSuccess(new TranslatableComponent("petrock.command.reload"), true);
+        source.sendSuccess(Component.translatable("petrock.command.reload"), true);
         return 0;
     }
 }

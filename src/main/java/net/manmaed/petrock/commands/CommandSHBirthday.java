@@ -1,11 +1,10 @@
 package net.manmaed.petrock.commands;
 
-
 import com.mojang.brigadier.builder.ArgumentBuilder;
 import net.manmaed.petrock.hats.PRHats;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
-import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.network.chat.Component;
 
 /**
  * Created by manmaed on 29/11/2019.
@@ -19,7 +18,7 @@ public class CommandSHBirthday {
 
     private static int run(CommandSourceStack source) {
         PRHats.setHat("birthday");
-        source.sendSuccess(new TranslatableComponent("petrock.command.sethat.brithday.feedback"), true);
+        source.sendSuccess(Component.translatable("petrock.command.sethat.brithday.feedback"), true);
         return 0;
     }
 }

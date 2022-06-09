@@ -1,7 +1,6 @@
 package net.manmaed.petrock.items;
 
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
@@ -20,6 +19,6 @@ public class Stoneium extends Item {
 
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level world, List<Component> tooltip, TooltipFlag flagIn) {
-        tooltip.add(new TranslatableComponent("item.petrock.stoneium.tooltip"));
+        tooltip.add(Component.translatable("item.petrock.stoneium.tooltip"));
     }
 }
