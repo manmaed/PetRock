@@ -31,8 +31,8 @@ public record OreBiomeModifier(GenerationStep.Decoration generationStage, Holder
     @Override
     public void modify(Holder<Biome> biome, Phase phase, ModifiableBiomeInfo.BiomeInfo.Builder builder) {
         if (phase == Phase.ADD && (!biome.is(BiomeTags.IS_END) || !biome.is(BiomeTags.IS_NETHER))) {
-            System.out.println("Biome: " + !biome.is(BiomeTags.IS_NETHER));
-            System.out.println("Biome: " + !biome.is(BiomeTags.IS_END));
+            //System.out.println("Biome: " + !biome.is(BiomeTags.IS_NETHER));
+            //System.out.println("Biome: " + !biome.is(BiomeTags.IS_END));
             BiomeGenerationSettingsBuilder generationSettings = builder.getGenerationSettings();
             this.placedFeature.forEach(placedFeatureHolder -> generationSettings.addFeature(this.generationStage, placedFeatureHolder));
         }
