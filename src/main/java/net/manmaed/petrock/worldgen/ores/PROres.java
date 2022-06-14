@@ -20,38 +20,37 @@ import net.minecraftforge.common.world.BiomeModifier;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-import org.checkerframework.checker.units.qual.C;
 
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.function.Supplier;
 
-import static net.minecraft.data.worldgen.features.OreFeatures.DEEPSLATE_ORE_REPLACEABLES;
 
 /**
  * Created by manmaed on 25/01/2022.
  */
 public class PROres {
 
+    public static final DeferredRegister<ConfiguredFeature<?, ?>> FEATURE_REGISTRY = DeferredRegister.create(Registry.CONFIGURED_FEATURE_REGISTRY, PetRock.MOD_ID);
+    public static final DeferredRegister<PlacedFeature> PLACED_FEATURE_REGISTRY = DeferredRegister.create(Registry.PLACED_FEATURE_REGISTRY, PetRock.MOD_ID);
+
     public static final DeferredRegister<Codec<? extends BiomeModifier>> BIOME_SERIALIZERS = DeferredRegister.create(ForgeRegistries.Keys.BIOME_MODIFIER_SERIALIZERS, PetRock.MOD_ID);
     public static final RegistryObject<Codec<OreBiomeModifier>> ORE_BIOME_MODIFIER = BIOME_SERIALIZERS.register("ore_biome_modifiers", () -> OreBiomeModifier.CODEC);
 
-
     public static final RegistryObject<ConfiguredFeature<?, ?>> ORE_STONEIUM_CONFIG;
     public static final RegistryObject<ConfiguredFeature<?, ?>> ORE_STONEIUM_DEEPSLATE_CONFIG;
+
     public static final RegistryObject<PlacedFeature> ORE_STONEIUM;
     public static final RegistryObject<PlacedFeature> ORE_STONEIUM_DEEPSLATE;
 
     public static final Set<RegistryObject<PlacedFeature>> PLACEMENTS = new HashSet<>();
 
-    public static final DeferredRegister<ConfiguredFeature<?, ?>> FEATURE_REGISTRY = DeferredRegister.create(Registry.CONFIGURED_FEATURE_REGISTRY, PetRock.MOD_ID);
-    public static final DeferredRegister<PlacedFeature> PLACED_FEATURE_REGISTRY = DeferredRegister.create(Registry.PLACED_FEATURE_REGISTRY, PetRock.MOD_ID);
 
     public static void init() {}
 
     static {
-        Supplier<List<OreConfiguration.TargetBlockState>> stoneiumTargetList = () -> List.of(OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, PRBlocks.STONEIUM_ORE.get().defaultBlockState()), OreConfiguration.target(DEEPSLATE_ORE_REPLACEABLES, PRBlocks.DEEPSLATE_STONEIUM_ORE.get().defaultBlockState()));
+        Supplier<List<OreConfiguration.TargetBlockState>> stoneiumTargetList = () -> List.of(OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, PRBlocks.STONEIUM_ORE.get().defaultBlockState()), OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, PRBlocks.DEEPSLATE_STONEIUM_ORE.get().defaultBlockState()));
 
         ORE_STONEIUM_CONFIG = FEATURE_REGISTRY.register("ore_stoneium", () -> new ConfiguredFeature<>(Feature.ORE,
                 new OreConfiguration(stoneiumTargetList.get(), PRConfig.STONEIUM_ORE_VAIN_SIZE.get()))); //PRConfig.STONEIUM_ORE_VAIN_SIZE.get() = 10

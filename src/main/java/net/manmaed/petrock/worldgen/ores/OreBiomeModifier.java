@@ -7,7 +7,6 @@ package net.manmaed.petrock.worldgen.ores;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.DataResult;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
-import net.manmaed.petrock.PetRock;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderSet;
 import net.minecraft.tags.BiomeTags;
@@ -23,18 +22,23 @@ import net.minecraftforge.common.world.ModifiableBiomeInfo;
  */
 public record OreBiomeModifier(GenerationStep.Decoration generationStage, HolderSet<PlacedFeature> placedFeature) implements BiomeModifier {
 
-    public static Codec<OreBiomeModifier> CODEC = RecordCodecBuilder.create(builder -> builder.group(
+    public static Codec<OreBiomeModifier> CODEC = RecordCodecBuilder.create(builder ->
+            builder.group(
             Codec.STRING.comapFlatMap(OreBiomeModifier::generationStageFromString, GenerationStep.Decoration::toString).fieldOf("generation_stage").forGetter(OreBiomeModifier::generationStage),
             PlacedFeature.LIST_CODEC.fieldOf("features").forGetter(OreBiomeModifier::placedFeature)
     ).apply(builder, OreBiomeModifier::new));
 
     @Override
     public void modify(Holder<Biome> biome, Phase phase, ModifiableBiomeInfo.BiomeInfo.Builder builder) {
-        if (phase == Phase.ADD && (biome.is(BiomeTags.IS_END) && biome.is(BiomeTags.IS_NETHER))) {
+        if (phase == Phase.ADD && (!biome.is(BiomeTags.IS_END) || !biome.is(BiomeTags.IS_NETHER))) {
+            System.out.println("Biome: " + !biome.is(BiomeTags.IS_NETHER));
+            System.out.println("Biome: " + !biome.is(BiomeTags.IS_END));
             BiomeGenerationSettingsBuilder generationSettings = builder.getGenerationSettings();
             this.placedFeature.forEach(placedFeatureHolder -> generationSettings.addFeature(this.generationStage, placedFeatureHolder));
         }
     }
+
+
 
     @Override
     public Codec<? extends BiomeModifier> codec() {

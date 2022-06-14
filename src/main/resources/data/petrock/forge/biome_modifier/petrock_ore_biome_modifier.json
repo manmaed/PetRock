@@ -1,8 +1,8 @@
 {
   "type": "petrock:ore_biome_modifiers",
   "features": [
-    "ore_stoneium",
-    "ore_stoneium_deepslate"
+    "petrock:ore_stoneium",
+    "petrock:ore_stoneium_deepslate"
   ],
   "generation_stage": "TOP_LAYER_MODIFICATION"
 }
