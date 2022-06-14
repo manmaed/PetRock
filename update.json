@@ -1,6 +1,7 @@
 {
   "homepage": "https://www.curseforge.com/minecraft/mc-mods/petrock-mod",
   "1.19": {
+    "0.10.2": "Fixed Debug messgae",
     "0.10.1": "Port to 1.19, Changed Ore texure, changed defualt config values for ore spawns"
   },
   "1.18.2": {
@@ -47,8 +48,8 @@
     "0.1.0": "ReCode of Mod"
   },
   "promos": {
-    "1.19-latest": "0.10.1",
-    "1.19-recommended": "0.10.1",
+    "1.19-latest": "0.10.2",
+    "1.19-recommended": "0.10.2",
     "1.18.2-latest": "0.9.3",
     "1.18.2-recommended": "0.9.3",
     "1.18.1-latest": "0.8.4",
