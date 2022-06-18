@@ -21,7 +21,7 @@ public class RenderPetRock extends MobRenderer<EntityPetRock, ModelPetRock<Entit
 
     public RenderPetRock(EntityRendererProvider.Context context) {
         super(context, new ModelPetRock<EntityPetRock>(context.bakeLayer(PRModels.PETROCK)), 0.25F);
-        this.addLayer(new BirthdayLayer(this, context.getModelSet()));
+        this.addLayer(new BirthdayLayer<>(this, context.getModelSet()));
         this.addLayer(new ChristmasLayer<>(this, context.getModelSet()));
         this.addLayer(new HalloweenLayer<>(this, context.getModelSet()));
         this.addLayer(new SlowpokeLayer<>(this, context.getModelSet()));
