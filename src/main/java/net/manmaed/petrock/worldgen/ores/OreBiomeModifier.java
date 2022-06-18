@@ -7,6 +7,7 @@ package net.manmaed.petrock.worldgen.ores;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.DataResult;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
+import net.manmaed.petrock.config.PRConfig;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderSet;
 import net.minecraft.tags.BiomeTags;
@@ -30,11 +31,11 @@ public record OreBiomeModifier(GenerationStep.Decoration generationStage, Holder
 
     @Override
     public void modify(Holder<Biome> biome, Phase phase, ModifiableBiomeInfo.BiomeInfo.Builder builder) {
-        if (phase == Phase.ADD && (!biome.is(BiomeTags.IS_END) || !biome.is(BiomeTags.IS_NETHER))) {
-            //System.out.println("Biome: " + !biome.is(BiomeTags.IS_NETHER));
-            //System.out.println("Biome: " + !biome.is(BiomeTags.IS_END));
-            BiomeGenerationSettingsBuilder generationSettings = builder.getGenerationSettings();
-            this.placedFeature.forEach(placedFeatureHolder -> generationSettings.addFeature(this.generationStage, placedFeatureHolder));
+        if (PRConfig.ENABLE_WORLD_GEN.get()) {
+            if (phase == Phase.ADD && (!biome.is(BiomeTags.IS_END) || !biome.is(BiomeTags.IS_NETHER))) {
+                BiomeGenerationSettingsBuilder generationSettings = builder.getGenerationSettings();
+                this.placedFeature.forEach(placedFeatureHolder -> generationSettings.addFeature(this.generationStage, placedFeatureHolder));
+            }
         }
     }
 

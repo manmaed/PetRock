@@ -53,17 +53,17 @@ public class PROres {
         Supplier<List<OreConfiguration.TargetBlockState>> stoneiumTargetList = () -> List.of(OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, PRBlocks.STONEIUM_ORE.get().defaultBlockState()), OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, PRBlocks.DEEPSLATE_STONEIUM_ORE.get().defaultBlockState()));
 
         ORE_STONEIUM_CONFIG = FEATURE_REGISTRY.register("ore_stoneium", () -> new ConfiguredFeature<>(Feature.ORE,
-                new OreConfiguration(stoneiumTargetList.get(), PRConfig.STONEIUM_ORE_VAIN_SIZE.get()))); //PRConfig.STONEIUM_ORE_VAIN_SIZE.get() = 10
+                new OreConfiguration(stoneiumTargetList.get(), 10))); //PRConfig.STONEIUM_ORE_VAIN_SIZE.get() = 10
         ORE_STONEIUM_DEEPSLATE_CONFIG = FEATURE_REGISTRY.register("ore_stoneium_deepslate", () -> new ConfiguredFeature<>(Feature.ORE,
-                new OreConfiguration(stoneiumTargetList.get(), PRConfig.DEEPSLATE_STONEIUM_ORE_VAIN_SIZE.get()))); //PRConfig.DEEPSLATE_STONEIUM_ORE_VAIN_SIZE.get() = 10
+                new OreConfiguration(stoneiumTargetList.get(), 10))); //PRConfig.DEEPSLATE_STONEIUM_ORE_VAIN_SIZE.get() = 10
 
         ORE_STONEIUM = PLACED_FEATURE_REGISTRY.register("ore_stoneium", () -> new PlacedFeature(ORE_STONEIUM_CONFIG.getHolder().get(), commonOrePlacement(
-                PRConfig.STONEIUM_ORE_VAIN_AMOUNT.get(), //STONEIUM_ORE_VAIN_AMOUNT = 30
+                30, //STONEIUM_ORE_VAIN_AMOUNT = 30
                 HeightRangePlacement.triangle(
                         VerticalAnchor.absolute(30), VerticalAnchor.absolute(384)
                 ))));
         ORE_STONEIUM_DEEPSLATE = PLACED_FEATURE_REGISTRY.register("ore_stoneium_deepslate", () -> new PlacedFeature(ORE_STONEIUM_DEEPSLATE_CONFIG.getHolder().get(), commonOrePlacement(
-                PRConfig.DEEPSLATE_STONEIUM_ORE_VAIN_AMOUNT.get(), //DEEPSLATE_STONEIUM_ORE_VAIN_AMOUNT = 15
+                15, //DEEPSLATE_STONEIUM_ORE_VAIN_AMOUNT = 15
                 HeightRangePlacement.triangle(
                         VerticalAnchor.bottom(), VerticalAnchor.absolute(0)
                 ))));
