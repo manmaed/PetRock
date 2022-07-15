@@ -1,15 +1,18 @@
-{  "parent": "block/block",
-  "loader": "forge:multi-layer",
-  "layers": {
-    "solid": {
+{
+  "parent": "block/block",
+  "loader": "forge:composite",
+  "children": {
+    "first": {
       "parent": "block/cube_all",
       "textures": { "all": "block/deepslate" },
-      "transform": { "origin":"center", "scale": 1 }
+      "transform": { "origin":"center", "scale": 1 },
+      "render_type": "solid"
     },
-    "translucent": {
+    "second": {
       "parent": "block/cube_all",
-      "textures": { "all": "petrock:blocks/stoneium_ore" }
+      "textures": { "all": "petrock:blocks/stoneium_ore" },
+      "render_type": "translucent"
     }
   },
-  "textures": { "particle": "block/stone" }
+  "textures": { "particle": "block/deepslate" }
 }

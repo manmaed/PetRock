@@ -50,7 +50,5 @@ public class PetRockClient {
             }
             new Thread(PRHats::load).start();
         }
-        ItemBlockRenderTypes.setRenderLayer(PRBlocks.STONEIUM_ORE.get(), renderType -> renderType == RenderType.solid() || renderType == RenderType.translucent());
-        ItemBlockRenderTypes.setRenderLayer(PRBlocks.DEEPSLATE_STONEIUM_ORE.get(), renderType -> renderType == RenderType.solid() || renderType == RenderType.translucent());
     }
 }

@@ -9,7 +9,7 @@ import net.minecraftforge.registries.RegistryObject;
 
 public class PREntityTypes {
 
-    public static DeferredRegister<EntityType<?>> ENTITY_TYPES = DeferredRegister.create(ForgeRegistries.ENTITIES, PetRock.MOD_ID);
+    public static DeferredRegister<EntityType<?>> ENTITY_TYPES = DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, PetRock.MOD_ID);
 
     //Entity Types
     /*@ObjectHolder(Refs.Register + "petrock")*/

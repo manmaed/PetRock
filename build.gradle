@@ -83,7 +83,7 @@ dependencies {
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
     compileOnly fg.deobf("vazkii.patchouli:Patchouli:${minecraft_version}-${patchouli_version}:api")
     runtimeOnly fg.deobf("vazkii.patchouli:Patchouli:${minecraft_version}-${patchouli_version}")
-    implementation fg.deobf("curse.maven:${tk_slug}-${tk_pid}:${tk_fid}")
+    //implementation fg.deobf("curse.maven:${tk_slug}-${tk_pid}:${tk_fid}")
 //    implementation fg.deobf("curse.maven:${pat_slug}-${pat_pid}:${pat_fid}")
 //    compile fg.deobf("curse.maven:TOP-245211:3157997") //The One Probe
 //    compile fg.deobf("curse.maven:JEI-238222:3414898") //Just Enough Items
