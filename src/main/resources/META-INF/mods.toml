@@ -13,6 +13,6 @@ A Mod that adds PetRocks!'''
 [[dependencies.petrock]]
 modId="forge"
 mandatory=true
-versionRange="[41.0.98,)"
+versionRange="[41.1.0,)"
 ordering="NONE"
 side="BOTH"
