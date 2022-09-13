@@ -21,5 +21,7 @@ public class PRItems {
     public static final RegistryObject<Item> KIBBLE = ITEMS.register("kibble", () -> new Kibble(new Item.Properties().tab(PetRock.itemGroup)));
     public static final RegistryObject<Item> ORDER_FORM = ITEMS.register("orderform", () -> new OrderForm(new Item.Properties().tab(PetRock.itemGroup)));
     public static final RegistryObject<Item> PETROCKBOX = ITEMS.register("petrockbox", () -> new PetRockBox(new Item.Properties().tab(PetRock.itemGroup)));
+    public static final RegistryObject<Item> PETROCKWITHLEGSBOX = ITEMS.register("petrockwithlegsbox", () -> new PetRockWithLegsBox(new Item.Properties().tab(PetRock.itemGroup)));
+    public static final RegistryObject<Item> STONE_LEGS = ITEMS.register("stone_legs", () -> new StoneLegs(new Item.Properties().tab(PetRock.itemGroup)));
 
 }

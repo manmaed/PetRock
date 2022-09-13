@@ -20,5 +20,9 @@ public class PREntityTypes {
                     .sized(0.5f, 0.5f)
                     .build("petrock")
     );
-
+    public static final RegistryObject<EntityType<EntityPetRockWithLegs>> PETROCKWITHLEGS = ENTITY_TYPES.register("petrockwithlegs",
+            () -> EntityType.Builder.of(EntityPetRockWithLegs:: new, MobCategory.MISC)
+                    .sized(0.5f, 0.8f)
+                    .build("petrockwithlegs")
+    );
 }

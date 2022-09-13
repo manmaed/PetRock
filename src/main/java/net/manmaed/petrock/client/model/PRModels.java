@@ -10,6 +10,7 @@ import net.minecraft.resources.ResourceLocation;
 public class PRModels {
 
     public static final ModelLayerLocation PETROCK = makeModelLayerLocation("petrock");
+    public static final ModelLayerLocation PETROCKWITHLEGS = makeModelLayerLocation("petrockwithlegs");
 
     //Layers
     public static final ModelLayerLocation CAKE = makeModelLayerLocation("cake");

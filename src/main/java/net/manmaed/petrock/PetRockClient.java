@@ -4,6 +4,7 @@ package net.manmaed.petrock;
 import net.manmaed.petrock.blocks.PRBlocks;
 import net.manmaed.petrock.client.model.PRModels;
 import net.manmaed.petrock.client.render.entity.RenderPetRock;
+import net.manmaed.petrock.client.render.entity.RenderPetRockWithLegs;
 import net.manmaed.petrock.client.render.model.*;
 import net.manmaed.petrock.commands.PRCommands;
 import net.manmaed.petrock.entitys.PREntityTypes;
@@ -23,6 +24,7 @@ public class PetRockClient {
 
     public static void doEntityRendering(final EntityRenderersEvent.RegisterRenderers event) {
         event.registerEntityRenderer(PREntityTypes.PETROCK.get(), RenderPetRock::new);
+        event.registerEntityRenderer(PREntityTypes.PETROCKWITHLEGS.get(), RenderPetRockWithLegs::new);
     }
 
     public static void registerClientCommands(RegisterClientCommandsEvent event) {
@@ -31,6 +33,7 @@ public class PetRockClient {
 
     public static void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
         event.registerLayerDefinition(PRModels.PETROCK, ModelPetRock::createBodyLayer);
+        event.registerLayerDefinition(PRModels.PETROCKWITHLEGS, ModelPetRockWithLegs::createBodyLayer);
         event.registerLayerDefinition(PRModels.CAKE, ModelCakeHat::createBodyLayer);
         event.registerLayerDefinition(PRModels.CREEPER, ModelCreeperHat::createBodyLayer);
         event.registerLayerDefinition(PRModels.SANTA, ModelSantaHat::createBodyLayer);
