@@ -3,6 +3,7 @@ package net.manmaed.petrock;
 import net.manmaed.petrock.blocks.PRBlocks;
 import net.manmaed.petrock.config.PRConfig;
 import net.manmaed.petrock.entitys.EntityPetRock;
+import net.manmaed.petrock.entitys.EntityPetRockWithLegs;
 import net.manmaed.petrock.entitys.PREntityTypes;
 import net.manmaed.petrock.items.PRItems;
 import net.manmaed.petrock.worldgen.ores.PROres;
@@ -58,5 +59,6 @@ public class PetRock {
 
     private void AttributeCreation(EntityAttributeCreationEvent event) {
         event.put(PREntityTypes.PETROCK.get(), EntityPetRock.createAttributes().build());
+        event.put(PREntityTypes.PETROCKWITHLEGS.get(), EntityPetRockWithLegs.createAttributes().build());
     }
 }
