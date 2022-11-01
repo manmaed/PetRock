@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "s s",
+    "s s"
+  ],
+  "key": {
+    "s": { "item": "minecraft:stone"}
+  },
+  "result": {
+    "item": "petrock:stone_legs"
+  }
+}

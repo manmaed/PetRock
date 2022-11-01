@@ -12,15 +12,41 @@
     "show_toast": true,
     "announce_to_chat": true
   },
+  "requirements": [
+    [
+      "petrock:petrock",
+      "petrock:petrockwithlegs"
+    ]
+  ],
   "parent": "petrock:petrock/petrockbox",
   "criteria": {
-    "requirement": {
-      "trigger": "minecraft:player_hurt_entity",
+    "petrock:petrock": {
       "conditions": {
-        "entity": {
-          "type": "petrock:petrock"
-        }
-      }
+       "entity": [
+         {
+           "condition": "minecraft:entity_properties",
+           "entity": "this",
+           "predicate": {
+             "type": "petrock:petrock"
+           }
+         }
+       ]
+      },
+      "trigger": "minecraft:player_killed_entity"
+    },
+    "petrock:petrockwithlegs": {
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "petrock:petrockwithlegs"
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:player_killed_entity"
     }
   }
 }
