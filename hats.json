@@ -99,6 +99,26 @@
             "day": 0
         }
       }
+    },
+    {
+      "hat": "christmas",
+      "condition": {
+        "username": "christmas",
+        "date": {
+          "month": 4,
+          "day": 0
+        }
+      }
+    },
+    {
+      "hat": "christmas",
+      "condition": {
+        "username": "christmas",
+        "date": {
+          "month": 3,
+          "day": 0
+        }
+      }
     }
   ]
 }
