@@ -1,7 +1,6 @@
 package net.manmaed.petrock;
 
 
-import net.manmaed.petrock.blocks.PRBlocks;
 import net.manmaed.petrock.client.model.PRModels;
 import net.manmaed.petrock.client.render.entity.RenderPetRock;
 import net.manmaed.petrock.client.render.entity.RenderPetRockWithLegs;
@@ -9,11 +8,12 @@ import net.manmaed.petrock.client.render.model.*;
 import net.manmaed.petrock.commands.PRCommands;
 import net.manmaed.petrock.entitys.PREntityTypes;
 import net.manmaed.petrock.hats.PRHats;
+import net.manmaed.petrock.hats.Trolling;
+import net.manmaed.petrock.libs.LogHelper;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.ItemBlockRenderTypes;
-import net.minecraft.client.renderer.RenderType;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.RegisterClientCommandsEvent;
+import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 
@@ -40,6 +40,7 @@ public class PetRockClient {
         event.registerLayerDefinition(PRModels.SLOWPOKE, ModelSlowpokeHat::createBodyLayer);
         event.registerLayerDefinition(PRModels.CAGE, ModelCageHat::createBodyLayer);
         event.registerLayerDefinition(PRModels.SIGN, ModelSignHat::createBodyLayer);
+        event.registerLayerDefinition(PRModels.EASTER_EGG, ModelEggHat::createBodyLayer);
 
 
     }

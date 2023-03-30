@@ -19,7 +19,7 @@ public class CommandSHHallowen {
 
     private static int run(CommandSourceStack source) {
         PRHats.setHat("halloween");
-        source.sendSuccess(Component.translatable("petrock.command.sethat.halloween.feedback"), true);
+        source.sendSuccess(Component.translatable("petrock.command.sethat.halloween.feedback", source.getDisplayName()), true);
         return 0;
     }
 }

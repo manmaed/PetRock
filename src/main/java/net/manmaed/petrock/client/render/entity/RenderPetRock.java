@@ -27,6 +27,7 @@ public class RenderPetRock extends MobRenderer<EntityPetRock, ModelPetRock<Entit
         this.addLayer(new SlowpokeLayer<>(this, context.getModelSet()));
         this.addLayer(new CageLayer<>(this, context.getModelSet()));
         this.addLayer(new SignLayer<>(this, context.getModelSet()));
+        this.addLayer(new EggLayer<>(this, context.getModelSet()));
     }
 
     @Override
