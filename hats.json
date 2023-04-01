@@ -10,6 +10,16 @@
         }
       }
     },
+	  {
+      "hat": "birthday",
+      "condition": {
+        "username": "actuallybear",
+        "date": {
+            "month": 6,
+            "day": 24
+        }
+      }
+    },
 	{
       "hat": "birthday",
       "condition": {
