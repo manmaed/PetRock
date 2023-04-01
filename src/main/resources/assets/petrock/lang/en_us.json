@@ -51,6 +51,10 @@
   "petrock.command.sethat.loneztar.failure": "No custom hat set with Slowpoke mode enabled",
   "petrock.command.sethat.loneztar.success": "Happy Birthday Loneztar!",
   "petrock.command.reload.feedback": "Hats Reloaded!",
+  "petrock.command.disable.troll.feedback.1": "Trolling Disabled :(",
+  "petrock.command.disable.troll.feedback.2": "Please Note: this is temporarily and will be enabled next restart unless its disabled in config",
+  "petrock.command.disable.troll.failed.config": "Unable to disable a troll this is already disabled via the config",
+  "petrock.command.disable.troll.failed.command": "Looks like someone has already done this command",
 
   "petrock.comment.6" : "Other Random Junk",
   "":""
