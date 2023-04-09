@@ -41,6 +41,7 @@ public class PetRockClient {
         event.registerLayerDefinition(PRModels.CAGE, ModelCageHat::createBodyLayer);
         event.registerLayerDefinition(PRModels.SIGN, ModelSignHat::createBodyLayer);
         event.registerLayerDefinition(PRModels.EASTER_EGG, ModelEggHat::createBodyLayer);
+        event.registerLayerDefinition(PRModels.HOOD, ModelHood::createBodyLayer);
 
 
     }

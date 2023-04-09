@@ -21,6 +21,7 @@ public class PRModels {
     public static final ModelLayerLocation SIGN = makeModelLayerLocation("sign");
 
     public static final ModelLayerLocation EASTER_EGG = makeModelLayerLocation("egg");
+    public static final ModelLayerLocation HOOD = makeModelLayerLocation("hood");
 
     /*public static final ModelLayerLocation PETROCK = new ModelLayerLocation(new ResourceLocation(PetRock.MOD_ID, "petrock"), "petrock");*/
 
