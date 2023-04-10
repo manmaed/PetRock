@@ -55,6 +55,7 @@ public class PRHats {
                             LogHelper.fatal("Please inform manmaed of this error: Happy Birthday!");
                         }
                         if (hatData.getUsername().equalsIgnoreCase("ActuallyBear")) {
+                            birthday = false;
                             bear = true;
                         }
                         if (hatData.getUsername().equalsIgnoreCase("Slowpoke101")) {
