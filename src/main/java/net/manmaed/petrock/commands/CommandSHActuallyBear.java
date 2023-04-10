@@ -10,9 +10,9 @@ import net.minecraft.network.chat.Component;
 /**
  * Created by manmaed on 29/11/2019.
  */
-public class CommandSHLone {
+public class CommandSHActuallyBear {
     public static ArgumentBuilder<CommandSourceStack, ?> register() {
-        return Commands.literal("loneztar")
+        return Commands.literal("actuallybear")
                 .requires(cs -> cs.hasPermission(0))
                 .executes(ctx -> run(ctx.getSource()));
     }
@@ -21,8 +21,8 @@ public class CommandSHLone {
         if (PRHats.slowpoke) {
             source.sendFailure(Component.translatable("petrock.command.sethat.noslow.failure"));
         } else {
-            PRHats.setHat("loneztar");
-            source.sendSuccess(Component.translatable("petrock.command.sethat.loneztar.success"), true);
+            PRHats.setHat("actuallybear");
+            source.sendSuccess(Component.translatable("petrock.command.sethat.actuallybear.success"), true);
         }
         return 0;
     }

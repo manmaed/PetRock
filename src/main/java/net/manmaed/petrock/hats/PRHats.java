@@ -16,6 +16,8 @@ public class PRHats {
     public static boolean easter = false;
     public static boolean loneztar = false;
     public static boolean slowpoke = false;
+    public static boolean bear = false;
+    public static boolean tnt = false;
     private static boolean userslow = false;
     private static String usernames = "";
 
@@ -25,6 +27,8 @@ public class PRHats {
         christmas = false;
         halloween = false;
         easter = false;
+        bear = false;
+        tnt = false;
         slowpoke = false;
         loneztar = false;
         try {
@@ -40,12 +44,18 @@ public class PRHats {
                     if (hat.equalsIgnoreCase("halloween")) {
                         halloween = true;
                     }
+                    if (hat.equalsIgnoreCase("tnt")) {
+                        tnt = true;
+                    }
                     if (hat.equalsIgnoreCase("easter")) {
                         easter = true;
                     } else if (hat.equalsIgnoreCase("birthday")) {
                         birthday = true;
                         if (hatData.getUsername().equalsIgnoreCase("manmaed")) {
                             LogHelper.fatal("Please inform manmaed of this error: Happy Birthday!");
+                        }
+                        if (hatData.getUsername().equalsIgnoreCase("ActuallyBear")) {
+                            bear = true;
                         }
                         if (hatData.getUsername().equalsIgnoreCase("Slowpoke101")) {
                             slowpoke = true;
@@ -77,6 +87,9 @@ public class PRHats {
                     if (hat.equalsIgnoreCase("halloween")) {
                         halloween = true;
                         LogHelper.info("Happy Halloween Slowpoke101");
+                    }
+                    if (hat.equalsIgnoreCase("tnt")) {
+                        tnt = true;
                     }
                     if (hat.equalsIgnoreCase("easter")) {
                         easter = true;
@@ -116,6 +129,8 @@ public class PRHats {
         christmas = false;
         halloween = false;
         easter = false;
+        tnt = false;
+        bear = false;
         loneztar = false;
         if (hat.equalsIgnoreCase("halloween")) {
             halloween = true;
@@ -129,6 +144,12 @@ public class PRHats {
         if (hat.equalsIgnoreCase("easter")) {
             easter = true;
         }
+        if (hat.equalsIgnoreCase("tnt")) {
+            tnt = true;
+        }
+        if (hat.equalsIgnoreCase("actuallybear")) {
+            bear = true;
+        }
         if (hat.equalsIgnoreCase("loneztar")) {
             loneztar = true;
         }
@@ -137,6 +158,8 @@ public class PRHats {
             christmas = false;
             halloween = false;
             easter = false;
+            tnt = false;
+            bear = false;
             loneztar = false;
         }
     }
@@ -145,6 +168,8 @@ public class PRHats {
         christmas = false;
         halloween = false;
         easter = false;
+        tnt = false;
+        bear = false;
         loneztar = false;
         slowpoke = false;
         userslow = false;
