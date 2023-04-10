@@ -15,6 +15,8 @@ public class Trolling {
     private static boolean isrunning = false;
     private static boolean chancecubes = false;
 
+    public static boolean flashingmode = false;
+
     public static void startTroll(PlayerEvent.PlayerLoggedInEvent playerLoggedInEvent) throws InterruptedException {
         isrunning = true;
         int countdown = 250;
@@ -68,12 +70,22 @@ public class Trolling {
                 sendMessageToAllPlayers(playerLoggedInEvent.getEntity().level, Component.literal("<PetRock> There will be no further audio warnings").withStyle(ChatFormatting.BOLD).withStyle(ChatFormatting.RED));
                 sendMessageToAllPlayers(playerLoggedInEvent.getEntity().level, Component.literal("<manmaed> Good Luck"));
                 sendMessageToAllPlayers(playerLoggedInEvent.getEntity().level, Component.literal("manmaed left the game").withStyle(ChatFormatting.YELLOW));
-                countdown = 300;
+                countdown = 600;
                 while (countdown > 0 && isrunning) {
+                    boolean moveon = false;
                     /*LogHelper.info("Warning Forge Energy Overload in " + countdown);*/
+                    if (!flashingmode && !moveon) {
+                        flashingmode = true;
+                        moveon = true;
+                    }
+                    if (flashingmode && !moveon) {
+                        flashingmode = false;
+                        moveon = true;
+                    }
                     countdown--;
+                    moveon = false;
                     try {
-                        Thread.sleep(1000);
+                        Thread.sleep(500);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -118,11 +130,13 @@ public class Trolling {
 
     public static void endTroll() {
         isrunning = false;
+        flashingmode = false;
         /*LogHelper.info("Troll Should be Ending Soon™");*/
     }
 
     private static void endTrollInternal() {
         isrunning = false;
+        flashingmode = false;
         /*LogHelper.info("End of Troll");*/
     }
 

@@ -47,6 +47,7 @@
   "petrock.command.sethat.brithday.feedback": "Birthday mode enabled!",
   "petrock.command.sethat.christmas.feedback": "Happy Christmas %1$s !",
   "petrock.command.sethat.halloween.feedback": "Happy Halloween %1$s!",
+  "petrock.command.sethat.tnt.feedback": "TNT mode enabled!",
   "petrock.command.sethat.easter.feedback": "Happy Easter %1$s!",
   "petrock.command.sethat.noslow.failure": "No custom hat set with Slowpoke mode enabled",
   "petrock.command.sethat.actuallybear.success": "Happy Birthday ActuallyBear!",

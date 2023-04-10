@@ -17,6 +17,7 @@ public class PRHats {
     public static boolean loneztar = false;
     public static boolean slowpoke = false;
     public static boolean bear = false;
+    public static boolean tnt = false;
     private static boolean userslow = false;
     private static String usernames = "";
 
@@ -27,6 +28,7 @@ public class PRHats {
         halloween = false;
         easter = false;
         bear = false;
+        tnt = false;
         slowpoke = false;
         loneztar = false;
         try {
@@ -41,6 +43,9 @@ public class PRHats {
                     }
                     if (hat.equalsIgnoreCase("halloween")) {
                         halloween = true;
+                    }
+                    if (hat.equalsIgnoreCase("tnt")) {
+                        tnt = true;
                     }
                     if (hat.equalsIgnoreCase("easter")) {
                         easter = true;
@@ -83,6 +88,9 @@ public class PRHats {
                         halloween = true;
                         LogHelper.info("Happy Halloween Slowpoke101");
                     }
+                    if (hat.equalsIgnoreCase("tnt")) {
+                        tnt = true;
+                    }
                     if (hat.equalsIgnoreCase("easter")) {
                         easter = true;
                         LogHelper.info("Happy Easter Slowpoke101");
@@ -121,6 +129,7 @@ public class PRHats {
         christmas = false;
         halloween = false;
         easter = false;
+        tnt = false;
         bear = false;
         loneztar = false;
         if (hat.equalsIgnoreCase("halloween")) {
@@ -135,6 +144,9 @@ public class PRHats {
         if (hat.equalsIgnoreCase("easter")) {
             easter = true;
         }
+        if (hat.equalsIgnoreCase("tnt")) {
+            tnt = true;
+        }
         if (hat.equalsIgnoreCase("actuallybear")) {
             bear = true;
         }
@@ -146,6 +158,7 @@ public class PRHats {
             christmas = false;
             halloween = false;
             easter = false;
+            tnt = false;
             bear = false;
             loneztar = false;
         }
@@ -155,6 +168,7 @@ public class PRHats {
         christmas = false;
         halloween = false;
         easter = false;
+        tnt = false;
         bear = false;
         loneztar = false;
         slowpoke = false;

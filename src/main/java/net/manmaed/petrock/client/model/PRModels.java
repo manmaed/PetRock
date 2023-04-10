@@ -22,7 +22,10 @@ public class PRModels {
 
     public static final ModelLayerLocation EASTER_EGG = makeModelLayerLocation("egg");
     public static final ModelLayerLocation HOOD = makeModelLayerLocation("hood");
-
+    public static final ModelLayerLocation TNT_SIDE = makeModelLayerLocation("tnt_side");
+    public static final ModelLayerLocation TNT_TOP = makeModelLayerLocation("tnt_top");
+    public static final ModelLayerLocation TNT_BOTTOM = makeModelLayerLocation("tnt_botom");
+    public static final ModelLayerLocation TNT_PRIMED = makeModelLayerLocation("tnt_primed");
     /*public static final ModelLayerLocation PETROCK = new ModelLayerLocation(new ResourceLocation(PetRock.MOD_ID, "petrock"), "petrock");*/
 
 

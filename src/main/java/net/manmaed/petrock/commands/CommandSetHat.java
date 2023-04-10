@@ -15,6 +15,7 @@ public class CommandSetHat {
                 .then(CommandSHChristmas.register())
                 .then(CommandSHHallowen.register())
                 .then(CommandSHEaster.register())
+                .then(CommandSHTNT.register())
                 .then(CommandSHActuallyBear.register())
                 .then(CommandSHLone.register())
                 .then(CommandSHNone.register());
