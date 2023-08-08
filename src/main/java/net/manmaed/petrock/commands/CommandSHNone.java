@@ -19,7 +19,7 @@ public class CommandSHNone {
 
     private static int run(CommandSourceStack source) {
         PRHats.setHat("none");
-        source.sendSuccess(Component.translatable("petrock.command.sethat.none.feedback"),true);
+        source.sendSuccess(() -> Component.translatable("petrock.command.sethat.none.feedback"),true);
         return 0;
     }
 }

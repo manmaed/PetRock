@@ -1,6 +1,6 @@
-package net.manmaed.petrock.items;
+package net.manmaed.petrock.item;
 
-import net.manmaed.petrock.entitys.PREntityTypes;
+import net.manmaed.petrock.entity.PREntityTypes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
@@ -32,8 +32,8 @@ import java.util.Objects;
 /**
  * Created by manmaed on 28/11/2019.
  */
-public class PetRockWithLegsBox extends Item {
-    public PetRockWithLegsBox(Properties properties) {
+public class PetRockBox extends Item {
+    public PetRockBox(Properties properties) {
         super(properties);
         //PREntitys.petrock, 0xdcd5d5, 0x686565
     }
@@ -53,7 +53,7 @@ public class PetRockWithLegsBox extends Item {
                 BlockEntity blockEntity = world.getBlockEntity(blockpos);
                 if (blockEntity instanceof SpawnerBlockEntity) {
                     BaseSpawner baseSpawner = ((SpawnerBlockEntity)blockEntity).getSpawner();
-                    baseSpawner.setEntityId(PREntityTypes.PETROCKWITHLEGS.get());
+                    //baseSpawner.setEntityId(PREntityTypes.PETROCK.get());
                     blockEntity.setChanged();
                     world.sendBlockUpdated(blockpos, blockstate, blockstate, 3);
                     itemstack.shrink(1);
@@ -68,7 +68,7 @@ public class PetRockWithLegsBox extends Item {
                 blockpos1 = blockpos.relative(direction);
             }
 
-            if (PREntityTypes.PETROCKWITHLEGS.get().spawn((ServerLevel)world, itemstack, context.getPlayer(), blockpos1, MobSpawnType.MOB_SUMMONED, true, !Objects.equals(blockpos, blockpos1) && direction == Direction.UP) != null) {
+            if (PREntityTypes.PETROCK.get().spawn((ServerLevel)world, itemstack, context.getPlayer(), blockpos1, MobSpawnType.MOB_SUMMONED, true, !Objects.equals(blockpos, blockpos1) && direction == Direction.UP) != null) {
                 itemstack.shrink(1);
                 world.gameEvent(context.getPlayer(), GameEvent.ENTITY_PLACE, blockpos);
             }
@@ -91,7 +91,7 @@ public class PetRockWithLegsBox extends Item {
             if (!(level.getBlockState(blockpos).getBlock() instanceof LiquidBlock)) {
                 return InteractionResultHolder.pass(itemstack);
             } else if (level.mayInteract(player, blockpos) && player.mayUseItemAt(blockpos, blockhitresult.getDirection(), itemstack)) {
-                Entity entity = PREntityTypes.PETROCKWITHLEGS.get().spawn((ServerLevel)level, itemstack, player, blockpos, MobSpawnType.MOB_SUMMONED, false, false);
+                Entity entity = PREntityTypes.PETROCK.get().spawn((ServerLevel)level, itemstack, player, blockpos, MobSpawnType.MOB_SUMMONED, false, false);
                 if (entity == null) {
                     return InteractionResultHolder.pass(itemstack);
                 } else {

@@ -6,7 +6,7 @@ import net.manmaed.petrock.PetRock;
 import net.manmaed.petrock.client.model.PRModels;
 import net.manmaed.petrock.client.render.model.ModelPetRock;
 import net.manmaed.petrock.client.render.model.ModelSignHat;
-import net.manmaed.petrock.entitys.EntityPetRock;
+import net.manmaed.petrock.entity.EntityPetRock;
 import net.manmaed.petrock.hats.PRHats;
 import net.minecraft.client.model.geom.EntityModelSet;
 import net.minecraft.client.renderer.MultiBufferSource;

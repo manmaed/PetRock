@@ -18,7 +18,7 @@ public class CommandSHBirthday {
 
     private static int run(CommandSourceStack source) {
         PRHats.setHat("birthday");
-        source.sendSuccess(Component.translatable("petrock.command.sethat.brithday.feedback"), true);
+        source.sendSuccess(() -> Component.translatable("petrock.command.sethat.brithday.feedback"), true);
         return 0;
     }
 }

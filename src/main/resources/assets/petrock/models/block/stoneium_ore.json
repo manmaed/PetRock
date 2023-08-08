@@ -10,7 +10,7 @@
     },
     "second": {
       "parent": "block/cube_all",
-      "textures": { "all": "petrock:blocks/stoneium_ore" },
+      "textures": { "all": "petrock:block/stoneium_ore" },
       "render_type": "translucent"
     }
   },

@@ -22,7 +22,7 @@ public class CommandSHLone {
             source.sendFailure(Component.translatable("petrock.command.sethat.noslow.failure"));
         } else {
             PRHats.setHat("loneztar");
-            source.sendSuccess(Component.translatable("petrock.command.sethat.loneztar.success"), true);
+            source.sendSuccess(() -> Component.translatable("petrock.command.sethat.loneztar.success"), true);
         }
         return 0;
     }

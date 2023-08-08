@@ -6,7 +6,7 @@ import net.manmaed.petrock.PetRock;
 import net.manmaed.petrock.client.model.PRModels;
 import net.manmaed.petrock.client.render.layers.MiniSlowpokeLayer;
 import net.manmaed.petrock.client.render.model.ModelPetRockWithLegs;
-import net.manmaed.petrock.entitys.EntityPetRockWithLegs;
+import net.manmaed.petrock.entity.EntityPetRockWithLegs;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;

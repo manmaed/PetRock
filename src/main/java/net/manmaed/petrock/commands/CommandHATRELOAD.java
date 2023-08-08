@@ -16,7 +16,7 @@ public class CommandHATRELOAD {
 
     private static int run(CommandSourceStack source) {
         PRHats.load();
-        source.sendSuccess(Component.translatable("petrock.command.reload"), true);
+        source.sendSuccess(() -> Component.translatable("petrock.command.reload.feedback"), true);
         return 0;
     }
 }

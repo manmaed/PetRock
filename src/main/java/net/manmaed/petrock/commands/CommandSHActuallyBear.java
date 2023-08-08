@@ -22,7 +22,7 @@ public class CommandSHActuallyBear {
             source.sendFailure(Component.translatable("petrock.command.sethat.noslow.failure"));
         } else {
             PRHats.setHat("actuallybear");
-            source.sendSuccess(Component.translatable("petrock.command.sethat.actuallybear.success"), true);
+            source.sendSuccess(() -> Component.translatable("petrock.command.sethat.actuallybear.success"), true);
         }
         return 0;
     }

@@ -19,7 +19,7 @@ public class CommandSHChristmas {
 
     private static int run(CommandSourceStack source) {
         PRHats.setHat("christmas");
-        source.sendSuccess(Component.translatable("petrock.command.sethat.christmas.feedback", source.getDisplayName()), true);
+        source.sendSuccess(() -> Component.translatable("petrock.command.sethat.christmas.feedback", source.getDisplayName()), true);
         return 0;
     }
 }

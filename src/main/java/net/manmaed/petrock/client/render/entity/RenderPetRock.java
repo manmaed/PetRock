@@ -5,7 +5,7 @@ import net.manmaed.petrock.PetRock;
 import net.manmaed.petrock.client.model.PRModels;
 import net.manmaed.petrock.client.render.layers.*;
 import net.manmaed.petrock.client.render.model.ModelPetRock;
-import net.manmaed.petrock.entitys.EntityPetRock;
+import net.manmaed.petrock.entity.EntityPetRock;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.resources.ResourceLocation;

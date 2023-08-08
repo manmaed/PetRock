@@ -1,8 +1,9 @@
 plugins {
     id 'eclipse'
+    id 'idea'
     id 'maven-publish'
-    id 'net.minecraftforge.gradle' version '5.1.+'
-    id 'com.matthewprenger.cursegradle' version '1.4.0'
+    id 'net.minecraftforge.gradle' version '[6.0,6.2)'
+    id "me.modmuss50.mod-publish-plugin" version "0.3.0"
 }
 
 repositories {
@@ -15,13 +16,16 @@ repositories {
 def ENV = System.getenv()
 version = "${ENV.GITHUB_RUN_NUMBER}" ? "${mod_version}.${ENV.GITHUB_RUN_NUMBER}" : "${mod_version}.nobuildnumber"
 group = "net.manmaed.petrock" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = "petrock"
+base {
+    archivesBaseName = "petrock"
+}
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(17) // Mojang ships Java 8 to end users, so your mod should target Java 8.
 
 println('Java: ' + System.getProperty('java.version') + ' JVM: ' + System.getProperty('java.vm.version') + '(' + System.getProperty('java.vendor') + ') Arch: ' + System.getProperty('os.arch'))
 minecraft {
-    mappings channel: 'official', version: "${minecraft_version}"
+    mappings channel: "${minecraft_mappings}", version: "${minecraft_version}"
+    copyIdeResources = true
     runs {
         client {
             workingDirectory project.file('run/c')
@@ -69,8 +73,8 @@ repositories {
 }
 dependencies {
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
-    compileOnly fg.deobf("vazkii.patchouli:Patchouli:${minecraft_version}-${patchouli_version}:api")
-    runtimeOnly fg.deobf("vazkii.patchouli:Patchouli:${minecraft_version}-${patchouli_version}")
+    //compileOnly fg.deobf("vazkii.patchouli:Patchouli:${minecraft_version}-${patchouli_version}:api")
+    //runtimeOnly fg.deobf("vazkii.patchouli:Patchouli:${minecraft_version}-${patchouli_version}")
     //runtimeOnly fg.deobf("curse.maven:CP-267193:3915811")
     //implementation fg.deobf("curse.maven:${tk_slug}-${tk_pid}:${tk_fid}")
 //    implementation fg.deobf("curse.maven:${pat_slug}-${pat_pid}:${pat_fid}")
@@ -103,23 +107,20 @@ jar.finalizedBy('reobfJar')
 // However if you are in a multi-project build, dev time needs unobfed jar files, so you can delay the obfuscation until publishing by doing
 //publish.dependsOn('reobfJar')
 
-if (ENV.CURSE_DEPLOY) {
+publishMods {
+    dryRun = providers.environmentVariable("CURSE_DEPLOY").getOrNull() == null
+    file = jar.archiveFile
+    modLoaders.add("forge")
+    type = BETA
+    changelog = "changeme"
+    displayName = "${mod_name} v${version} - ${minecraft_version}"
     curseforge {
-        apiKey = ENV.CURSE_DEPLOY
-        project {
-            id = project.curseforge_id
-            releaseType = "beta"
-            addGameVersion "Forge"
-            addGameVersion "Java 17"
-            addGameVersion "${minecraft_version}"
-            mainArtifact(jar) {
-                displayName = "Petrock v${version} - ${minecraft_version}"
-                relations {
-                optionalDependency 'patchouli'
-                }
-            }
-            changelog = "changeme"
-
+        accessToken  = providers.environmentVariable("CURSE_DEPLOY")
+        projectId = "${curseforge_id}"
+        minecraftVersions.add("Java 17")
+        minecraftVersions.add("${minecraft_version}")
+        optional {
+            slug = 'patchouli'
         }
     }
 }

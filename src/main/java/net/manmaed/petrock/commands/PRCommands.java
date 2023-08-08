@@ -25,16 +25,16 @@ public class PRCommands {
         );
     }
 
-    public static void registerNomal(CommandDispatcher<CommandSourceStack> dispatcher) {
+    /*public static void registerNomal(CommandDispatcher<CommandSourceStack> dispatcher) {
 
         dispatcher.register(
                 Commands.literal(PetRock.MOD_ID + "_troll")
                         .requires(cs -> cs.hasPermission(0))
                         .executes(ctx -> runTrollDisable(ctx.getSource()))
         );
-    }
+    }*/
 
-    private static int runTrollDisable(CommandSourceStack source) {
+    /*private static int runTrollDisable(CommandSourceStack source) {
         if (PRConfig.DISABLE_TROLL.get()) {
             source.sendFailure(Component.translatable("petrock.command.disable.troll.failed.config"));
             return 0;
@@ -44,11 +44,11 @@ public class PRCommands {
             source.sendFailure(Component.translatable("petrock.command.disable.troll.feedback.2").withStyle(ChatFormatting.BOLD).withStyle(ChatFormatting.RED));
             return 0;
         } else {
-            PetRock.disable_troll();
+            *//*PetRock.disable_troll();*//*
             Trolling.endTroll();
             source.sendSuccess(Component.translatable("petrock.command.disable.troll.feedback.1"), true);
             source.sendSuccess(Component.translatable("petrock.command.disable.troll.feedback.2").withStyle(ChatFormatting.BOLD).withStyle(ChatFormatting.RED), true);
             return 0;
         }
-    }
+    }*/
 }

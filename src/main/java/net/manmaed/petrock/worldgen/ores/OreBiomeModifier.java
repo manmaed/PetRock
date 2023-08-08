@@ -19,11 +19,11 @@ import net.minecraftforge.common.world.BiomeModifier;
 import net.minecraftforge.common.world.ModifiableBiomeInfo;
 
 /**
- *  Copy Paste form forge tests
+ *  Copy and Paste form forge tests
  */
-public record OreBiomeModifier(GenerationStep.Decoration generationStage, HolderSet<PlacedFeature> placedFeature) implements BiomeModifier {
+public record OreBiomeModifier(GenerationStep.Decoration generationStage, HolderSet<PlacedFeature> placedFeature) /*implements BiomeModifier*/ {
 
-    public static Codec<OreBiomeModifier> CODEC = RecordCodecBuilder.create(builder ->
+    /*public static Codec<OreBiomeModifier> CODEC = RecordCodecBuilder.create(builder ->
             builder.group(
             Codec.STRING.comapFlatMap(OreBiomeModifier::generationStageFromString, GenerationStep.Decoration::toString).fieldOf("generation_stage").forGetter(OreBiomeModifier::generationStage),
             PlacedFeature.LIST_CODEC.fieldOf("features").forGetter(OreBiomeModifier::placedFeature)
@@ -56,5 +56,5 @@ public record OreBiomeModifier(GenerationStep.Decoration generationStage, Holder
         {
             return DataResult.error("Not a decoration stage: " + name);
         }
-    }
+    }*/
 }

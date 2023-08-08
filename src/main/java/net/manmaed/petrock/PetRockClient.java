@@ -2,34 +2,21 @@ package net.manmaed.petrock;
 
 
 import net.manmaed.petrock.client.model.PRModels;
-import net.manmaed.petrock.client.render.entity.RenderPetRock;
-import net.manmaed.petrock.client.render.entity.RenderPetRockWithLegs;
+import net.manmaed.petrock.client.render.entity.*;
 import net.manmaed.petrock.client.render.model.*;
 import net.manmaed.petrock.commands.PRCommands;
-import net.manmaed.petrock.entitys.PREntityTypes;
+import net.manmaed.petrock.entity.PREntityTypes;
 import net.manmaed.petrock.hats.PRHats;
-import net.manmaed.petrock.hats.Trolling;
-import net.manmaed.petrock.libs.LogHelper;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.RegisterClientCommandsEvent;
-import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 
 public class PetRockClient {
 
-    public static String slow_uuid = "d2839efc727a426397ce3c73cdee5013";
     public static boolean iChunHatsLoaded;
-
-    public static void doEntityRendering(final EntityRenderersEvent.RegisterRenderers event) {
-        event.registerEntityRenderer(PREntityTypes.PETROCK.get(), RenderPetRock::new);
-        event.registerEntityRenderer(PREntityTypes.PETROCKWITHLEGS.get(), RenderPetRockWithLegs::new);
-    }
-
-    public static void registerClientCommands(RegisterClientCommandsEvent event) {
-        PRCommands.register(event.getDispatcher());
-    }
+    public static String slow_uuid = "d2839efc727a426397ce3c73cdee5013";
 
     public static void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
         event.registerLayerDefinition(PRModels.PETROCK, ModelPetRock::createBodyLayer);
@@ -46,8 +33,14 @@ public class PetRockClient {
         event.registerLayerDefinition(PRModels.TNT_TOP, ModelTNTTop::createBodyLayer);
         event.registerLayerDefinition(PRModels.TNT_BOTTOM, ModelTNTBottom::createBodyLayer);
         event.registerLayerDefinition(PRModels.TNT_PRIMED, ModelTNTPrimed::createBodyLayer);
+    }
 
-
+    public static void registerClientCommands(RegisterClientCommandsEvent event) {
+        PRCommands.register(event.getDispatcher());
+    }
+    public static void doEntityRendering(final EntityRenderersEvent.RegisterRenderers event) {
+        event.registerEntityRenderer(PREntityTypes.PETROCK.get(), RenderPetRock::new);
+        event.registerEntityRenderer(PREntityTypes.PETROCKWITHLEGS.get(), RenderPetRockWithLegs::new);
     }
 
     public static void doClientStuff(final FMLClientSetupEvent event) {
@@ -55,9 +48,11 @@ public class PetRockClient {
         iChunHatsLoaded = ModList.get().isLoaded("hats");
         if (!iChunHatsLoaded) {
             if (uuid.equals(slow_uuid)) {
-                PRHats.slowisplaying();
+                PRHats.slowIsPlaying();
             }
             new Thread(PRHats::load).start();
         }
     }
+
+
 }

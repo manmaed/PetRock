@@ -12,6 +12,13 @@ import java.util.Random;
 
 public class Trolling {
 
+    public static Random random = new Random();
+
+    static String[] PHONETIC_ALPHABET = {
+            "Alpha", "Bravo", "Charlie", "Delta", "Echo", "Foxtrot", "Golf", "Hotel",
+            "India", "Juliett", "Kilo", "Lima", "Mike", "November", "Oscar", "Papa",
+            "Quebec", "Romeo", "Sierra", "Tango", "Uniform", "Victor", "Whiskey", "X-ray",
+            "Yankee", "Zulu"};
     private static boolean isrunning = false;
     private static boolean chancecubes = false;
 
@@ -24,7 +31,7 @@ public class Trolling {
         int starttime = random.nextInt(120) + 60;
         Player player = playerLoggedInEvent.getEntity();
         while (starttime > 0 && isrunning) {
-            /*LogHelper.info("Stating Troll in: " + starttime);*/
+            LogHelper.info("Stating Troll in: " + starttime);
             starttime--;
             try {
                 Thread.sleep(1000);
@@ -33,16 +40,16 @@ public class Trolling {
             }
         }
         if (starttime == 0 && isrunning) {
-            /*LogHelper.info("Starting");*/
+            LogHelper.info("Starting");
             if (chancecubes) {
-                sendMessageToAllPlayers(playerLoggedInEvent.getEntity().level, Component.literal("manmaed joined the game").withStyle(ChatFormatting.YELLOW));
-                sendMessageToAllPlayers(playerLoggedInEvent.getEntity().level, Component.literal("<manmaed> It seems you have Chance Cubes installed :)"));
-                sendMessageToAllPlayers(playerLoggedInEvent.getEntity().level, Component.literal("[@: Gave 1 [Compact Giant Chance Cube] to manmaed]").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
-                sendMessageToAllPlayersNames(playerLoggedInEvent.getEntity().level);
-                sendMessageToAllPlayers(playerLoggedInEvent.getEntity().level, Component.literal("Who Dat is!?"));
-                sendMessageToAllPlayers(playerLoggedInEvent.getEntity().level, Component.literal("I hope this isn't near your base, because you have 400 ticks before stuff goes bye bye. Kappa"));
-                sendMessageToAllPlayers(playerLoggedInEvent.getEntity().level, Component.literal("<manmaed> Good Luck"));
-                sendMessageToAllPlayers(playerLoggedInEvent.getEntity().level, Component.literal("manmaed left the game").withStyle(ChatFormatting.YELLOW));
+                sendMessageToAllPlayers(playerLoggedInEvent.getEntity().level(), Component.literal("manmaed joined the game").withStyle(ChatFormatting.YELLOW));
+                sendMessageToAllPlayers(playerLoggedInEvent.getEntity().level(), Component.literal("<manmaed> It seems you have Chance Cubes installed :)"));
+                sendMessageToAllPlayers(playerLoggedInEvent.getEntity().level(), Component.literal("[@: Gave 1 [Compact Giant Chance Cube] to manmaed]").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
+                sendMessageToAllPlayersNames(playerLoggedInEvent.getEntity().level());
+                sendMessageToAllPlayers(playerLoggedInEvent.getEntity().level(), Component.literal("Who Dat is!?"));
+                sendMessageToAllPlayers(playerLoggedInEvent.getEntity().level(), Component.literal("I hope this isn't near your base, because you have 400 ticks before stuff goes bye bye. Kappa"));
+                sendMessageToAllPlayers(playerLoggedInEvent.getEntity().level(), Component.literal("<manmaed> Good Luck"));
+                sendMessageToAllPlayers(playerLoggedInEvent.getEntity().level(), Component.literal("manmaed left the game").withStyle(ChatFormatting.YELLOW));
                 countdown = 20;
                 while (countdown > 0 && isrunning) {
                     /*LogHelper.info("Big Explosion in " + countdown);*/
@@ -54,22 +61,22 @@ public class Trolling {
                     }
                 }
                 if (countdown == 0 && isrunning) {
-                    sendMessageToAllPlayers(playerLoggedInEvent.getEntity().level, Component.literal("manmaed joined the game").withStyle(ChatFormatting.YELLOW));
-                    sendMessageToAllPlayers(playerLoggedInEvent.getEntity().level, Component.literal("<manmaed> April Fools!"));
-                    sendMessageToAllPlayers(playerLoggedInEvent.getEntity().level, Component.literal("manmaed left the game").withStyle(ChatFormatting.YELLOW));
+                    sendMessageToAllPlayers(playerLoggedInEvent.getEntity().level(), Component.literal("manmaed joined the game").withStyle(ChatFormatting.YELLOW));
+                    sendMessageToAllPlayers(playerLoggedInEvent.getEntity().level(), Component.literal("<manmaed> April Fools!"));
+                    sendMessageToAllPlayers(playerLoggedInEvent.getEntity().level(), Component.literal("manmaed left the game").withStyle(ChatFormatting.YELLOW));
                 }
 
             } else {
-                sendMessageToAllPlayers(playerLoggedInEvent.getEntity().level, Component.literal("manmaed joined the game").withStyle(ChatFormatting.YELLOW));
-                sendMessageToAllPlayers(playerLoggedInEvent.getEntity().level, Component.literal("<manmaed> It seems you don't have Chance Cubes installed :( I will just have to do it myself"));
-                sendMessageToAllPlayers(playerLoggedInEvent.getEntity().level, Component.literal("<manmaed> PetRocks initiate the self-destruct sequence. Authorization: manmaed Alpha " + (random.nextInt(8) + 1) + " Tango " + (random.nextInt(8) + 1)));
-                sendMessageToAllPlayers(playerLoggedInEvent.getEntity().level, Component.literal("<manmaed> Set at 6000 ticks and mute voice warnings!"));
-                sendMessageToAllPlayers(playerLoggedInEvent.getEntity().level, Component.literal("<manmaed> Enable"));
-                sendMessageToAllPlayers(playerLoggedInEvent.getEntity().level, Component.literal("<PetRock> Warning self-destruct sequence has been initiated!").withStyle(ChatFormatting.BOLD).withStyle(ChatFormatting.RED));
-                sendMessageToAllPlayers(playerLoggedInEvent.getEntity().level, Component.literal("<PetRock> Forge Energy Overload in 4 minutes and 55 seconds").withStyle(ChatFormatting.BOLD).withStyle(ChatFormatting.RED));
-                sendMessageToAllPlayers(playerLoggedInEvent.getEntity().level, Component.literal("<PetRock> There will be no further audio warnings").withStyle(ChatFormatting.BOLD).withStyle(ChatFormatting.RED));
-                sendMessageToAllPlayers(playerLoggedInEvent.getEntity().level, Component.literal("<manmaed> Good Luck"));
-                sendMessageToAllPlayers(playerLoggedInEvent.getEntity().level, Component.literal("manmaed left the game").withStyle(ChatFormatting.YELLOW));
+                sendMessageToAllPlayers(playerLoggedInEvent.getEntity().level(), Component.literal("manmaed joined the game").withStyle(ChatFormatting.YELLOW));
+                sendMessageToAllPlayers(playerLoggedInEvent.getEntity().level(), Component.literal("<manmaed> It seems you don't have Chance Cubes installed :( I will just have to do it myself"));
+                sendMessageToAllPlayers(playerLoggedInEvent.getEntity().level(), Component.literal("<manmaed> PetRocks initiate the self-destruct sequence. Authorization: manmaed " + getSelfDestructCode()));
+                sendMessageToAllPlayers(playerLoggedInEvent.getEntity().level(), Component.literal("<manmaed> Set at 6000 ticks and mute voice warnings!"));
+                sendMessageToAllPlayers(playerLoggedInEvent.getEntity().level(), Component.literal("<manmaed> Enable"));
+                sendMessageToAllPlayers(playerLoggedInEvent.getEntity().level(), Component.literal("<PetRock> Warning self-destruct sequence has been initiated!").withStyle(ChatFormatting.BOLD).withStyle(ChatFormatting.RED));
+                sendMessageToAllPlayers(playerLoggedInEvent.getEntity().level(), Component.literal("<PetRock> Forge Energy Overload in 4 minutes and 55 seconds").withStyle(ChatFormatting.BOLD).withStyle(ChatFormatting.RED));
+                sendMessageToAllPlayers(playerLoggedInEvent.getEntity().level(), Component.literal("<PetRock> There will be no further audio warnings").withStyle(ChatFormatting.BOLD).withStyle(ChatFormatting.RED));
+                sendMessageToAllPlayers(playerLoggedInEvent.getEntity().level(), Component.literal("<manmaed> Good Luck"));
+                sendMessageToAllPlayers(playerLoggedInEvent.getEntity().level(), Component.literal("manmaed left the game").withStyle(ChatFormatting.YELLOW));
                 countdown = 600;
                 while (countdown > 0 && isrunning) {
                     boolean moveon = false;
@@ -91,13 +98,26 @@ public class Trolling {
                     }
                 }
                 if (countdown == 0 && isrunning) {
-                    sendMessageToAllPlayers(playerLoggedInEvent.getEntity().level, Component.literal("manmaed joined the game").withStyle(ChatFormatting.YELLOW));
-                    sendMessageToAllPlayers(playerLoggedInEvent.getEntity().level, Component.literal("<manmaed> April Fools!"));
-                    sendMessageToAllPlayers(playerLoggedInEvent.getEntity().level, Component.literal("manmaed left the game").withStyle(ChatFormatting.YELLOW));
+                    sendMessageToAllPlayers(playerLoggedInEvent.getEntity().level(), Component.literal("manmaed joined the game").withStyle(ChatFormatting.YELLOW));
+                    sendMessageToAllPlayers(playerLoggedInEvent.getEntity().level(), Component.literal("<manmaed> April Fools!"));
+                    sendMessageToAllPlayers(playerLoggedInEvent.getEntity().level(), Component.literal("manmaed left the game").withStyle(ChatFormatting.YELLOW));
                 }
             }
         }
         endTrollInternal();
+    }
+
+    public static String getSelfDestructCode() {
+        return getRandomLetter() + " " + getRandomNumber() + " " + getRandomLetter() + " " + getRandomNumber();
+    }
+
+    public static int getRandomNumber() {
+        return random.nextInt(8) + 1;
+    }
+
+    public static String getRandomLetter() {
+        int i = random.nextInt(PHONETIC_ALPHABET.length);
+        return PHONETIC_ALPHABET[i];
     }
 
     public static void sendMessageToAllPlayers(Level level, Component message) {

@@ -103,7 +103,7 @@ public class PRHats {
         }
     }
 
-    public static void slowisplaying() {
+    public static void slowIsPlaying() {
         slowpoke = true;
         userslow = true;
         if (birthday & usernames.equalsIgnoreCase("Slowpoke101")) {
@@ -164,7 +164,7 @@ public class PRHats {
             loneztar = false;
         }
     }
-    public static void iamslowpoke101() {
+    public static void iAmSlowpoke101() {
         birthday = false;
         christmas = false;
         halloween = false;
@@ -174,7 +174,7 @@ public class PRHats {
         loneztar = false;
         slowpoke = false;
         userslow = false;
-        slowisplaying();
+        slowIsPlaying();
     }
 
 }

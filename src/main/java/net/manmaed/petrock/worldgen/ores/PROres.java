@@ -1,30 +1,8 @@
 package net.manmaed.petrock.worldgen.ores;
 
-import com.mojang.serialization.Codec;
-import net.manmaed.petrock.PetRock;
-import net.manmaed.petrock.blocks.PRBlocks;
-import net.manmaed.petrock.config.PRConfig;
-import net.minecraft.core.Holder;
-import net.minecraft.core.Registry;
-import net.minecraft.data.worldgen.features.FeatureUtils;
-import net.minecraft.data.worldgen.features.OreFeatures;
-import net.minecraft.data.worldgen.placement.PlacementUtils;
-import net.minecraft.world.level.biome.Biome;
-import net.minecraft.world.level.levelgen.GenerationStep;
-import net.minecraft.world.level.levelgen.VerticalAnchor;
-import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
-import net.minecraft.world.level.levelgen.feature.Feature;
-import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration;
 import net.minecraft.world.level.levelgen.placement.*;
-import net.minecraftforge.common.world.BiomeModifier;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
 
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
-import java.util.function.Supplier;
 
 
 /**
@@ -32,7 +10,7 @@ import java.util.function.Supplier;
  */
 public class PROres {
 
-    public static final DeferredRegister<ConfiguredFeature<?, ?>> FEATURE_REGISTRY = DeferredRegister.create(Registry.CONFIGURED_FEATURE_REGISTRY, PetRock.MOD_ID);
+    /*public static final DeferredRegister<ConfiguredFeature<?, ?>> FEATURE_REGISTRY = DeferredRegister.create(Registry.CONFIGURED_FEATURE_REGISTRY, PetRock.MOD_ID);
     public static final DeferredRegister<PlacedFeature> PLACED_FEATURE_REGISTRY = DeferredRegister.create(Registry.PLACED_FEATURE_REGISTRY, PetRock.MOD_ID);
 
     public static final DeferredRegister<Codec<? extends BiomeModifier>> BIOME_SERIALIZERS = DeferredRegister.create(ForgeRegistries.Keys.BIOME_MODIFIER_SERIALIZERS, PetRock.MOD_ID);
@@ -47,9 +25,9 @@ public class PROres {
     public static final Set<RegistryObject<PlacedFeature>> PLACEMENTS = new HashSet<>();
 
 
-    public static void init() {}
+    public static void init() {}*/
 
-    static {
+    /*static {
         Supplier<List<OreConfiguration.TargetBlockState>> stoneiumTargetList = () -> List.of(OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, PRBlocks.STONEIUM_ORE.get().defaultBlockState()), OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, PRBlocks.DEEPSLATE_STONEIUM_ORE.get().defaultBlockState()));
 
         ORE_STONEIUM_CONFIG = FEATURE_REGISTRY.register("ore_stoneium", () -> new ConfiguredFeature<>(Feature.ORE,
@@ -69,7 +47,7 @@ public class PROres {
                 ))));
 
         PLACEMENTS.addAll(List.of(ORE_STONEIUM, ORE_STONEIUM_DEEPSLATE));
-    }
+    }*/
 
     private static List<PlacementModifier> orePlacement(PlacementModifier placementModifier, PlacementModifier placementModifier2) {
         return List.of(placementModifier, InSquarePlacement.spread(), placementModifier2, BiomeFilter.biome());

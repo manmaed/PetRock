@@ -1,5 +1,5 @@
 modLoader="javafml" #mandatory
-loaderVersion="[43,)" #mandatory This is typically bumped every Minecraft version by Forge. See our download page for lists of versions.
+loaderVersion="[47,)" #mandatory This is typically bumped every Minecraft version by Forge. See our download page for lists of versions.
 license="All rights reserved"
 issueTrackerURL = "https://github.com/manmaed/petrock/issues"
 [[mods]] #mandatory
@@ -13,6 +13,6 @@ A Mod that adds PetRocks!'''
 [[dependencies.petrock]]
 modId="forge"
 mandatory=true
-versionRange="[43.1.0,)"
+versionRange="[47.0.3,)"
 ordering="NONE"
 side="BOTH"

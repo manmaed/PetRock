@@ -2,11 +2,6 @@ package net.manmaed.petrock.client.render.layers;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import net.manmaed.petrock.PetRock;
-import net.manmaed.petrock.client.model.PRModels;
-import net.manmaed.petrock.client.render.model.ModelCakeHat;
-import net.manmaed.petrock.client.render.model.ModelPetRock;
-import net.manmaed.petrock.entitys.EntityPetRock;
 import net.manmaed.petrock.hats.PRHats;
 import net.minecraft.client.model.PolarBearModel;
 import net.minecraft.client.model.geom.EntityModelSet;

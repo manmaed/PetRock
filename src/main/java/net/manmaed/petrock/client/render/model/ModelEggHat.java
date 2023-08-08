@@ -2,7 +2,7 @@ package net.manmaed.petrock.client.render.model;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import net.manmaed.petrock.entitys.EntityPetRock;
+import net.manmaed.petrock.entity.EntityPetRock;
 import net.minecraft.client.model.Model;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;

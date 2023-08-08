@@ -5,6 +5,7 @@ import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.manmaed.petrock.PetRock;
 import net.manmaed.petrock.client.model.PRModels;
 import net.manmaed.petrock.client.render.model.ModelTNTPrimed;
+import net.manmaed.petrock.hats.PRHats;
 import net.manmaed.petrock.hats.Trolling;
 import net.minecraft.client.model.geom.EntityModelSet;
 import net.minecraft.client.renderer.MultiBufferSource;
@@ -30,7 +31,7 @@ public class TNTPrimedLayer extends RenderLayer {
     @Override
 
     public void render(PoseStack poseStack, MultiBufferSource multiBufferSource, int packedLight, Entity entity, float p_117353_, float p_117354_, float p_117355_, float p_117356_, float p_117357_, float p_117358_) {
-        if (Trolling.flashingmode) {
+        if (false) { //TODO: ReAdd Troll
             poseStack.pushPose();
             poseStack.scale(1.05F, 1.05F, 1.05F);
             poseStack.translate(0F, -0.05F, 0F);

@@ -24,7 +24,7 @@ public class CommandSHEaster {
         PRHats.setHat("easter");
         //"petrock.command.sethat.easter.feedback": "Happy Easter %1$s",
         source.getEntity().getDisplayName();
-        source.sendSuccess(Component.translatable("petrock.command.sethat.easter.feedback", source.getDisplayName()), true);
+        source.sendSuccess(() -> Component.translatable("petrock.command.sethat.easter.feedback", source.getDisplayName()), true);
         return 0;
     }
 }

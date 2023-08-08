@@ -1,4 +1,4 @@
-package net.manmaed.petrock.entitys;
+package net.manmaed.petrock.entity;
 
 import net.manmaed.petrock.PetRock;
 import net.minecraft.world.entity.EntityType;

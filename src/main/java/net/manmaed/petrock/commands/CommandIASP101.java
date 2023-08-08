@@ -17,8 +17,8 @@ public class CommandIASP101 {
     }
 
     private static int run(CommandSourceStack source) {
-        PRHats.iamslowpoke101();
-        source.sendSuccess(Component.translatable("petrock.command.iamslowpoke101.feedback"), true);
+        PRHats.iAmSlowpoke101();
+        source.sendSuccess(() -> Component.translatable("petrock.command.iamslowpoke101.feedback"), true);
         return 0;
     }
 }

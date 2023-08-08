@@ -20,7 +20,7 @@ public class CommandSHTNT {
     private static int run(CommandSourceStack source) {
         PRHats.setHat("tnt");
         //"petrock.command.sethat.easter.feedback": "Happy Easter %1$s",
-        source.sendSuccess(Component.translatable("petrock.command.sethat.tnt.feedback"), true);
+        source.sendSuccess(() -> Component.translatable("petrock.command.sethat.tnt.feedback"), true);
         return 0;
     }
 }

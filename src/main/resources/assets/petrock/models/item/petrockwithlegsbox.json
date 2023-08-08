@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "petrock:items/petrockbox"
+    "layer0": "petrock:item/petrockbox"
   }
 }

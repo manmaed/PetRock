@@ -1,6 +1,6 @@
-package net.manmaed.petrock.entitys;
+package net.manmaed.petrock.entity;
 
-import net.manmaed.petrock.items.PRItems;
+import net.manmaed.petrock.item.PRItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
@@ -29,23 +29,19 @@ import javax.annotation.Nullable;
 import java.util.UUID;
 
 /**
- * Created by manmaed on 07/03/2021.
+ * Created by manmaed on 14/06/2022.
  */
-public class EntityPetRock extends TamableAnimal {
-    private static boolean isSittingDown;
-    protected EntityPetRock(EntityType<? extends TamableAnimal> type, Level worldIn) {
+public class EntityPetRockWithLegs extends TamableAnimal {
+
+    protected EntityPetRockWithLegs(EntityType<? extends TamableAnimal> type, Level worldIn) {
         super(type, worldIn);
-        this.setTame(false);
     }
 
-    public boolean isSittingDown() {
-        return isSittingDown;
-    }
     protected void registerGoals() {
         //Goal Selectors
         this.goalSelector.addGoal(1, new FloatGoal(this));
         this.goalSelector.addGoal(2, new SitWhenOrderedToGoal(this));
-        this.goalSelector.addGoal(3, new FollowOwnerGoal(this, 1.0D, 10.0F, 2.0F, false));
+        this.goalSelector.addGoal(3, new FollowOwnerGoal(this, 1.0D, 5.0F, 2.0F, false));
         this.goalSelector.addGoal(4, new BreedGoal(this, 1.0D));
         this.goalSelector.addGoal(5, new WaterAvoidingRandomStrollGoal(this, 1.0D));
         this.goalSelector.addGoal(6, new LookAtPlayerGoal(this, Player.class, 8.0F));
@@ -102,7 +98,8 @@ public class EntityPetRock extends TamableAnimal {
     public InteractionResult mobInteract(Player player, InteractionHand hand) {
         ItemStack itemStack = player.getItemInHand(hand);
         Item item = itemStack.getItem();
-        if (this.level.isClientSide) {
+        Level level = this.level();
+        if (level.isClientSide) {
             boolean flag = this.isOwnedBy(player) || this.isTame() || item == PRItems.STONEIUM.get() && !this.isTame();
             return flag ? InteractionResult.CONSUME : InteractionResult.PASS;
         } else {
@@ -135,20 +132,19 @@ public class EntityPetRock extends TamableAnimal {
                     this.tame(player);
                     this.navigation.stop();
                     this.setOrderedToSit(true);
-                    this.level.broadcastEntityEvent(this, (byte)7);
+                    level.broadcastEntityEvent(this, (byte)7);
                 } else {
-                    this.level.broadcastEntityEvent(this, (byte)6);
+                    level.broadcastEntityEvent(this, (byte)6);
                 }
                 return InteractionResult.SUCCESS;
-                }
-            return super.mobInteract(player, hand);
             }
-        }
+            return super.mobInteract(player, hand);
+        }    }
 
     @Nullable
     @Override
     public AgeableMob getBreedOffspring(ServerLevel serverLevel, AgeableMob ageableMob) {
-        EntityPetRock petRock = new EntityPetRock((PREntityTypes.PETROCK.get()), serverLevel);
+        EntityPetRockWithLegs petRock = new EntityPetRockWithLegs((PREntityTypes.PETROCKWITHLEGS.get()), serverLevel);
         UUID uuid = this.getOwnerUUID();
         if (uuid != null) {
             petRock.setOwnerUUID(uuid);

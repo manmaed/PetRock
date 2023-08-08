@@ -1,4 +1,4 @@
-package net.manmaed.petrock.items;
+package net.manmaed.petrock.item;
 
 
 import net.minecraft.world.InteractionHand;
