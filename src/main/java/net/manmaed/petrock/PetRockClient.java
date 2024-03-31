@@ -8,12 +8,9 @@ import net.manmaed.petrock.client.render.model.*;
 import net.manmaed.petrock.commands.PRCommands;
 import net.manmaed.petrock.entitys.PREntityTypes;
 import net.manmaed.petrock.hats.PRHats;
-import net.manmaed.petrock.hats.Trolling;
-import net.manmaed.petrock.libs.LogHelper;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.RegisterClientCommandsEvent;
-import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 
@@ -45,9 +42,6 @@ public class PetRockClient {
         event.registerLayerDefinition(PRModels.TNT_SIDE, ModelTNTSides::createBodyLayer);
         event.registerLayerDefinition(PRModels.TNT_TOP, ModelTNTTop::createBodyLayer);
         event.registerLayerDefinition(PRModels.TNT_BOTTOM, ModelTNTBottom::createBodyLayer);
-        event.registerLayerDefinition(PRModels.TNT_PRIMED, ModelTNTPrimed::createBodyLayer);
-
-
     }
 
     public static void doClientStuff(final FMLClientSetupEvent event) {

@@ -20,14 +20,12 @@ public class TNTSidesLayer extends RenderLayer {
     private final ModelTNTSides sides;
     private final TNTTopLayer top;
     private final TNTBottomLayer bottom;
-    private final TNTPrimedLayer primed;
 
     public TNTSidesLayer(RenderLayerParent layerParent, EntityModelSet modelSet) {
         super(layerParent);
         this.sides = new ModelTNTSides(modelSet.bakeLayer(PRModels.TNT_SIDE));
         this.top = new TNTTopLayer(layerParent, modelSet);
         this.bottom = new TNTBottomLayer(layerParent, modelSet);
-        this.primed = new TNTPrimedLayer(layerParent, modelSet);
     }
 
     @Override
@@ -44,7 +42,6 @@ public class TNTSidesLayer extends RenderLayer {
             sides.renderToBuffer(poseStack, vertexConsumer, packedLight, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
             top.render(poseStack, multiBufferSource, packedLight, entity,  p_117353_, p_117354_, p_117355_, p_117356_, p_117357_, p_117358_);
             bottom.render(poseStack, multiBufferSource, packedLight, entity,  p_117353_, p_117354_, p_117355_, p_117356_, p_117357_, p_117358_);
-            primed.render(poseStack, multiBufferSource, packedLight, entity,  p_117353_, p_117354_, p_117355_, p_117356_, p_117357_, p_117358_);
             poseStack.popPose();
         }
     }
