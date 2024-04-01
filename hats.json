@@ -100,16 +100,6 @@
         }
       }
     },
-	{
-      "hat": "tnt",
-      "condition": {
-        "username": "tnt",
-        "date": {
-          "month": 4,
-          "day": 1
-        }
-      }
-    },
     {
       "hat": "easter",
       "condition": {
@@ -117,6 +107,16 @@
         "date": {
           "month": 4,
           "day": 0
+        }
+      }
+    },
+    {
+      "hat": "tnt",
+      "condition": {
+        "username": "tnt",
+        "date": {
+          "month": 4,
+          "day": 2
         }
       }
     },
