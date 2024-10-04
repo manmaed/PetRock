@@ -2,11 +2,11 @@ package net.manmaed.petrock.client.render.entity;
 
 
 import com.mojang.blaze3d.vertex.PoseStack;
-import net.manmaed.petrock.PetRock;
 import net.manmaed.petrock.client.model.PRModels;
 import net.manmaed.petrock.client.render.layers.MiniSlowpokeLayer;
 import net.manmaed.petrock.client.render.model.ModelPetRockWithLegs;
 import net.manmaed.petrock.entity.EntityPetRockWithLegs;
+import net.manmaed.petrock.libs.RLHelper;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
@@ -17,9 +17,9 @@ import net.minecraft.resources.ResourceLocation;
  */
 public class RenderPetRockWithLegs extends MobRenderer<EntityPetRockWithLegs, ModelPetRockWithLegs> {
 
-    private static final ResourceLocation UNTAME = ResourceLocation.fromNamespaceAndPath(PetRock.MOD_ID, "textures/entity/petrock_withlegs.png");
-    private static final ResourceLocation TAMED = ResourceLocation.fromNamespaceAndPath(PetRock.MOD_ID, "textures/entity/petrock_withlegs_tame.png");
-    private static final ResourceLocation SITTING = ResourceLocation.fromNamespaceAndPath(PetRock.MOD_ID, "textures/entity/petrock_withlegs_tamesit.png");
+    private static final ResourceLocation UNTAME = RLHelper.location("textures/entity/petrock_withlegs.png");
+    private static final ResourceLocation TAMED = RLHelper.location("textures/entity/petrock_withlegs_tame.png");
+    private static final ResourceLocation SITTING = RLHelper.location("textures/entity/petrock_withlegs_tamesit.png");
 
     public RenderPetRockWithLegs(EntityRendererProvider.Context context) {
         super(context, new ModelPetRockWithLegs(context.bakeLayer(PRModels.PETROCKWITHLEGS)), 0.25F);

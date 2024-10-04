@@ -1,11 +1,11 @@
 package net.manmaed.petrock.client.render.entity;
 
 
-import net.manmaed.petrock.PetRock;
 import net.manmaed.petrock.client.model.PRModels;
 import net.manmaed.petrock.client.render.layers.*;
 import net.manmaed.petrock.client.render.model.ModelPetRock;
 import net.manmaed.petrock.entity.EntityPetRock;
+import net.manmaed.petrock.libs.RLHelper;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.resources.ResourceLocation;
@@ -15,9 +15,9 @@ import net.minecraft.resources.ResourceLocation;
  */
 public class RenderPetRock extends MobRenderer<EntityPetRock, ModelPetRock> {
 
-    private static final ResourceLocation UNTAME = ResourceLocation.fromNamespaceAndPath(PetRock.MOD_ID, "textures/entity/petrock.png");
-    private static final ResourceLocation TAMED = ResourceLocation.fromNamespaceAndPath(PetRock.MOD_ID, "textures/entity/petrock_tame.png");
-    private static final ResourceLocation SITTING = ResourceLocation.fromNamespaceAndPath(PetRock.MOD_ID, "textures/entity/petrocktamesit.png");
+    private static final ResourceLocation UNTAME = RLHelper.location("textures/entity/petrock.png");
+    private static final ResourceLocation TAMED = RLHelper.location("textures/entity/petrock_tame.png");
+    private static final ResourceLocation SITTING = RLHelper.location("textures/entity/petrocktamesit.png");
 
     public RenderPetRock(EntityRendererProvider.Context context) {
         super(context, new ModelPetRock(context.bakeLayer(PRModels.PETROCK)), 0.25F);

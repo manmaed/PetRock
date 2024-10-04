@@ -1,6 +1,7 @@
 package net.manmaed.petrock.client.model;
 
 import net.manmaed.petrock.PetRock;
+import net.manmaed.petrock.libs.RLHelper;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.resources.ResourceLocation;
 
@@ -31,7 +32,7 @@ public class PRModels {
 
 
     public static ModelLayerLocation makeModelLayerLocation(String name) {
-        return new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(PetRock.MOD_ID, name), name);
+        return new ModelLayerLocation(RLHelper.location(name), name);
     }
 
 }

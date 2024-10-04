@@ -5,6 +5,7 @@ import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.manmaed.petrock.PetRock;
 import net.manmaed.petrock.client.model.PRModels;
 import net.manmaed.petrock.client.render.model.ModelHood;
+import net.manmaed.petrock.libs.RLHelper;
 import net.minecraft.client.model.geom.EntityModelSet;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
@@ -16,7 +17,7 @@ import net.minecraft.world.entity.Entity;
 
 public class HoodLayer extends RenderLayer {
 
-    private static final ResourceLocation skin = ResourceLocation.fromNamespaceAndPath(PetRock.MOD_ID, "textures/entity/event/hood.png");
+    private static final ResourceLocation skin = RLHelper.location("textures/entity/event/hood.png");
     private final ModelHood hat;
 
     public HoodLayer(RenderLayerParent layerParent, EntityModelSet p_174494_) {

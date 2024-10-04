@@ -142,7 +142,7 @@ public class EntityPetRockWithLegs extends TamableAnimal {
                 } else {
                     level.broadcastEntityEvent(this, (byte) 6);
                 }
-                playSound(SoundEvents.GENERIC_DRINK, getSoundVolume(), 1F);
+                //playSound(SoundEvents.GENERIC_DRINK, getSoundVolume(), 1F);
                 return InteractionResult.SUCCESS;
             }
             return super.mobInteract(player, hand);
