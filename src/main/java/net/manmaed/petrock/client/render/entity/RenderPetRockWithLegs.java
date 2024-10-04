@@ -17,19 +17,13 @@ import net.minecraft.resources.ResourceLocation;
  */
 public class RenderPetRockWithLegs extends MobRenderer<EntityPetRockWithLegs, ModelPetRockWithLegs> {
 
-    private static final ResourceLocation UNTAME = new ResourceLocation(PetRock.MOD_ID, "textures/entity/petrock_withlegs.png");
-    private static final ResourceLocation TAMED = new ResourceLocation(PetRock.MOD_ID, "textures/entity/petrock_withlegs_tame.png");
-    private static final ResourceLocation SITTING = new ResourceLocation(PetRock.MOD_ID, "textures/entity/petrock_withlegs_tamesit.png");
+    private static final ResourceLocation UNTAME = ResourceLocation.fromNamespaceAndPath(PetRock.MOD_ID, "textures/entity/petrock_withlegs.png");
+    private static final ResourceLocation TAMED = ResourceLocation.fromNamespaceAndPath(PetRock.MOD_ID, "textures/entity/petrock_withlegs_tame.png");
+    private static final ResourceLocation SITTING = ResourceLocation.fromNamespaceAndPath(PetRock.MOD_ID, "textures/entity/petrock_withlegs_tamesit.png");
 
     public RenderPetRockWithLegs(EntityRendererProvider.Context context) {
         super(context, new ModelPetRockWithLegs(context.bakeLayer(PRModels.PETROCKWITHLEGS)), 0.25F);
-        this.addLayer(new MiniSlowpokeLayer<>(this, context.getModelSet()));
-        /*this.addLayer(new BirthdayLayer(this, context.getModelSet()));
-        this.addLayer(new ChristmasLayer(this, context.getModelSet()));
-        this.addLayer(new HalloweenLayer(this, context.getModelSet()));
-        this.addLayer(new SlowpokeLayer(this, context.getModelSet()));*/
-        /*this.addLayer(new CageLayer<>(this, context.getModelSet()));
-        this.addLayer(new SignLayer<>(this, context.getModelSet()));*/
+        this.addLayer(new MiniSlowpokeLayer(this, context.getModelSet()));
     }
 
     @Override

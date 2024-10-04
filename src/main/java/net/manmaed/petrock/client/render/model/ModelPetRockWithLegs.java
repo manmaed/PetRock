@@ -65,7 +65,7 @@ public class ModelPetRockWithLegs extends EntityModel<EntityPetRockWithLegs> {
     }
 
     @Override
-    public void renderToBuffer(PoseStack poseStack, VertexConsumer buffer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
+    public void renderToBuffer(PoseStack poseStack, VertexConsumer buffer, int packedLight, int packedOverlay, int ihavenocluetrynegone) {
         poseStack.pushPose();
         petrock.render(poseStack, buffer, packedLight, packedOverlay);
         arms.render(poseStack, buffer, packedLight, packedOverlay);

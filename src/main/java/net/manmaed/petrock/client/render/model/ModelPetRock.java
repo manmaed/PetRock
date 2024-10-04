@@ -6,22 +6,18 @@ package net.manmaed.petrock.client.render.model;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import net.manmaed.petrock.PetRock;
+import net.manmaed.petrock.entity.EntityPetRock;
 import net.minecraft.client.model.EntityModel;
-import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.entity.Entity;
 
 /**
  * ModelPetRock - manmaed
  * Created using Tabula 7.0.0
  */
 
-public class ModelPetRock<T extends Entity> extends EntityModel<T> {
-    public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation(PetRock.MOD_ID, "petrock"), "petrock");
+public class ModelPetRock extends EntityModel<EntityPetRock> {
     private final ModelPart petrock;
 
     public ModelPetRock(ModelPart root) {
@@ -40,12 +36,13 @@ public class ModelPetRock<T extends Entity> extends EntityModel<T> {
         return LayerDefinition.create(meshdefinition, 64, 32);
     }
     @Override
-    public void setupAnim(T p_102618_, float p_102619_, float p_102620_, float p_102621_, float p_102622_, float p_102623_) {
+    public void setupAnim(EntityPetRock entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
 
     }
 
+
     @Override
-    public void renderToBuffer(PoseStack poseStack, VertexConsumer buffer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
+    public void renderToBuffer(PoseStack poseStack, VertexConsumer buffer, int packedLight, int packedOverlay, int ihavenocluetrynegone) {
         petrock.render(poseStack, buffer, packedLight, packedOverlay);
     }
 }

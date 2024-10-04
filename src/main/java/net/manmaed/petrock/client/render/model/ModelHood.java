@@ -2,16 +2,17 @@ package net.manmaed.petrock.client.render.model;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import net.minecraft.client.model.EntityModel;
+import net.minecraft.client.model.Model;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
-import net.minecraft.world.entity.Entity;
+import net.minecraft.client.renderer.RenderType;
 
-public class ModelHood<T extends Entity> extends EntityModel<T> {
+public class ModelHood extends Model {
 	private final ModelPart bb_main;
 
 	public ModelHood(ModelPart root) {
+		super(RenderType::entitySolid);
 		this.bb_main = root.getChild("bb_main");
 	}
 
@@ -24,13 +25,9 @@ public class ModelHood<T extends Entity> extends EntityModel<T> {
 		return LayerDefinition.create(meshdefinition, 128, 64);
 	}
 
-	@Override
-	public void setupAnim(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
-
-	}
 
 	@Override
-	public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
-		bb_main.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
+	public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, int ihavenocluetrynegone) {
+		bb_main.render(poseStack, vertexConsumer, packedLight, packedOverlay);
 	}
 }

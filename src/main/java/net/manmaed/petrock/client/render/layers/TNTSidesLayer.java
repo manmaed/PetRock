@@ -16,18 +16,16 @@ import net.minecraft.world.entity.Entity;
 
 public class TNTSidesLayer extends RenderLayer {
 
-    private static final ResourceLocation skin = new ResourceLocation("minecraft", "textures/block/tnt_side.png");
+    private static final ResourceLocation skin = ResourceLocation.withDefaultNamespace("textures/block/tnt_side.png");
     private final ModelTNTSides sides;
     private final TNTTopLayer top;
     private final TNTBottomLayer bottom;
-    private final TNTPrimedLayer primed;
 
     public TNTSidesLayer(RenderLayerParent layerParent, EntityModelSet modelSet) {
         super(layerParent);
         this.sides = new ModelTNTSides(modelSet.bakeLayer(PRModels.TNT_SIDE));
         this.top = new TNTTopLayer(layerParent, modelSet);
         this.bottom = new TNTBottomLayer(layerParent, modelSet);
-        this.primed = new TNTPrimedLayer(layerParent, modelSet);
     }
 
     @Override
@@ -41,10 +39,9 @@ public class TNTSidesLayer extends RenderLayer {
                 poseStack.translate(0F, 2.25F, 0F);
             }
             VertexConsumer vertexConsumer = multiBufferSource.getBuffer(RenderType.entityCutout(skin));
-            sides.renderToBuffer(poseStack, vertexConsumer, packedLight, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
+            sides.renderToBuffer(poseStack, vertexConsumer, packedLight, OverlayTexture.NO_OVERLAY);
             top.render(poseStack, multiBufferSource, packedLight, entity,  p_117353_, p_117354_, p_117355_, p_117356_, p_117357_, p_117358_);
             bottom.render(poseStack, multiBufferSource, packedLight, entity,  p_117353_, p_117354_, p_117355_, p_117356_, p_117357_, p_117358_);
-            primed.render(poseStack, multiBufferSource, packedLight, entity,  p_117353_, p_117354_, p_117355_, p_117356_, p_117357_, p_117358_);
             poseStack.popPose();
         }
     }

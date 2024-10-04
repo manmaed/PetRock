@@ -32,16 +32,16 @@ import java.util.UUID;
  * Created by manmaed on 14/06/2022.
  */
 public class EntityPetRockWithLegs extends TamableAnimal {
-
     protected EntityPetRockWithLegs(EntityType<? extends TamableAnimal> type, Level worldIn) {
         super(type, worldIn);
+        this.setTame(false, false);
     }
 
     protected void registerGoals() {
         //Goal Selectors
         this.goalSelector.addGoal(1, new FloatGoal(this));
         this.goalSelector.addGoal(2, new SitWhenOrderedToGoal(this));
-        this.goalSelector.addGoal(3, new FollowOwnerGoal(this, 1.0D, 5.0F, 2.0F, false));
+        this.goalSelector.addGoal(3, new FollowOwnerGoal(this, 1.0D, 10.0F, 2.0F));
         this.goalSelector.addGoal(4, new BreedGoal(this, 1.0D));
         this.goalSelector.addGoal(5, new WaterAvoidingRandomStrollGoal(this, 1.0D));
         this.goalSelector.addGoal(6, new LookAtPlayerGoal(this, Player.class, 8.0F));
@@ -84,9 +84,9 @@ public class EntityPetRockWithLegs extends TamableAnimal {
 
 
     @Override
-    public void setTame(boolean tame) {
-        super.setTame(tame);
-        if (tame) {
+    public void setTame(boolean tame1, boolean tame2) {
+        super.setTame(tame1, tame2);
+        if (tame1) {
             this.getAttribute(Attributes.MAX_HEALTH).setBaseValue(20.0D);
             this.setHealth(20.0F);
         } else {
@@ -95,6 +95,10 @@ public class EntityPetRockWithLegs extends TamableAnimal {
     }
 
     @Override
+    public boolean isFood(ItemStack itemStack) {
+        return itemStack == PRItems.STONEIUM.get().getDefaultInstance();
+    }
+
     public InteractionResult mobInteract(Player player, InteractionHand hand) {
         ItemStack itemStack = player.getItemInHand(hand);
         Item item = itemStack.getItem();
@@ -128,18 +132,22 @@ public class EntityPetRockWithLegs extends TamableAnimal {
                 if (!player.getAbilities().instabuild) {
                     itemStack.shrink(1);
                 }
-                if (this.random.nextInt(3) == 0 && !net.minecraftforge.event.ForgeEventFactory.onAnimalTame(this, player)) {
+                if (this.random.nextInt(3) == 0) {
                     this.tame(player);
                     this.navigation.stop();
                     this.setOrderedToSit(true);
-                    level.broadcastEntityEvent(this, (byte)7);
+                    level.broadcastEntityEvent(this, (byte) 7);
+                    //TOTEM_USE maybe
+                    //playSound(PSSounds.SLOW_TAME.get(), getSoundVolume(), 1F);
                 } else {
-                    level.broadcastEntityEvent(this, (byte)6);
+                    level.broadcastEntityEvent(this, (byte) 6);
                 }
+                playSound(SoundEvents.GENERIC_DRINK, getSoundVolume(), 1F);
                 return InteractionResult.SUCCESS;
             }
             return super.mobInteract(player, hand);
-        }    }
+        }
+    }
 
     @Nullable
     @Override
@@ -148,7 +156,7 @@ public class EntityPetRockWithLegs extends TamableAnimal {
         UUID uuid = this.getOwnerUUID();
         if (uuid != null) {
             petRock.setOwnerUUID(uuid);
-            petRock.setTame(true);
+            petRock.setTame(true, true);
         }
         return petRock;
     }

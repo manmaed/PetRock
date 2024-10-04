@@ -1,0 +1,19 @@
+modLoader="javafml"
+loaderVersion="[1,)
+license="All rights reserved"
+issueTrackerURL = "https://github.com/manmaed/petrock/issues"
+[[mods]]
+modId="petrock"
+version = "${version}"
+displayName="PetRock" #mandatory
+updateJSONURL = "https://raw.githubusercontent.com/manmaed/PetRock/refs/heads/main/neo/update.json"
+credits = "Squidgy for the PetRock Box (The PetRock With Legs one)"
+authors = "manmaed"
+description='''
+A Mod that adds PetRocks!'''
+[[dependencies.petrock]]
+modId="neoforge"
+mandatory=true
+versionRange="[21.1.65,)"
+ordering="NONE"
+side="BOTH"

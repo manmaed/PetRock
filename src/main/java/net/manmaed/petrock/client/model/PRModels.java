@@ -31,7 +31,7 @@ public class PRModels {
 
 
     public static ModelLayerLocation makeModelLayerLocation(String name) {
-        return new ModelLayerLocation(new ResourceLocation(PetRock.MOD_ID, name), name);
+        return new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(PetRock.MOD_ID, name), name);
     }
 
 }

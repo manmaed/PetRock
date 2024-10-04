@@ -1,8 +1,0 @@
-{
-  "type": "petrock:ore_biome_modifiers",
-  "features": [
-    "petrock:ore_stoneium",
-    "petrock:ore_stoneium_deepslate"
-  ],
-  "generation_stage": "UNDERGROUND_ORES"
-}

@@ -15,7 +15,7 @@ import net.minecraft.world.entity.Entity;
 
 public class TNTTopLayer extends RenderLayer {
 
-    private static final ResourceLocation skin = new ResourceLocation("minecraft", "textures/block/tnt_top.png");
+    private static final ResourceLocation skin = ResourceLocation.withDefaultNamespace("textures/block/tnt_top.png");
     private final ModelTNTTop sides;
 
     public TNTTopLayer(RenderLayerParent layerParent, EntityModelSet modelSet) {
@@ -26,6 +26,6 @@ public class TNTTopLayer extends RenderLayer {
     @Override
     public void render(PoseStack poseStack, MultiBufferSource multiBufferSource, int packedLight, Entity entity, float p_117353_, float p_117354_, float p_117355_, float p_117356_, float p_117357_, float p_117358_) {
         VertexConsumer vertexConsumer = multiBufferSource.getBuffer(RenderType.entityCutout(skin));
-        sides.renderToBuffer(poseStack, vertexConsumer, packedLight, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
+        sides.renderToBuffer(poseStack, vertexConsumer, packedLight, OverlayTexture.NO_OVERLAY);
     }
 }

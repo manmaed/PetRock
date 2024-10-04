@@ -13,21 +13,21 @@ import net.minecraft.resources.ResourceLocation;
 /**
  * Created by manmaed on 30/08/2019.
  */
-public class RenderPetRock extends MobRenderer<EntityPetRock, ModelPetRock<EntityPetRock>> {
+public class RenderPetRock extends MobRenderer<EntityPetRock, ModelPetRock> {
 
-    private static final ResourceLocation UNTAME = new ResourceLocation(PetRock.MOD_ID, "textures/entity/petrock.png");
-    private static final ResourceLocation TAMED = new ResourceLocation(PetRock.MOD_ID, "textures/entity/petrock_tame.png");
-    private static final ResourceLocation SITTING = new ResourceLocation(PetRock.MOD_ID, "textures/entity/petrocktamesit.png");
+    private static final ResourceLocation UNTAME = ResourceLocation.fromNamespaceAndPath(PetRock.MOD_ID, "textures/entity/petrock.png");
+    private static final ResourceLocation TAMED = ResourceLocation.fromNamespaceAndPath(PetRock.MOD_ID, "textures/entity/petrock_tame.png");
+    private static final ResourceLocation SITTING = ResourceLocation.fromNamespaceAndPath(PetRock.MOD_ID, "textures/entity/petrocktamesit.png");
 
     public RenderPetRock(EntityRendererProvider.Context context) {
-        super(context, new ModelPetRock<EntityPetRock>(context.bakeLayer(PRModels.PETROCK)), 0.25F);
-        this.addLayer(new BirthdayLayer<>(this, context.getModelSet()));
-        this.addLayer(new ChristmasLayer<>(this, context.getModelSet()));
-        this.addLayer(new HalloweenLayer<>(this, context.getModelSet()));
-        this.addLayer(new SlowpokeLayer<>(this, context.getModelSet()));
-        this.addLayer(new CageLayer<>(this, context.getModelSet()));
-        this.addLayer(new SignLayer<>(this, context.getModelSet()));
-        this.addLayer(new EggLayer<>(this, context.getModelSet()));
+        super(context, new ModelPetRock(context.bakeLayer(PRModels.PETROCK)), 0.25F);
+        this.addLayer(new BirthdayLayer(this, context.getModelSet()));
+        this.addLayer(new ChristmasLayer(this, context.getModelSet()));
+        this.addLayer(new HalloweenLayer(this, context.getModelSet()));
+        this.addLayer(new SlowpokeLayer(this, context.getModelSet()));
+        this.addLayer(new CageLayer(this, context.getModelSet()));
+        this.addLayer(new SignLayer(this, context.getModelSet()));
+        this.addLayer(new EggLayer(this, context.getModelSet()));
         this.addLayer(new PolarBearLayer(this, context.getModelSet()));
         this.addLayer(new TNTSidesLayer(this, context.getModelSet()));
     }

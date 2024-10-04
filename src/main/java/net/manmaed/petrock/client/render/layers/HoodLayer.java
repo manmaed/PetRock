@@ -16,12 +16,12 @@ import net.minecraft.world.entity.Entity;
 
 public class HoodLayer extends RenderLayer {
 
-    private static final ResourceLocation skin = new ResourceLocation(PetRock.MOD_ID, "textures/entity/event/hood.png");
+    private static final ResourceLocation skin = ResourceLocation.fromNamespaceAndPath(PetRock.MOD_ID, "textures/entity/event/hood.png");
     private final ModelHood hat;
 
     public HoodLayer(RenderLayerParent layerParent, EntityModelSet p_174494_) {
         super(layerParent);
-        this.hat = new ModelHood<>(p_174494_.bakeLayer(PRModels.HOOD));
+        this.hat = new ModelHood(p_174494_.bakeLayer(PRModels.HOOD));
 
     }
 
@@ -32,7 +32,7 @@ public class HoodLayer extends RenderLayer {
         poseStack.translate(0.22F, 0.3F, -0.913F);
         /*poseStack.scale(0.5F, 0.5F,0.5F);*/
         VertexConsumer vertexConsumer = multiBufferSource.getBuffer(RenderType.entityCutoutNoCull(skin));
-        hat.renderToBuffer(poseStack, vertexConsumer, packedLight, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
+        hat.renderToBuffer(poseStack, vertexConsumer, packedLight, OverlayTexture.NO_OVERLAY);
         poseStack.popPose();
 
     }

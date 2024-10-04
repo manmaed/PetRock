@@ -2,14 +2,13 @@ package net.manmaed.petrock.client.render.model;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import net.manmaed.petrock.entity.EntityPetRock;
 import net.minecraft.client.model.Model;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.client.renderer.RenderType;
 
-public class ModelEggHat<T extends EntityPetRock> extends Model {
+public class ModelEggHat extends Model {
     private final ModelPart Egg;
 
     public ModelEggHat(ModelPart root) {
@@ -155,7 +154,7 @@ public class ModelEggHat<T extends EntityPetRock> extends Model {
     }
 
     @Override
-    public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
-        Egg.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
+    public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, int ihavenocluetrynegone) {
+        Egg.render(poseStack, vertexConsumer, packedLight, packedOverlay);
     }
 }
