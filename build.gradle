@@ -83,6 +83,7 @@ publishMods {
         projectId = project.curseforge_id
         minecraftVersions.add("Java 21")
         minecraftVersions.add("${minecraft_version}")
+        minecraftVersions.add("${minecraft_version}.1")
         optional {
             slug = 'patchouli'
         }
