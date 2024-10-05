@@ -15,6 +15,7 @@ import net.minecraft.resources.ResourceLocation;
  */
 public class RenderPetRock extends MobRenderer<EntityPetRock, ModelPetRock> {
 
+
     private static final ResourceLocation UNTAME = RLHelper.location("textures/entity/petrock.png");
     private static final ResourceLocation TAMED = RLHelper.location("textures/entity/petrock_tame.png");
     private static final ResourceLocation SITTING = RLHelper.location("textures/entity/petrocktamesit.png");
