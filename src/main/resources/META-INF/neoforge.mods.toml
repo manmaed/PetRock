@@ -7,7 +7,7 @@ modId="petrock"
 version = "${version}"
 displayName="PetRock"
 updateJSONURL = "https://raw.githubusercontent.com/manmaed/PetRock/refs/heads/main/neo/update.json"
-credits = "Squidgy for the PetRock Box (The PetRock With Legs one)"
+credits = "Squidgy for the PetRock Box (The PetRock With Legs one) and other textures"
 authors = "manmaed"
 description='''
 A Mod that adds PetRocks!'''
