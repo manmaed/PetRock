@@ -9,14 +9,14 @@
       "text": "Stoneium Spawns in the Overworld. Use The Stoneium Ingots to tame a Petrock"
     },
     {
-      "type": "spotlight",
-      "item": "petrock:stoneium_ore",
-      "text": "Mine to get Stoneium"
+      "type": "smelting",
+      "recipe": "petrock:stoneium_from_smelting_stoneium_ore",
+      "recipe2": "petrock:stoneium_from_smelting_deepslate_stoneium_ore"
     },
     {
-      "type": "spotlight",
-      "item": "petrock:stoneium",
-      "text": "Drops from Stoneium Ore"
+      "type": "blasting",
+      "recipe": "petrock:stoneium_from_blasting_stoneium_ore",
+      "recipe2": "petrock:stoneium_from_blasting_deepslate_stoneium_ore"
     }
   ]
 }
