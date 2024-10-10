@@ -24,6 +24,7 @@ public class PRDataGeneration {
         generator.addProvider(true, new PRRecipeProvider(packOutput, lookupProvider));
         generator.addProvider(true, new PRTagsProvider(packOutput, lookupProvider, fileHelper));
         generator.addProvider(true, new PRLootTabels(packOutput, lookupProvider));
+        generator.addProvider(true, new PRWorldGenProvider(packOutput, lookupProvider));
 
 
 
