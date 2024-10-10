@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "s": {
+      "item": "petrock:stoneium"
+    }
+  },
+  "pattern": [
+    "sss",
+    "sss",
+    "sss"
+  ],
+  "result": {
+    "count": 1,
+    "id": "petrock:stoneium_block"
+  }
+}

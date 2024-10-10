@@ -17,10 +17,6 @@ import net.minecraft.resources.ResourceLocation;
  */
 public class RenderPetRockWithLegs extends MobRenderer<EntityPetRockWithLegs, ModelPetRockWithLegs> {
 
-    private static final ResourceLocation UNTAME = RLHelper.location("textures/entity/petrock_withlegs.png");
-    private static final ResourceLocation TAMED = RLHelper.location("textures/entity/petrock_withlegs_tame.png");
-    private static final ResourceLocation SITTING = RLHelper.location("textures/entity/petrock_withlegs_tamesit.png");
-
     public RenderPetRockWithLegs(EntityRendererProvider.Context context) {
         super(context, new ModelPetRockWithLegs(context.bakeLayer(PRModels.PETROCKWITHLEGS)), 0.25F);
         this.addLayer(new MiniSlowpokeLayer(this, context.getModelSet()));
@@ -41,13 +37,13 @@ public class RenderPetRockWithLegs extends MobRenderer<EntityPetRockWithLegs, Mo
     @Override
     public ResourceLocation getTextureLocation(EntityPetRockWithLegs petRock) {
        if (petRock.isTame()) {
-            if (petRock.isInSittingPose()) {
-                return SITTING;
-            } else {
-                return TAMED;
-            }
-        } else {
-            return UNTAME;
-        }
+           if (petRock.isInSittingPose()) {
+               return RLHelper.location("textures/entity/petrock/with_legs/" + petRock.getVariantName() + "/sit.png");
+           } else {
+               return RLHelper.location("textures/entity/petrock/with_legs/" + petRock.getVariantName() + "/tame.png");
+           }
+       } else {
+           return RLHelper.location("textures/entity/petrock/with_legs/" + petRock.getVariantName() + "/untame.png");
+       }
     }
 }

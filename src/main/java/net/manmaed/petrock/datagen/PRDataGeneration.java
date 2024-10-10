@@ -21,5 +21,9 @@ public class PRDataGeneration {
         ExistingFileHelper fileHelper = event.getExistingFileHelper();
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
 
+        generator.addProvider(true, new PRRecipeProvider(packOutput, lookupProvider));
+
+
+
     }
 }

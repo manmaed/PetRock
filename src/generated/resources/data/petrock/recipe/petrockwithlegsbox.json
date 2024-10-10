@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "petrock:petrockbox"
+    },
+    {
+      "item": "petrock:stone_legs"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "petrock:petrockwithlegsbox"
+  }
+}

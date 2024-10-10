@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "i": {
+      "item": "minecraft:ink_sac"
+    },
+    "p": {
+      "item": "minecraft:paper"
+    }
+  },
+  "pattern": [
+    "ppp",
+    "pip",
+    "ppp"
+  ],
+  "result": {
+    "count": 1,
+    "id": "petrock:orderform"
+  }
+}

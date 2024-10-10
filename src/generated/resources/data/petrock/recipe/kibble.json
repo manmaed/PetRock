@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "c": {
+      "item": "minecraft:cookie"
+    },
+    "m": {
+      "item": "minecraft:stone"
+    },
+    "s": {
+      "item": "petrock:stoneium"
+    }
+  },
+  "pattern": [
+    "msm",
+    "scs",
+    "msm"
+  ],
+  "result": {
+    "count": 1,
+    "id": "petrock:kibble"
+  }
+}
