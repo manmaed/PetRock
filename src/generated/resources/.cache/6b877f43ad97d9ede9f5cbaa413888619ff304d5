@@ -1,7 +1,7 @@
-// 1.21	2024-10-10T21:47:56.7365032	Tags for minecraft:block mod id petrock
+// 1.21	2024-10-10T23:52:38.4730507	Tags for minecraft:block mod id petrock
 ec6f2f7823e9f0ae5d79667cc6788305addb1eea data/minecraft/tags/block/deepslate_ore_replaceables.json
 0300e8ad8dfb7929984fb736bd69075e92ce2059 data/minecraft/tags/block/mineable/pickaxe.json
 ec6f2f7823e9f0ae5d79667cc6788305addb1eea data/minecraft/tags/block/needs_iron_tool.json
-db058be6ec8fa77e6f040ec4045273da87b01316 data/minecraft/tags/block/needs_stone_tool.json
+2dc35104a8823ca5e88f6f58c133a8a8288d8bdb data/minecraft/tags/block/needs_stone_tool.json
 db058be6ec8fa77e6f040ec4045273da87b01316 data/minecraft/tags/block/stone_ore_replaceables.json
 0300e8ad8dfb7929984fb736bd69075e92ce2059 data/petrock/tags/block/stoneium_ores.json

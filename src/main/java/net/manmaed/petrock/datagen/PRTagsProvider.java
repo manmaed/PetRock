@@ -23,7 +23,7 @@ public class PRTagsProvider extends BlockTagsProvider {
         tag(BlockTags.STONE_ORE_REPLACEABLES).add(PRBlocks.STONEIUM_ORE.get());
         tag(BlockTags.DEEPSLATE_ORE_REPLACEABLES).add(PRBlocks.DEEPSLATE_STONEIUM_ORE.get());
         tag(PRTags.STONEIUM_ORES).add(PRBlocks.STONEIUM_ORE.get()).add(PRBlocks.DEEPSLATE_STONEIUM_ORE.get());
-        tag(BlockTags.NEEDS_STONE_TOOL).add(PRBlocks.STONEIUM_ORE.get());
+        tag(BlockTags.NEEDS_STONE_TOOL).add(PRBlocks.STONEIUM_ORE.get()).add(PRBlocks.STONEIUM_BLOCK.get());
         tag(BlockTags.NEEDS_IRON_TOOL).add(PRBlocks.DEEPSLATE_STONEIUM_ORE.get());
         tag(BlockTags.MINEABLE_WITH_PICKAXE).add(PRBlocks.STONEIUM_ORE.get()).add(PRBlocks.DEEPSLATE_STONEIUM_ORE.get());
     }
