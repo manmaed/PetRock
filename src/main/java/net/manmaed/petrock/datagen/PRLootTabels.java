@@ -2,6 +2,7 @@ package net.manmaed.petrock.datagen;
 
 import com.google.common.collect.ImmutableList;
 import net.manmaed.petrock.block.PRBlocks;
+import net.manmaed.petrock.item.PRItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.loot.BlockLootSubProvider;
@@ -28,8 +29,9 @@ public class PRLootTabels extends LootTableProvider {
 
         @Override
         protected void generate() {
-            dropSelf(PRBlocks.STONEIUM_ORE.get());
-            dropSelf(PRBlocks.DEEPSLATE_STONEIUM_ORE.get());
+
+            add(PRBlocks.STONEIUM_ORE.get(), createOreDrop(PRBlocks.STONEIUM_ORE.get(), PRItems.RAW_STONEIUM.get()));
+            add(PRBlocks.DEEPSLATE_STONEIUM_ORE.get(), createOreDrop(PRBlocks.STONEIUM_ORE.get(), PRItems.RAW_STONEIUM.get()));
             dropSelf(PRBlocks.STONEIUM_BLOCK.get());
         }
 
