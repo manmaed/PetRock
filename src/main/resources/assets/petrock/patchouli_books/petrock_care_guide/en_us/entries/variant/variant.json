@@ -1,0 +1,147 @@
+{
+  "name": "PetRock variants",
+  "icon": "petrock:petrockbox",
+  "category": "petrock:petrock_category",
+  "pages": [
+    {
+      "type": "text",
+      "title": "PetRock Variants",
+      "text": "This will show you all the PetRock variants you can have. $(br) To get the new variants just right click a tamed PetRock with the block type you would like from the list here."
+    },
+    {
+      "type": "entity",
+      "entity": "petrock:petrock{rock_variant:0}",
+      "text": "This is the Stone Variant"
+
+    },
+    {
+      "type": "entity",
+      "entity": "petrock:petrock{rock_variant:1}",
+      "text": "This is the Netherrack Variant"
+
+    },
+    {
+      "type": "entity",
+      "entity": "petrock:petrock{rock_variant:2}",
+      "text": "This is the End Stone Variant"
+
+    },
+    {
+      "type": "entity",
+      "entity": "petrock:petrock{rock_variant:3}",
+      "text": "This is the Deepslate Variant"
+
+    },
+    {
+      "type": "entity",
+      "entity": "petrock:petrock{rock_variant:4}",
+      "text": "This is the Diorite Variant"
+
+    },
+    {
+      "type": "entity",
+      "entity": "petrock:petrock{rock_variant:5}",
+      "text": "This is the Granite Variant"
+
+    },
+    {
+      "type": "entity",
+      "entity": "petrock:petrock{rock_variant:6}",
+      "text": "This is the Andesite Variant"
+
+    },
+    {
+      "type": "entity",
+      "entity": "petrock:petrock{rock_variant:7}",
+      "text": "This is the Clay Variant"
+
+    },
+    {
+      "type": "entity",
+      "entity": "petrock:petrock{rock_variant:9}",
+      "text": "This is the Squidgy Variant (get by naming a PetRock \"Squidgy\")"
+    },
+    {
+      "type": "entity",
+      "entity": "petrock:petrock{rock_variant:8}",
+      "text": "This is the Bedrock Variant (creative only)"
+
+    },
+    {
+      "type": "entity",
+      "entity": "petrock:petrock{rock_variant:-1}",
+      "text": "This is the missingno variant (impossable without cheats)"
+
+    },
+    {
+      "type": "text",
+      "title": "PetRock with legs Variants",
+      "text": "This will show you all the PetRock with legs variants you can have. $(br) To get the new variants just right click a tamed PetRock with the block type you would like from the list here."
+    },
+    {
+      "type": "entity",
+      "entity": "petrock:petrockwithlegs{rock_variant:0}",
+      "text": "This is the Stone Variant"
+
+    },
+    {
+      "type": "entity",
+      "entity": "petrock:petrockwithlegs{rock_variant:1}",
+      "text": "This is the Netherrack Variant"
+
+    },
+    {
+      "type": "entity",
+      "entity": "petrock:petrockwithlegs{rock_variant:2}",
+      "text": "This is the End Stone Variant"
+
+    },
+    {
+      "type": "entity",
+      "entity": "petrock:petrockwithlegs{rock_variant:3}",
+      "text": "This is the Deepslate Variant"
+
+    },
+    {
+      "type": "entity",
+      "entity": "petrock:petrockwithlegs{rock_variant:4}",
+      "text": "This is the Diorite Variant"
+
+    },
+    {
+      "type": "entity",
+      "entity": "petrock:petrockwithlegs{rock_variant:5}",
+      "text": "This is the Granite Variant"
+
+    },
+    {
+      "type": "entity",
+      "entity": "petrock:petrockwithlegs{rock_variant:6}",
+      "text": "This is the Andesite Variant"
+
+    },
+    {
+      "type": "entity",
+      "entity": "petrock:petrockwithlegs{rock_variant:7}",
+      "text": "This is the Clay Variant"
+
+    },
+    {
+      "type": "entity",
+      "entity": "petrock:petrockwithlegs{rock_variant:9}",
+      "text": "This is the Squidgy Variant (get by naming a PetRock \"Squidgy\")"
+    },
+    {
+      "type": "entity",
+      "entity": "petrock:petrockwithlegs{rock_variant:8}",
+      "text": "This is the Bedrock Variant (creative only)"
+
+    },
+    {
+      "type": "entity",
+      "entity": "petrock:petrockwithlegs{rock_variant:-1}",
+      "text": "This is the missingno variant (impossable without cheats)"
+
+    }
+  ]
+}

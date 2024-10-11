@@ -14,11 +14,6 @@ import net.minecraft.resources.ResourceLocation;
  * Created by manmaed on 30/08/2019.
  */
 public class RenderPetRock extends MobRenderer<EntityPetRock, ModelPetRock> {
-
-    private static final ResourceLocation UNTAME = RLHelper.location("textures/entity/petrock.png");
-    private static final ResourceLocation TAMED = RLHelper.location("textures/entity/petrock_tame.png");
-    private static final ResourceLocation SITTING = RLHelper.location("textures/entity/petrocktamesit.png");
-
     public RenderPetRock(EntityRendererProvider.Context context) {
         super(context, new ModelPetRock(context.bakeLayer(PRModels.PETROCK)), 0.25F);
         this.addLayer(new BirthdayLayer(this, context.getModelSet()));
@@ -36,12 +31,12 @@ public class RenderPetRock extends MobRenderer<EntityPetRock, ModelPetRock> {
     public ResourceLocation getTextureLocation(EntityPetRock petRock) {
        if (petRock.isTame()) {
             if (petRock.isInSittingPose()) {
-                return SITTING;
+                return RLHelper.location("textures/entity/petrock/" + petRock.getVariantName() + "/sit.png");
             } else {
-                return TAMED;
+                return RLHelper.location("textures/entity/petrock/" + petRock.getVariantName() + "/tame.png");
             }
         } else {
-            return UNTAME;
+            return RLHelper.location("textures/entity/petrock/" + petRock.getVariantName() + "/untame.png");
         }
     }
 }

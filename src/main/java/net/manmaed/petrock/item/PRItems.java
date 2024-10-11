@@ -22,5 +22,8 @@ public class PRItems {
     public static final DeferredItem<Item> PETROCKBOX = ITEMS.register("petrockbox", () -> new PetRockBox(new Item.Properties()));
     public static final DeferredItem<Item> PETROCKWITHLEGSBOX = ITEMS.register("petrockwithlegsbox", () -> new PetRockWithLegsBox(new Item.Properties()));
     public static final DeferredItem<Item> STONE_LEGS = ITEMS.register("stone_legs", () -> new StoneLegs(new Item.Properties()));
+    public static final DeferredItem<Item> RAW_STONEIUM = ITEMS.register("raw_stoneium", () -> new Item(new Item.Properties()));
+
+
 
 }

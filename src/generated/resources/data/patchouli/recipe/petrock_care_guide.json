@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:book"
+    },
+    {
+      "item": "petrock:stoneium"
+    }
+  ],
+  "result": {
+    "components": {
+      "patchouli:book": "petrock:petrock_care_guide"
+    },
+    "count": 1,
+    "id": "patchouli:guide_book"
+  }
+}

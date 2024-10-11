@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.7,
+  "ingredient": {
+    "item": "petrock:deepslate_stoneium_ore"
+  },
+  "result": {
+    "count": 1,
+    "id": "petrock:stoneium"
+  }
+}

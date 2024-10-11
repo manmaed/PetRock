@@ -1,0 +1,8 @@
+// 1.21	2024-10-11T17:06:45.9812272	Tags for minecraft:block mod id petrock
+7e101ad3299254dc0037fcc9f2240591195d8e51 data/c/tags/block/ores.json
+0300e8ad8dfb7929984fb736bd69075e92ce2059 data/minecraft/tags/block/mineable/pickaxe.json
+ec6f2f7823e9f0ae5d79667cc6788305addb1eea data/minecraft/tags/block/needs_iron_tool.json
+2dc35104a8823ca5e88f6f58c133a8a8288d8bdb data/minecraft/tags/block/needs_stone_tool.json
+7e101ad3299254dc0037fcc9f2240591195d8e51 data/minecraft/tags/block/overworld_carver_replaceables.json
+db058be6ec8fa77e6f040ec4045273da87b01316 data/minecraft/tags/block/snaps_goat_horn.json
+0300e8ad8dfb7929984fb736bd69075e92ce2059 data/petrock/tags/block/stoneium_ores.json
