@@ -1,6 +1,6 @@
 {
   "type": "neoforge:add_features",
   "biomes": "#minecraft:is_overworld",
-  "features": "petrock:stoneium_ore",
+  "features": "petrock:ore_stoneium",
   "step": "underground_ores"
 }

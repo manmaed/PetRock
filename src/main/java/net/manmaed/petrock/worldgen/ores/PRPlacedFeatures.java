@@ -5,6 +5,7 @@ import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
+import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
@@ -15,16 +16,15 @@ import net.minecraft.world.level.levelgen.placement.PlacementModifier;
 import java.util.List;
 
 public class PRPlacedFeatures {
-    protected static ResourceKey<PlacedFeature> STONEIUM_ORE = createKey("stoneium_ore");
-    protected static ResourceKey<PlacedFeature> DEEPSLATE_STONEIUM_ORE = createKey("deepslate_stoneium_ore");
+    protected static ResourceKey<PlacedFeature> ORE_STONEIUM = createKey("ore_stoneium");
+    protected static ResourceKey<PlacedFeature> ORE_STONEIUM_LOWER = createKey("ore_stoneium_lower");
 
     public static void bootstrap(BootstrapContext<PlacedFeature> context) {
         HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
-        Holder<ConfiguredFeature<?, ?>> featureHolder = configuredFeatures.getOrThrow(PRConfiguredFeatures.OVERWORLD_ORES);
-        Holder<ConfiguredFeature<?, ?>> featureHolder2 = configuredFeatures.getOrThrow(PRConfiguredFeatures.DEEP_OVERWORLD_ORES);
+        Holder<ConfiguredFeature<?, ?>> featureHolder = configuredFeatures.getOrThrow(PRConfiguredFeatures.ORE_STONEIUM);
+/*        Holder<ConfiguredFeature<?, ?>> featureHolder2 = configuredFeatures.getOrThrow(PRConfiguredFeatures.DEEP_OVERWORLD_ORES);*/
 
-        register(context, STONEIUM_ORE, featureHolder, PROrePlacement.commonOrePlacements(5, HeightRangePlacement.uniform(VerticalAnchor.absolute(0), VerticalAnchor.TOP)));
-        register(context, DEEPSLATE_STONEIUM_ORE, featureHolder2, PROrePlacement.commonOrePlacements(5, HeightRangePlacement.uniform(VerticalAnchor.BOTTOM, VerticalAnchor.absolute(0))));
+        PlacementUtils.register(context, ORE_STONEIUM, featureHolder, PROrePlacement.commonOrePlacements(12, HeightRangePlacement.triangle(VerticalAnchor.BOTTOM, VerticalAnchor.TOP)));
     }
     private static void register(BootstrapContext<PlacedFeature> context, ResourceKey<PlacedFeature> resourceKey, Holder<ConfiguredFeature<?, ?>> configuredFeatureHolder, List<PlacementModifier> placementModifiers) {
         context.register(resourceKey, new PlacedFeature(configuredFeatureHolder, placementModifiers));

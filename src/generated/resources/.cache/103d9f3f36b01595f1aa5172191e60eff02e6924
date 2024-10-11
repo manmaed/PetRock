@@ -1,7 +1,4 @@
-// 1.21	2024-10-10T23:38:38.5957433	Registries
-15db87768a35609b68c0f4a9b6a8937edf89a070 data/petrock/neoforge/biome_modifier/add_deepslate_stoneium_ore.json
-007d84b7786cd470d8dc83ee89d015dd8dd3b71d data/petrock/neoforge/biome_modifier/add_stoneium_ore.json
-657a3f8a4f1137c0aff7f76efb2082e5995a1fdf data/petrock/worldgen/configured_feature/deep_overworld_ores.json
-b2200afaa86f0e811a4bccb23f538d5168398d5d data/petrock/worldgen/configured_feature/overworld_ores.json
-1a74faec1f4225d6500cd7a6274f030bcf48cff5 data/petrock/worldgen/placed_feature/deepslate_stoneium_ore.json
-bad66348978688990db904807bf7f2c1710a7728 data/petrock/worldgen/placed_feature/stoneium_ore.json
+// 1.21	2024-10-11T16:44:14.9784635	Registries
+c34d991a19c0ba5698aab824c367216c8002b112 data/petrock/neoforge/biome_modifier/ore_stoneium.json
+02a2ce55d768e52abc0580b791c03b427edd5b00 data/petrock/worldgen/configured_feature/ore_stoneium.json
+e63883e11583307b102ba58f572dfef314534797 data/petrock/worldgen/placed_feature/ore_stoneium.json

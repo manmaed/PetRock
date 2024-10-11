@@ -20,9 +20,11 @@ public class PRDataGeneration {
         PackOutput packOutput = generator.getPackOutput();
         ExistingFileHelper fileHelper = event.getExistingFileHelper();
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
+        PRBlockTagsProvider prBlockTagsProvider = new PRBlockTagsProvider(packOutput, lookupProvider, fileHelper);
 
         generator.addProvider(true, new PRRecipeProvider(packOutput, lookupProvider));
-        generator.addProvider(true, new PRTagsProvider(packOutput, lookupProvider, fileHelper));
+        generator.addProvider(true, prBlockTagsProvider);
+        generator.addProvider(true, new PRItemTagsProvider(packOutput, lookupProvider, prBlockTagsProvider.contentsGetter(), fileHelper));
         generator.addProvider(true, new PRLootTabels(packOutput, lookupProvider));
         generator.addProvider(true, new PRWorldGenProvider(packOutput, lookupProvider));
 

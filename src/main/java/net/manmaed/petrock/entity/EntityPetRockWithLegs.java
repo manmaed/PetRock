@@ -256,6 +256,9 @@ public class EntityPetRockWithLegs extends TamableAnimal {
             case 8:
                 name = "bedrock";
                 break;
+            case 9:
+                name = "squidgy";
+                break;
             default:
                 name = "stone";
                 break;
@@ -310,6 +313,9 @@ public class EntityPetRockWithLegs extends TamableAnimal {
             case "missingno":
                 setVariant(-1);
                 break;
+            case "squidgy":
+                setVariant(9);
+                break;
         }
     }
 
@@ -319,6 +325,12 @@ public class EntityPetRockWithLegs extends TamableAnimal {
         //System.out.println(getVariant());
         if (getVariant() == null) {
             setVariant(0);
+        }
+        if (hasCustomName()) {
+            String customName = this.getCustomName().getString();
+            if (customName.equals("Squidgy") && getVariant() != 9) {
+                setVariant(9);
+            }
         }
     }
 }

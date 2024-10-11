@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_raw_stoneium": {
+      "conditions": {
+        "items": [
+          {
+            "items": "petrock:raw_stoneium"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "petrock:stoneium_from_blasting_raw_stoneium"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_raw_stoneium"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "petrock:stoneium_from_blasting_raw_stoneium"
+    ]
+  }
+}

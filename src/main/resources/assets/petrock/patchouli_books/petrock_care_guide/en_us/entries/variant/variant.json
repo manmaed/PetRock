@@ -58,6 +58,11 @@
     },
     {
       "type": "entity",
+      "entity": "petrock:petrock{rock_variant:9}",
+      "text": "This is the Squidgy Variant (get by naming a PetRock \"Squidgy\")"
+    },
+    {
+      "type": "entity",
       "entity": "petrock:petrock{rock_variant:8}",
       "text": "This is the Bedrock Variant (creative only)"
 
@@ -120,6 +125,11 @@
       "entity": "petrock:petrockwithlegs{rock_variant:7}",
       "text": "This is the Clay Variant"
 
+    },
+    {
+      "type": "entity",
+      "entity": "petrock:petrockwithlegs{rock_variant:9}",
+      "text": "This is the Squidgy Variant (get by naming a PetRock \"Squidgy\")"
     },
     {
       "type": "entity",

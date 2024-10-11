@@ -6,28 +6,24 @@ import net.manmaed.petrock.libs.RLHelper;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import vazkii.patchouli.api.PatchouliAPI;
 
 import java.util.concurrent.CompletableFuture;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class PRRecipeProvider extends RecipeProvider {
-    private static RecipeCategory misc = RecipeCategory.MISC;
-    private static RecipeCategory block = RecipeCategory.BUILDING_BLOCKS;
-    private static RecipeCategory food = RecipeCategory.FOOD;
+    private static final RecipeCategory misc = RecipeCategory.MISC;
+    private static final RecipeCategory block = RecipeCategory.BUILDING_BLOCKS;
+    private static final RecipeCategory food = RecipeCategory.FOOD;
 
     public PRRecipeProvider(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> completableFuture) {
         super(packOutput, completableFuture);
-    }
-
-    public static ResourceLocation getSave(String string) {
-        return RLHelper.location(string);
     }
 
     @Override
@@ -70,8 +66,15 @@ public class PRRecipeProvider extends RecipeProvider {
         oreToIngot(PRBlocks.STONEIUM_ORE.get(), PRItems.STONEIUM.get(), recipeOutput);
         oreToIngot(PRBlocks.DEEPSLATE_STONEIUM_ORE.get(), PRItems.STONEIUM.get(), recipeOutput);
 
+        ingotToIngot(PRItems.RAW_STONEIUM.get(), PRItems.STONEIUM.get(), recipeOutput);
+        ShapelessRecipeBuilder.shapeless(misc, PatchouliAPI.get().getBookStack(RLHelper.location("petrock_care_guide")))
+                .requires(Items.BOOK).requires(PRItems.STONEIUM).unlockedBy("has_stoneium_ingot", has(PRItems.STONEIUM)).save(recipeOutput, "patchouli:petrock_care_guide");
     }
 
+    private static void ingotToIngot(Item rawore, Item ingot, RecipeOutput recipeOutput) {
+        SimpleCookingRecipeBuilder.blasting(Ingredient.of(rawore), misc, ingot, 0.7F, 100).unlockedBy(getHasName(rawore), has(rawore)).save(recipeOutput, RLHelper.location(retunName(ingot) + "_from_blasting_" + retunName(rawore)));
+        SimpleCookingRecipeBuilder.smelting(Ingredient.of(rawore), misc, ingot, 0.7F, 200).unlockedBy(getHasName(rawore), has(rawore)).save(recipeOutput, RLHelper.location(retunName(ingot) + "_from_smelting_" + retunName(rawore)));
+    }
     private static void oreToIngot(Block ore, Item ingot, RecipeOutput recipeOutput) {
         SimpleCookingRecipeBuilder.blasting(Ingredient.of(ore), misc, ingot, 0.7F, 100).unlockedBy(getHasName(ore), has(ore)).save(recipeOutput, RLHelper.location(retunName(ingot) + "_from_blasting_" + retunName(ore.asItem())));
         SimpleCookingRecipeBuilder.smelting(Ingredient.of(ore), misc, ingot, 0.7F, 200).unlockedBy(getHasName(ore), has(ore)).save(recipeOutput, RLHelper.location(retunName(ingot) + "_from_smelting_" + retunName(ore.asItem())));

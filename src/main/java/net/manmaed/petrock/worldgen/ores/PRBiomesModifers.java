@@ -19,25 +19,28 @@ public class PRBiomesModifers {
     private static ResourceKey<BiomeModifier> ADD_STONEIUM_ORE = createKey("add_stoneium_ore");
     private static ResourceKey<BiomeModifier> ADD_DEEPSLATE_STONEIUM_ORE = createKey("add_deepslate_stoneium_ore");
 
+    private static ResourceKey<BiomeModifier> ORE_STONEIUM = createKey("ore_stoneium");
+
+
 
     public static void bootstrap(BootstrapContext<BiomeModifier> context) {
         HolderGetter<PlacedFeature> placedFeaturs = context.lookup(Registries.PLACED_FEATURE);
         HolderGetter<Biome> biomes = context.lookup(Registries.BIOME);
 
         context.register(
-                ADD_STONEIUM_ORE,
+                ORE_STONEIUM,
                 new BiomeModifiers.AddFeaturesBiomeModifier(
                         biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
-                        HolderSet.direct(placedFeaturs.getOrThrow(PRPlacedFeatures.STONEIUM_ORE)),
+                        HolderSet.direct(placedFeaturs.getOrThrow(PRPlacedFeatures.ORE_STONEIUM)),
                         GenerationStep.Decoration.UNDERGROUND_ORES
                         ));
-        context.register(
+        /*context.register(
                 ADD_DEEPSLATE_STONEIUM_ORE,
                 new BiomeModifiers.AddFeaturesBiomeModifier(
                         biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
-                        HolderSet.direct(placedFeaturs.getOrThrow(PRPlacedFeatures.DEEPSLATE_STONEIUM_ORE)),
+                        HolderSet.direct(placedFeaturs.getOrThrow(PRPlacedFeatures.ORE_STONEIUM)),
                         GenerationStep.Decoration.UNDERGROUND_ORES
-                ));
+                ));*/
 
     }
 
