@@ -1,0 +1,33 @@
+{
+  "parent": "petrock:mine_stoneium",
+  "criteria": {
+    "cook_raw_stoneium": {
+      "conditions": {
+        "items": [
+          {
+            "items": "petrock:stoneium"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.petrock.cook_raw_stoneium.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "petrock:stoneium"
+    },
+    "title": {
+      "translate": "advancements.petrock.cook_raw_stoneium.title"
+    }
+  },
+  "requirements": [
+    [
+      "cook_raw_stoneium"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

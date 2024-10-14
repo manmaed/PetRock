@@ -1,0 +1,39 @@
+{
+  "parent": "petrock:get_petrock_with_legs",
+  "criteria": {
+    "kill_petrock_with_legs": {
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "petrock:petrockwithlegs"
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:player_killed_entity"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.petrock.warranty_void.description"
+    },
+    "frame": "challenge",
+    "hidden": true,
+    "icon": {
+      "count": 1,
+      "id": "minecraft:diamond_sword"
+    },
+    "title": {
+      "translate": "advancements.petrock.warranty_void.title"
+    }
+  },
+  "requirements": [
+    [
+      "kill_petrock_with_legs"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

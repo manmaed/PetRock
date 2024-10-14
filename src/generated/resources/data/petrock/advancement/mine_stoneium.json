@@ -1,0 +1,33 @@
+{
+  "parent": "petrock:root",
+  "criteria": {
+    "get_raw_stoneium": {
+      "conditions": {
+        "items": [
+          {
+            "items": "petrock:raw_stoneium"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.petrock.mine_stoneium.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "petrock:raw_stoneium"
+    },
+    "title": {
+      "translate": "advancements.petrock.mine_stoneium.title"
+    }
+  },
+  "requirements": [
+    [
+      "get_raw_stoneium"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -1,0 +1,34 @@
+{
+  "parent": "petrock:order_form",
+  "criteria": {
+    "get_petrock_with_legs": {
+      "conditions": {
+        "items": [
+          {
+            "items": "petrock:petrockwithlegsbox"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.petrock.get_petrock_with_legs.description"
+    },
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "petrock:petrockwithlegsbox"
+    },
+    "title": {
+      "translate": "advancements.petrock.get_petrock_with_legs.title"
+    }
+  },
+  "requirements": [
+    [
+      "get_petrock_with_legs"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

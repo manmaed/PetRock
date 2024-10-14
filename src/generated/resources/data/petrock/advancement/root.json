@@ -1,0 +1,35 @@
+{
+  "criteria": {
+    "get_pick_to_mine_stoneium": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:stone_pickaxe"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "background": "minecraft:textures/block/stone.png",
+    "description": {
+      "translate": "advancements.petrock.root.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "petrock:petrockbox"
+    },
+    "show_toast": false,
+    "title": {
+      "translate": "advancements.petrock.root.title"
+    }
+  },
+  "requirements": [
+    [
+      "get_pick_to_mine_stoneium"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

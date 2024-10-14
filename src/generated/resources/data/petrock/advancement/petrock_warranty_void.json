@@ -1,0 +1,39 @@
+{
+  "parent": "petrock:get_petrock",
+  "criteria": {
+    "kill_petrock": {
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "petrock:petrock"
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:player_killed_entity"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.petrock.warranty_void.description"
+    },
+    "frame": "challenge",
+    "hidden": true,
+    "icon": {
+      "count": 1,
+      "id": "minecraft:diamond_sword"
+    },
+    "title": {
+      "translate": "advancements.petrock.warranty_void.title"
+    }
+  },
+  "requirements": [
+    [
+      "kill_petrock"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
