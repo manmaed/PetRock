@@ -32,7 +32,7 @@ public class PRConfiguredFeatures {
                 OreConfiguration.target(deepslateReplaceable, PRBlocks.DEEPSLATE_STONEIUM_ORE.get().defaultBlockState())
         );
 
-        FeatureUtils.register(context, ORE_STONEIUM, Feature.ORE, new OreConfiguration(list_of_stoneium, 17));
+        FeatureUtils.register(context, ORE_STONEIUM, Feature.ORE, new OreConfiguration(list_of_stoneium, 9));
 
     }
 

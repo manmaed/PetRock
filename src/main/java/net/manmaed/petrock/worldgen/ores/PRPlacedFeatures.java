@@ -24,7 +24,7 @@ public class PRPlacedFeatures {
         Holder<ConfiguredFeature<?, ?>> featureHolder = configuredFeatures.getOrThrow(PRConfiguredFeatures.ORE_STONEIUM);
 /*        Holder<ConfiguredFeature<?, ?>> featureHolder2 = configuredFeatures.getOrThrow(PRConfiguredFeatures.DEEP_OVERWORLD_ORES);*/
 
-        PlacementUtils.register(context, ORE_STONEIUM, featureHolder, PROrePlacement.commonOrePlacements(12, HeightRangePlacement.triangle(VerticalAnchor.BOTTOM, VerticalAnchor.TOP)));
+        PlacementUtils.register(context, ORE_STONEIUM, featureHolder, PROrePlacement.commonOrePlacements(5, HeightRangePlacement.triangle(VerticalAnchor.BOTTOM, VerticalAnchor.TOP)));
     }
     private static void register(BootstrapContext<PlacedFeature> context, ResourceKey<PlacedFeature> resourceKey, Holder<ConfiguredFeature<?, ?>> configuredFeatureHolder, List<PlacementModifier> placementModifiers) {
         context.register(resourceKey, new PlacedFeature(configuredFeatureHolder, placementModifiers));
