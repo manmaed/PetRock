@@ -19,4 +19,14 @@ public class PRCommands {
                         .then(CommandHATRELOAD.register())
         );
     }
+
+    public static void registerNormal(CommandDispatcher<CommandSourceStack> dispatcher) {
+
+        dispatcher.register(
+                Commands.literal(PetRock.MOD_ID)
+                        .requires(cs -> cs.hasPermission(4))
+                        .then(CommandFUN.register())
+        );
+    }
+
 }

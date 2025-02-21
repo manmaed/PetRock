@@ -79,6 +79,8 @@ public class PetRockENUS extends LanguageProvider {
         add(getName(4, "sethat.actuallybear.success"), "Happy Birthday ActuallyBear!");
         add(getName(4, "sethat.loneztar.success"), "Happy Birthday Loneztar!");
         add(getName(4, "sethat.reload.feedback"), "Hats Reloaded!");
+        add(getName(4, "fun.sd.success"), "Petrock Self-Destruct will start soon™");
+        add(getName(4, "fun.sd.failure"), "Petrock Self-Destruct is already running");
 
         //Advancements getAName(true for descption false for title)
         add(getAName(false, "root"), "PetRock Advancements");

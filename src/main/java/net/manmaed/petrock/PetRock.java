@@ -1,6 +1,7 @@
 package net.manmaed.petrock;
 
 import net.manmaed.petrock.block.PRBlocks;
+import net.manmaed.petrock.commands.PRCommands;
 import net.manmaed.petrock.entity.EntityPetRock;
 import net.manmaed.petrock.entity.EntityPetRockWithLegs;
 import net.manmaed.petrock.entity.PREntityTypes;
@@ -10,6 +11,7 @@ import net.neoforged.bus.api.EventPriority;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.common.NeoForge;
+import net.neoforged.neoforge.event.RegisterCommandsEvent;
 import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
 
 /**
@@ -29,11 +31,16 @@ public class PetRock {
         event.addListener(PetRockClient::doEntityRendering);
         event.addListener(PetRockClient::registerLayerDefinitions);
         event.addListener(PetRockClient::doClientStuff);
+        NeoForge.EVENT_BUS.addListener(EventPriority.HIGH, this::registerCommands);
         NeoForge.EVENT_BUS.addListener(EventPriority.HIGH, PetRockClient::registerClientCommands);
     }
 
     private void AttributeCreation(EntityAttributeCreationEvent event) {
         event.put(PREntityTypes.PETROCK.get(), EntityPetRock.createAttributes().build());
         event.put(PREntityTypes.PETROCKWITHLEGS.get(), EntityPetRockWithLegs.createAttributes().build());
+    }
+
+    public void registerCommands(RegisterCommandsEvent event) {
+        PRCommands.registerNormal(event.getDispatcher());
     }
 }
