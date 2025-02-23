@@ -3,7 +3,6 @@ package net.manmaed.petrock.fun;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 
 import java.util.Random;
@@ -46,11 +45,12 @@ public class SelfDestruct {
     private static Random random = new Random();
 
     public static void start(ServerLevel level) throws InterruptedException {
+        FunUtils.runNewTroll();
         isrunning = true;
         int countdown = 600;
         int starttime = random.nextInt(120) + 60;
-        /*int countdown = 100; //DEBUG
-        int starttime = 15; //DEBUG*/
+        /*int countdown = 5; //DEBUG
+        int starttime = 5; //DEBUG*/
         while (starttime > 0 && isrunning) {
             /*LogHelper.info("Stating Troll in: " + starttime);*/
             starttime--;
@@ -78,21 +78,7 @@ public class SelfDestruct {
         }
     }
 
-    public static void sendMessageToAllPlayers(Level level, Component message) {
-        for (int i = 0; i < level.players().size(); ++i) {
-            Player entityplayer = level.players().get(i);
-            entityplayer.sendSystemMessage(message);
-        }
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
-
-
     public static boolean isRunning() {
-        System.out.println("retuens: " + isrunning);
         return isrunning;
     }
 
@@ -101,25 +87,23 @@ public class SelfDestruct {
         return alphabet[random.nextInt(alpha)];
     }
 
-    private static void activateCodes(Level level) {
-        sendMessageToAllPlayers(level, Component.literal("manmaed joined the game").withStyle(ChatFormatting.YELLOW));
-        sendMessageToAllPlayers(level, Component.literal("<manmaed> Hello o/"));
-        sendMessageToAllPlayers(level, Component.literal("<manmaed> I hope you aren't attached to you're petrocks"));
-        sendMessageToAllPlayers(level, Component.literal("<manmaed> PetRocks initiate the self-destruct sequence. Authorization: manmaed " + getAuthCodeLetter() + " " +  (random.nextInt(8) + 1) + " " + getAuthCodeLetter() + " " + (random.nextInt(8) + 1)));
-        sendMessageToAllPlayers(level, Component.literal("<manmaed> Set at 6000 ticks and mute voice warnings!"));
-        sendMessageToAllPlayers(level, Component.literal("<manmaed> Enable"));
-        sendMessageToAllPlayers(level, Component.literal("<PetRock> Warning self-destruct sequence has been initiated!").withStyle(ChatFormatting.BOLD).withStyle(ChatFormatting.RED));
-        sendMessageToAllPlayers(level, Component.literal("<PetRock> Forge Energy Overload in 4 minutes and 55 seconds").withStyle(ChatFormatting.BOLD).withStyle(ChatFormatting.RED));
-        sendMessageToAllPlayers(level, Component.literal("<PetRock> There will be no further audio warnings").withStyle(ChatFormatting.BOLD).withStyle(ChatFormatting.RED));
-        sendMessageToAllPlayers(level, Component.literal("<manmaed> Good Luck"));
-        sendMessageToAllPlayers(level, Component.literal("manmaed left the game").withStyle(ChatFormatting.YELLOW));
+    private static void activateCodes(Level l) {
+        FunUtils.manmaedLogin(l);
+        FunUtils.talkAsmanmaed(l, "Hello o/");
+        FunUtils.talkAsmanmaed(l, "I hope you aren't attached to you're petrocks");
+        FunUtils.talkAsmanmaed(l, "PetRocks initiate the self-destruct sequence. Authorization: manmaed " + getAuthCodeLetter() + " " +  (random.nextInt(8) + 1) + " " + getAuthCodeLetter() + " " + (random.nextInt(8) + 1));
+        FunUtils.talkAsmanmaed(l, "Set at 6000 ticks and mute voice warnings!");
+        FunUtils.talkAsmanmaed(l, "Enable");
+        FunUtils.talkAs(l, Component.literal("<PetRock> Warning self-destruct sequence has been initiated!").withStyle(ChatFormatting.BOLD).withStyle(ChatFormatting.RED));
+        FunUtils.talkAs(l, Component.literal("<PetRock> Forge Energy Overload in 4 minutes and 55 seconds").withStyle(ChatFormatting.BOLD).withStyle(ChatFormatting.RED));
+        FunUtils.talkAs(l, Component.literal("<PetRock> There will be no further audio warnings").withStyle(ChatFormatting.BOLD).withStyle(ChatFormatting.RED));
+        FunUtils.talkAsmanmaed(l, "Good Luck");
+        FunUtils.manmaedLogff(l);
     }
 
     public static void endTroll(Level level) {
         isrunning = false;
-        sendMessageToAllPlayers(level, Component.literal("manmaed joined the game").withStyle(ChatFormatting.YELLOW));
-        sendMessageToAllPlayers(level, Component.literal("<manmaed> April Fools!"));
-        sendMessageToAllPlayers(level, Component.literal("manmaed left the game").withStyle(ChatFormatting.YELLOW));
+        FunUtils.aprilFoolsMesage(level);
         /*LogHelper.info("Troll Should be Ending Soon™");*/
     }
 }
