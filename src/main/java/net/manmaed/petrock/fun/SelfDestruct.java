@@ -90,7 +90,7 @@ public class SelfDestruct {
     private static void activateCodes(Level l) {
         FunUtils.manmaedLogin(l);
         FunUtils.talkAsmanmaed(l, "Hello o/");
-        FunUtils.talkAsmanmaed(l, "I hope you aren't attached to you're petrocks");
+        FunUtils.talkAsmanmaed(l, "I hope you aren't attached to you're PetRocks");
         FunUtils.talkAsmanmaed(l, "PetRocks initiate the self-destruct sequence. Authorization: manmaed " + getAuthCodeLetter() + " " +  (random.nextInt(8) + 1) + " " + getAuthCodeLetter() + " " + (random.nextInt(8) + 1));
         FunUtils.talkAsmanmaed(l, "Set at 6000 ticks and mute voice warnings!");
         FunUtils.talkAsmanmaed(l, "Enable");
