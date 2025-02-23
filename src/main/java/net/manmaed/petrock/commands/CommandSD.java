@@ -1,6 +1,7 @@
 package net.manmaed.petrock.commands;
 
 import com.mojang.brigadier.builder.ArgumentBuilder;
+import net.manmaed.petrock.fun.FunUtils;
 import net.manmaed.petrock.fun.SelfDestruct;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
@@ -15,22 +16,24 @@ public class CommandSD {
     }
 
     private static int run(CommandSourceStack source) {
-        if (SelfDestruct.isRunning()) {
-            source.sendFailure(Component.translatable("petrock.command.fun.sd.failure"));
-        } else {
-            source.sendSuccess(() -> Component.translatable("petrock.command.fun.sd.success"), true);
-            Thread selfDestruct = new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    try {
-                        SelfDestruct.start(source.getLevel());
-                    } catch (InterruptedException e) {
-                        throw new RuntimeException(e);
+        if (!FunUtils.isATrollRunning()) {
+            if (SelfDestruct.isRunning()) {
+                source.sendFailure(Component.translatable("petrock.command.fun.sd.failure"));
+            } else {
+                source.sendSuccess(() -> Component.translatable("petrock.command.fun.sd.success"), true);
+                Thread selfDestruct = new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            SelfDestruct.start(source.getLevel());
+                        } catch (InterruptedException e) {
+                            throw new RuntimeException(e);
+                        }
                     }
-                }
-            });
-            selfDestruct.start();
-        }
+                });
+                selfDestruct.start();
+            }
+        } else source.sendFailure(Component.translatable("petrock.command.fun.anotherrunning"));
         return 0;
     }
 }
