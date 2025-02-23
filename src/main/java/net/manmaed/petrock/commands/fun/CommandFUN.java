@@ -1,4 +1,4 @@
-package net.manmaed.petrock.commands;
+package net.manmaed.petrock.commands.fun;
 
 import com.mojang.brigadier.builder.ArgumentBuilder;
 import net.minecraft.commands.CommandSourceStack;
@@ -8,6 +8,7 @@ public class CommandFUN {
     public static ArgumentBuilder<CommandSourceStack, ?> register() {
         return Commands.literal("fun")
                 .requires(cs -> cs.hasPermission(4))
-                .then(CommandSD.register());
+                .then(CommandSD.register())
+                .then(CommandCC.register());
     }
 }

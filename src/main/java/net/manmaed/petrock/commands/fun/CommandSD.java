@@ -1,4 +1,4 @@
-package net.manmaed.petrock.commands;
+package net.manmaed.petrock.commands.fun;
 
 import com.mojang.brigadier.builder.ArgumentBuilder;
 import net.manmaed.petrock.fun.FunUtils;
@@ -6,7 +6,6 @@ import net.manmaed.petrock.fun.SelfDestruct;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
 import net.minecraft.network.chat.Component;
-import org.checkerframework.checker.units.qual.C;
 
 public class CommandSD {
     public static ArgumentBuilder<CommandSourceStack, ?> register() {

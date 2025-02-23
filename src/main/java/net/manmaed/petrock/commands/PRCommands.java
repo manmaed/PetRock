@@ -3,6 +3,7 @@ package net.manmaed.petrock.commands;
 
 import com.mojang.brigadier.CommandDispatcher;
 import net.manmaed.petrock.PetRock;
+import net.manmaed.petrock.commands.fun.CommandFUN;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
 
