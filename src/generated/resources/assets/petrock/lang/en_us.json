@@ -32,6 +32,8 @@
   "item.petrock.stone_legs.tooltip": "Used only for crafting",
   "item.petrock.stoneium": "Stoneium",
   "item.petrock.stoneium.tooltip": "Used to tame a PetRock and for crafting Rock kibble",
+  "item.petrock.ultimate_stoneium": "Ultimate Stoneium",
+  "item.petrock.ultimate_stoneium.tooltip": "Instant Taming for PetRocks",
   "itemGroup.petrock": "PetRock",
   "petrock.command.iamslowpoke101.feedback": "Slowpoke101 Hat Enabled!",
   "petrock.command.sethat.actuallybear.success": "Happy Birthday ActuallyBear!",

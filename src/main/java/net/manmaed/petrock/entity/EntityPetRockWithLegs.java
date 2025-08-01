@@ -184,6 +184,15 @@ public class EntityPetRockWithLegs extends TamableAnimal {
 
                     return interactionresult;
                 }
+            } else if (item == PRItems.ULTIMATE_STONEIUM.get()) {
+                if (!player.getAbilities().instabuild) {
+                    itemStack.shrink(1);
+                }
+                this.tame(player);
+                this.navigation.stop();
+                this.setOrderedToSit(true);
+                level.broadcastEntityEvent(this, (byte) 7);
+                return InteractionResult.SUCCESS;
             } else if (item == PRItems.STONEIUM.get()) {
                 if (!player.getAbilities().instabuild) {
                     itemStack.shrink(1);

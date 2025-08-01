@@ -28,6 +28,7 @@ public class PRDataGeneration {
         generator.addProvider(true, new PRLootTabels(packOutput, lookupProvider));
         generator.addProvider(true, new PRWorldGenProvider(packOutput, lookupProvider));
         generator.addProvider(true, new PRAdvancementProvider(packOutput, lookupProvider, fileHelper));
+        generator.addProvider(true, new PRItemModelProvider(packOutput, fileHelper));
         PRLanguageProvider.addTranslations(generator);
 
 
