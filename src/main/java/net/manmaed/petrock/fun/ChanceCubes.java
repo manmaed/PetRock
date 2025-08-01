@@ -6,16 +6,19 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 
+import java.util.Random;
+
 public class ChanceCubes {
 
     private static boolean isrunning = false;
-    public static void start(ServerLevel level, Boolean     cc) throws InterruptedException {
+    private static Random random = new Random();
+    public static void start(ServerLevel level, Boolean cc) throws InterruptedException {
         FunUtils.runNewTroll();
         isrunning = true;
-        //int countdown = 20;
-        //int starttime = random.nextInt(120) + 60;
-        int countdown = 5; //DEBUG
-        int starttime = 5; //DEBUG
+        int countdown = 20;
+        int starttime = random.nextInt(120) + 60;
+        /*int countdown = 5; //DEBUG
+        int starttime = 5; //DEBUG*/
         while (starttime > 0 && isrunning) {
             /*LogHelper.info("Stating Troll in: " + starttime);*/
             starttime--;
@@ -95,6 +98,10 @@ public class ChanceCubes {
     public static void endTroll(Level level) {
         isrunning = false;
         FunUtils.aprilFoolsMesage(level);
+        /*LogHelper.info("Troll Should be Ending Soon™");*/
+    }
+    public static void endTrollNoMessage() {
+        isrunning = false;
         /*LogHelper.info("Troll Should be Ending Soon™");*/
     }
 

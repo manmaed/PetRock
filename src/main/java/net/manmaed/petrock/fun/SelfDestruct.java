@@ -106,4 +106,9 @@ public class SelfDestruct {
         FunUtils.aprilFoolsMesage(level);
         /*LogHelper.info("Troll Should be Ending Soon™");*/
     }
+
+    public static void endTrollNoMessage() {
+        isrunning = false;
+        /*LogHelper.info("Troll Should be Ending Soon™");*/
+    }
 }

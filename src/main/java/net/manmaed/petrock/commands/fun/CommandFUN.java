@@ -8,6 +8,7 @@ public class CommandFUN {
     public static ArgumentBuilder<CommandSourceStack, ?> register() {
         return Commands.literal("fun")
                 .requires(cs -> cs.hasPermission(4))
+                .then(CommandStop.register())
                 .then(CommandSD.register())
                 .then(CommandCC.register());
     }

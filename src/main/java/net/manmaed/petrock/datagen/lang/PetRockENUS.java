@@ -83,12 +83,14 @@ public class PetRockENUS extends LanguageProvider {
         add(getName(4, "sethat.reload.feedback"), "Hats Reloaded!");
 
         //Fun Commands
-        add(getName(4, "fun.anotherrunning"), "It seems another fun command is running please wait till that one ends");
+        add(getName(4, "fun.anotherrunning"), "It seems another fun command is running please wait till that one ends or use /petrock fun stop");
         add(getName(4, "fun.sd.success"), "Petrock Self-Destruct will start soon™");
         add(getName(4, "fun.sd.failure"), "Petrock Self-Destruct is already running");
         add(getName(4, "fun.cc.success"), "Petrock Chance Cubes will start soon™");
         add(getName(4, "fun.cc.failure"), "Petrock Chance Cubes is already running");
         add(getName(4, "fun.cc.whatone"), "What version of Chance Cubes do I run?");
+        add(getName(4, "fun.stop.success"), "Stopping Trolls");
+        add(getName(4, "fun.notrunning"), "It seems no fun commands are running");
 
         //Advancements getAName(true for descption false for title)
         add(getAName(false, "root"), "PetRock Advancements");
