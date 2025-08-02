@@ -10,6 +10,7 @@ public class PRTags {
 
     public static final TagKey<Block> STONEIUM_ORES = createBlockTag("stoneium_ores");
     public static final TagKey<Item> RAW_MATERIALS_STONEIUM = createItemTag("raw_materials_stoneium");
+    public static final TagKey<Item> PETROCK_FOOD = createItemTag("petrock_food");
 
     private static TagKey<Block> createBlockTag(String name) {
         return TagKey.create(BuiltInRegistries.BLOCK.key(), RLHelper.location(name));

@@ -1,0 +1,21 @@
+{
+    "sounds.entity.petrock.tamed": {
+        "category": "neutral",
+        "subtitle": "entity.petrock.tamed",
+        "sounds": [{
+                "name": "petrock:entity/petrock/tamed",
+                "stream": true,
+                "pitch": 1.0
+            }]
+    },
+    "sounds.entity.petrock.mating": {
+        "category": "neutral",
+        "subtitle": "entity.petrock.mating",
+        "sounds": [{
+            "name": "petrock:entity/petrock/mating",
+            "stream": true,
+            "pitch": 1.0
+        }]
+
+    }
+}

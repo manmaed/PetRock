@@ -1,6 +1,8 @@
 package net.manmaed.petrock.entity;
 
 import net.manmaed.petrock.item.PRItems;
+import net.manmaed.petrock.sounds.PRSounds;
+import net.manmaed.petrock.tag.PRTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -148,19 +150,19 @@ public class EntityPetRock extends TamableAnimal {
 
     @Override
     public boolean isFood(ItemStack itemStack) {
-        return itemStack == PRItems.STONEIUM.get().getDefaultInstance();
+        return itemStack.is(PRTags.PETROCK_FOOD);
     }
 
     public InteractionResult mobInteract(Player player, InteractionHand hand) {
         ItemStack itemStack = player.getItemInHand(hand);
         Item item = itemStack.getItem();
         Level level = this.level();
-        if (level.isClientSide) {
-            boolean flag = this.isOwnedBy(player) || this.isTame() || item == PRItems.STONEIUM.get() && !this.isTame();
+        if (level.isClientSide  || this.isBaby() && this.isFood(itemStack)) {
+            boolean flag = this.isOwnedBy(player) || this.isTame() || itemStack.is(PRItems.STONEIUM) && !this.isTame();
             return flag ? InteractionResult.CONSUME : InteractionResult.PASS;
         } else {
             if (this.isTame()) {
-                if (item == PRItems.KIBBLE.get() && this.getHealth() < this.getMaxHealth()) {
+                if (this.isFood(itemStack) && this.getHealth() < this.getMaxHealth()) {
                     if (!player.getAbilities().instabuild) {
                         itemStack.shrink(1);
                     }
@@ -171,43 +173,57 @@ public class EntityPetRock extends TamableAnimal {
                     rightClickSetRockVariant(itemStack, player);
                     return InteractionResult.SUCCESS;
                 }
-                if (!(item instanceof DyeItem)) {
+                else  {
                     InteractionResult interactionresult = super.mobInteract(player, hand);
-                    if ((!interactionresult.consumesAction() || this.isBaby()) && this.isOwnedBy(player)) {
+                    if (!interactionresult.consumesAction() && this.isOwnedBy(player)) {
                         //LogHelper.warn("before setting sit " + this.isOrderedToSit());
                         this.setOrderedToSit(!this.isOrderedToSit());
                         //LogHelper.warn("after setting sit " + this.isOrderedToSit());
                         this.jumping = false;
                         this.navigation.stop();
-                        return InteractionResult.SUCCESS;
+                        return InteractionResult.SUCCESS_NO_ITEM_USED;
                     }
 
                     return interactionresult;
                 }
+            } else if (item == PRItems.ULTIMATE_STONEIUM.get()) {
+                if (!player.getAbilities().instabuild) {
+                    itemStack.shrink(1);
+                }
+                makeTame(player);
+                return InteractionResult.SUCCESS;
             } else if (item == PRItems.STONEIUM.get()) {
                 if (!player.getAbilities().instabuild) {
                     itemStack.shrink(1);
                 }
-                if (this.random.nextInt(3) == 0) {
-                    this.tame(player);
-                    this.navigation.stop();
-                    this.setOrderedToSit(true);
-                    level.broadcastEntityEvent(this, (byte) 7);
-                    //TOTEM_USE maybe
-                    //playSound(PSSounds.SLOW_TAME.get(), getSoundVolume(), 1F);
-                } else {
-                    level.broadcastEntityEvent(this, (byte) 6);
-                }
+                tryToTame(player);
                 //playSound(SoundEvents.GENERIC_DRINK, getSoundVolume(), 1F);
                 return InteractionResult.SUCCESS;
             }
             return super.mobInteract(player, hand);
         }
     }
+    private void tryToTame(Player player) {
+        if (this.random.nextInt(3) == 0) {
+            makeTame(player);
+        } else {
+            this.level().broadcastEntityEvent(this, (byte) 6);
+        }
+    }
+
+    private void makeTame(Player player) {
+        this.tame(player);
+        this.navigation.stop();
+        this.setOrderedToSit(true);
+        this.level().broadcastEntityEvent(this, (byte) 7);
+        //TOTEM_USE maybe
+        playSound(PRSounds.PETROCK_TAME.get(), getSoundVolume(), 1F);
+    }
 
     @Nullable
     @Override
     public AgeableMob getBreedOffspring(ServerLevel serverLevel, AgeableMob ageableMob) {
+        playSound(PRSounds.PETROCK_MATE.get(), getSoundVolume(), 1F);
         EntityPetRock petRock = new EntityPetRock((PREntityTypes.PETROCK.get()), serverLevel);
         UUID uuid = this.getOwnerUUID();
         if (uuid != null) {

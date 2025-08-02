@@ -3,6 +3,7 @@ package net.manmaed.petrock.commands;
 
 import com.mojang.brigadier.CommandDispatcher;
 import net.manmaed.petrock.PetRock;
+import net.manmaed.petrock.commands.fun.CommandFUN;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
 
@@ -19,4 +20,14 @@ public class PRCommands {
                         .then(CommandHATRELOAD.register())
         );
     }
+
+    public static void registerNormal(CommandDispatcher<CommandSourceStack> dispatcher) {
+
+        dispatcher.register(
+                Commands.literal(PetRock.MOD_ID)
+                        .requires(cs -> cs.hasPermission(4))
+                        .then(CommandFUN.register())
+        );
+    }
+
 }

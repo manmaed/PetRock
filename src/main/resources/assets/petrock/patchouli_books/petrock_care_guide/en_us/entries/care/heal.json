@@ -6,11 +6,17 @@
     {
       "type": "text",
       "title": "Kibble",
-      "text": "Use Kibble to heal your damaged PetRock"
+      "text": "Use Kibble to heal your damaged PetRock & Used for mating"
     },
     {
       "type": "crafting",
       "recipe": "petrock:kibble"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "title": "Other Food Items",
+      "text": "Anything in the list above can be used to heal your damaged PetRock & Used for mating",
+      "item": "tag:petrock:petrock_food"
     }
   ]
 }

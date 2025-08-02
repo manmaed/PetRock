@@ -1,6 +1,7 @@
 package net.manmaed.petrock.item;
 
 import net.manmaed.petrock.PetRock;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.item.Item;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -16,13 +17,14 @@ public class PRItems {
      * Example Item:
      * public static final RegistryObject<Item> EXAMPLE_ITEM = ITEMS.register("example_item", () -> new Item(new Item.Properties()));
      **/
-    public static final DeferredItem<Item> STONEIUM = ITEMS.register("stoneium", () -> new Stoneium(new Item.Properties()));
-    public static final DeferredItem<Item> KIBBLE = ITEMS.register("kibble", () -> new Kibble(new Item.Properties()));
+    public static final DeferredItem<Item> STONEIUM = ITEMS.register("stoneium", PRItemWithTooltip::new);
+    public static final DeferredItem<Item> KIBBLE = ITEMS.register("kibble", PRItemWithTooltip::new);
     public static final DeferredItem<Item> ORDER_FORM = ITEMS.register("orderform", () -> new OrderForm(new Item.Properties()));
     public static final DeferredItem<Item> PETROCKBOX = ITEMS.register("petrockbox", () -> new PetRockBox(new Item.Properties()));
     public static final DeferredItem<Item> PETROCKWITHLEGSBOX = ITEMS.register("petrockwithlegsbox", () -> new PetRockWithLegsBox(new Item.Properties()));
-    public static final DeferredItem<Item> STONE_LEGS = ITEMS.register("stone_legs", () -> new StoneLegs(new Item.Properties()));
+    public static final DeferredItem<Item> STONE_LEGS = ITEMS.register("stone_legs", PRItemWithTooltip::new);
     public static final DeferredItem<Item> RAW_STONEIUM = ITEMS.register("raw_stoneium", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> ULTIMATE_STONEIUM = ITEMS.register("ultimate_stoneium", UltimateStoneium::new);
 
 
 
