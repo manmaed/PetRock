@@ -23,5 +23,6 @@ public class PRItemTagsProvider extends ItemTagsProvider {
     protected void addTags(HolderLookup.Provider context) {
         tag(Tags.Items.RAW_MATERIALS).addTag(PRTags.RAW_MATERIALS_STONEIUM);
         tag(PRTags.RAW_MATERIALS_STONEIUM).add(PRItems.RAW_STONEIUM.get());
+        tag(PRTags.PETROCK_FOOD).add(PRItems.KIBBLE.get());
     }
 }

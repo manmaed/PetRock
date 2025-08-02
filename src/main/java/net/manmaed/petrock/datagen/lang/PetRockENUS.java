@@ -111,5 +111,8 @@ public class PetRockENUS extends LanguageProvider {
         add(getAName(true, "heal_a_petrock"), "Heal the PetRock! You monster!");
         add(getAName(false, "get_petrock_with_legs"), "It Has Legs");
         add(getAName(true, "get_petrock_with_legs"), "Get a petrock with legs!");
+
+        add("entity.petrock.tamed", "PetRock Tamed");
+        add("entity.petrock.mating", "Petrock Mating");
     }
 }

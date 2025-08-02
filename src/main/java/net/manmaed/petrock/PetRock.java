@@ -6,6 +6,7 @@ import net.manmaed.petrock.entity.EntityPetRock;
 import net.manmaed.petrock.entity.EntityPetRockWithLegs;
 import net.manmaed.petrock.entity.PREntityTypes;
 import net.manmaed.petrock.item.PRItems;
+import net.manmaed.petrock.sounds.PRSounds;
 import net.manmaed.petrock.tab.PRTab;
 import net.neoforged.bus.api.EventPriority;
 import net.neoforged.bus.api.IEventBus;
@@ -26,6 +27,7 @@ public class PetRock {
         PRItems.ITEMS.register(event);
         PRBlocks.BLOCKS.register(event);
         PREntityTypes.ENTITY_TYPES.register(event);
+        PRSounds.SOUNDS.register(event);
         PRTab.CREATIVE_TABS.register(event);
         event.addListener(this::AttributeCreation);
         event.addListener(PetRockClient::doEntityRendering);
