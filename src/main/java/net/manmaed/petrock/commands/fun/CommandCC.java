@@ -26,14 +26,11 @@ public class CommandCC {
                     source.sendFailure(Component.translatable("petrock.command.fun.cc.failure"));
                 } else {
                     source.sendSuccess(() -> Component.translatable("petrock.command.fun.cc.success"), true);
-                    Thread chanceCubes = new Thread(new Runnable() {
-                        @Override
-                        public void run() {
-                            try {
-                                ChanceCubes.start(source.getLevel(), cubesinstalled);
-                            } catch (InterruptedException e) {
-                                throw new RuntimeException(e);
-                            }
+                    Thread chanceCubes = new Thread(() -> {
+                        try {
+                            ChanceCubes.start(source.getLevel(), cubesinstalled);
+                        } catch (InterruptedException e) {
+                            throw new RuntimeException(e);
                         }
                     });
                     chanceCubes.start();

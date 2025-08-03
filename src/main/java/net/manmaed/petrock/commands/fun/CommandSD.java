@@ -20,14 +20,11 @@ public class CommandSD {
                 source.sendFailure(Component.translatable("petrock.command.fun.sd.failure"));
             } else {
                 source.sendSuccess(() -> Component.translatable("petrock.command.fun.sd.success"), true);
-                Thread selfDestruct = new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                        try {
-                            SelfDestruct.start(source.getLevel());
-                        } catch (InterruptedException e) {
-                            throw new RuntimeException(e);
-                        }
+                Thread selfDestruct = new Thread(() -> {
+                    try {
+                        SelfDestruct.start(source.getLevel());
+                    } catch (InterruptedException e) {
+                        throw new RuntimeException(e);
                     }
                 });
                 selfDestruct.start();
