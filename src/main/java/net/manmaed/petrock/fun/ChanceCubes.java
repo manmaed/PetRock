@@ -1,5 +1,6 @@
 package net.manmaed.petrock.fun;
 
+import net.manmaed.petrock.libs.LogHelper;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
@@ -15,8 +16,9 @@ public class ChanceCubes {
     public static void start(ServerLevel level, Boolean cc) throws InterruptedException {
         FunUtils.runNewTroll();
         isrunning = true;
-        int countdown = 20;
-        int starttime = random.nextInt(120) + 60;
+        //Ints in Seconds
+        int countdown = 60;
+        int starttime = 5;
         /*int countdown = 5; //DEBUG
         int starttime = 5; //DEBUG*/
         while (starttime > 0 && isrunning) {
@@ -56,7 +58,7 @@ public class ChanceCubes {
         FunUtils.talkAsmanmaed(level,"Petrocks Active Chance Cube Mode");
         FunUtils.talkAsmanmaed(level, "Open!");
         FunUtils.talkAs(level, Component.literal("<PetRock> Who Dat is!?").withStyle(ChatFormatting.AQUA).withStyle(ChatFormatting.BOLD));
-        FunUtils.talkAs(level, Component.literal("<PetRock> I hope this isn't near your base, because you have 400 ticks before stuff and all you're PetRocks goes bye bye. Kappa").withStyle(ChatFormatting.AQUA).withStyle(ChatFormatting.BOLD));
+        FunUtils.talkAs(level, Component.literal("<PetRock> I hope this isn't near your base, because you have 1200 ticks before stuff and all you're PetRocks goes bye bye. Kappa").withStyle(ChatFormatting.AQUA).withStyle(ChatFormatting.BOLD));
         FunUtils.talkAsmanmaed(level, "Good Luck");
         FunUtils.manmaedLogff(level);
     }
@@ -67,7 +69,7 @@ public class ChanceCubes {
         FunUtils.talkAs(level, Component.literal("[@: Gave 1 [Compact Giant Chance Cube] to manmaed]").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
         forceOpens(level);
         FunUtils.talkAs(level, Component.literal("Who Dat is!?"));
-        FunUtils.talkAs(level, Component.literal("I hope this isn't near your base, because you have 400 ticks before stuff goes bye bye. Kappa"));
+        FunUtils.talkAs(level, Component.literal("I hope this isn't near your base, because you have 1200 ticks before stuff goes bye bye. Kappa"));
         FunUtils.talkAsmanmaed(level, "Good Luck");
         FunUtils.manmaedLogff(level);
     }

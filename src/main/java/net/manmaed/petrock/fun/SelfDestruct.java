@@ -1,5 +1,6 @@
 package net.manmaed.petrock.fun;
 
+import net.manmaed.petrock.libs.LogHelper;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
@@ -47,8 +48,9 @@ public class SelfDestruct {
     public static void start(ServerLevel level) throws InterruptedException {
         FunUtils.runNewTroll();
         isrunning = true;
-        int countdown = 600;
-        int starttime = random.nextInt(120) + 60;
+        //Ints in Seconds
+        int countdown = 295;
+        int starttime = 5;
         /*int countdown = 5; //DEBUG
         int starttime = 5; //DEBUG*/
         while (starttime > 0 && isrunning) {
@@ -67,7 +69,7 @@ public class SelfDestruct {
                 /*LogHelper.info("Warning Forge Energy Overload in " + countdown);*/
                 countdown--;
                 try {
-                    Thread.sleep(500);
+                    Thread.sleep(1000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
