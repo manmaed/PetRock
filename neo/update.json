@@ -1,17 +1,19 @@
 {
   "homepage": "https://www.curseforge.com/minecraft/mc-mods/petrock-mod",
   "1.21.1": {
+    "0.18.3": "Sounds, Tags & Troll Commands",
     "0.18.2": "Advancements are back",
     "0.18.1": "Port to 1.21"
   },
   "1.21": {
+    "0.18.3": "Sounds, Tags & Troll Commands",
     "0.18.2": "Advancements are back",
     "0.18.1": "Port to 1.21"
   },
   "promos": {
-    "1.21.1-latest": "0.18.2",
-    "1.21.1-recommended": "0.18.2",
-    "1.21-latest": "0.18.2",
-    "1.21-recommended": "0.18.2"
+    "1.21.1-latest": "0.18.3",
+    "1.21.1-recommended": "0.18.3",
+    "1.21-latest": "0.18.3",
+    "1.21-recommended": "0.18.3"
     }
 }
