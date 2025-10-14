@@ -30,6 +30,7 @@ public class PRItemModelProvider extends ItemModelProvider {
         handheldItem(PRItems.STONE_LEGS.get());
         handheldItem(PRItems.RAW_STONEIUM.get());
         handheldItem(PRItems.ULTIMATE_STONEIUM.get(), "stoneium");
+        handheldItem(PRItems.MISSING_NO.get());
 
         makeBlockItem(PRBlocks.STONEIUM_BLOCK.get());
         makeBlockItem(PRBlocks.STONEIUM_ORE.get());

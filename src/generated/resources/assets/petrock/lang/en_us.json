@@ -26,6 +26,8 @@
   "entity.petrock.tamed": "PetRock Tamed",
   "item.petrock.kibble": "Rock Kibble",
   "item.petrock.kibble.tooltip": "For PetRock consumption only!",
+  "item.petrock.missingno": "MissingNo",
+  "item.petrock.missingno.tooltip": "MissingNo",
   "item.petrock.orderform": "Order Form",
   "item.petrock.petrockbox": "PetRock",
   "item.petrock.petrockwithlegsbox": "PetRock With Legs",

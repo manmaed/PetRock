@@ -1,6 +1,7 @@
 package net.manmaed.petrock.entity;
 
 import net.manmaed.petrock.item.PRItems;
+import net.manmaed.petrock.libs.LogHelper;
 import net.manmaed.petrock.sounds.PRSounds;
 import net.manmaed.petrock.tag.PRTags;
 import net.minecraft.core.BlockPos;
@@ -11,6 +12,7 @@ import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.damagesource.DamageSource;
@@ -31,9 +33,11 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 
 import javax.annotation.Nullable;
+import java.util.List;
 import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 /**
  * Created by manmaed on 07/03/2021.
@@ -148,6 +152,22 @@ public class EntityPetRock extends TamableAnimal {
         return false;
     }
 
+    public boolean isRockVariantChangeItem(ItemStack itemStack) {
+        itemStack.is(PRTags.PETROCK_STONE_VARIANT);
+        List<TagKey<Item>> tagKeys = itemStack.getTags().toList();
+    if (tagKeys.contains(PRTags.PETROCK_STONE_VARIANT)) { return true; }
+    else if (tagKeys.contains(PRTags.PETROCK_NETHER_VARIANT)) { return true; }
+    else if (tagKeys.contains(PRTags.PETROCK_END_VARIANT)) { return true; }
+    else if (tagKeys.contains(PRTags.PETROCK_DEEPSLATE_VARIANT)) { return true; }
+    else if (tagKeys.contains(PRTags.PETROCK_DIORITE_VARIANT)) { return true; }
+    else if (tagKeys.contains(PRTags.PETROCK_GRANITE_VARIANT)) { return true; }
+    else if (tagKeys.contains(PRTags.PETROCK_ANDASITE_VARIANT)) { return true; }
+    else if (tagKeys.contains(PRTags.PETROCK_CLAY_VARIANT)) { return true; }
+    else if (tagKeys.contains(PRTags.PETROCK_BEDROCK_VARIANT)) { return true; }
+    else if (tagKeys.contains(PRTags.PETROCK_MISSINGNO_VARIANT)) { return true; }
+        else return false;
+    }
+
     @Override
     public boolean isFood(ItemStack itemStack) {
         return itemStack.is(PRTags.PETROCK_FOOD);
@@ -169,7 +189,7 @@ public class EntityPetRock extends TamableAnimal {
                     this.heal(3.0F);
                     return InteractionResult.SUCCESS;
                 }
-                if (isRockVariantChangeItem(item)) {
+                if (isRockVariantChangeItem(itemStack)) {
                     rightClickSetRockVariant(itemStack, player);
                     return InteractionResult.SUCCESS;
                 }
@@ -283,6 +303,18 @@ public class EntityPetRock extends TamableAnimal {
     }
 
     private void rightClickSetRockVariant(ItemStack itemStack, Player player) {
+        List<TagKey<Item>> tagKeys = itemStack.getTags().toList();
+        if (tagKeys.contains(PRTags.PETROCK_STONE_VARIANT)) { setVariant(0); }
+        else if (tagKeys.contains(PRTags.PETROCK_NETHER_VARIANT)) { setVariant(1); }
+        else if (tagKeys.contains(PRTags.PETROCK_END_VARIANT)) { setVariant(2); }
+        else if (tagKeys.contains(PRTags.PETROCK_DEEPSLATE_VARIANT)) { setVariant(3); }
+        else if (tagKeys.contains(PRTags.PETROCK_DIORITE_VARIANT)) { setVariant(4); }
+        else if (tagKeys.contains(PRTags.PETROCK_GRANITE_VARIANT)) { setVariant(5); }
+        else if (tagKeys.contains(PRTags.PETROCK_ANDASITE_VARIANT)) { setVariant(6); }
+        else if (tagKeys.contains(PRTags.PETROCK_CLAY_VARIANT)) { setVariant(7); }
+        else if (tagKeys.contains(PRTags.PETROCK_BEDROCK_VARIANT)) { setVariant(8); }
+        else if (tagKeys.contains(PRTags.PETROCK_MISSINGNO_VARIANT)) { setVariant(-1); }
+        //Old Code
         Item item = itemStack.getItem();
         String itemName = item.toString();
         // Use regex to extract the part after the colon
@@ -298,7 +330,7 @@ public class EntityPetRock extends TamableAnimal {
             itemStack.shrink(1);
         }
         //System.out.println("Item We got " + extractedName);
-        switch (extractedName) {
+        /*switch (extractedName) {
             case "stone":
                 setVariant(0);
                 break;
@@ -332,7 +364,7 @@ public class EntityPetRock extends TamableAnimal {
             case "squidgy":
                 setVariant(9);
                 break;
-        }
+        }*/
     }
 
     @Override

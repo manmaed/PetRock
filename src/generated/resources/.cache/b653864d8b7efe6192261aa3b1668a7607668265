@@ -1,4 +1,14 @@
-// 1.21	2025-08-03T00:21:40.4698581	Tags for minecraft:item mod id petrock
+// 1.21	2025-10-14T22:19:15.4272694	Tags for minecraft:item mod id petrock
 783a0c67afdaf913fb65384c166c8207f82b4c5e data/c/tags/item/raw_materials.json
+411f6180b37eea00f0069105f932d6024ebc8cfd data/petrock/tags/item/petrock_andasite_variant.json
+cfab2ab481bf476a645d326b87627918009b9e50 data/petrock/tags/item/petrock_bedrock_variant.json
+da1d12f678963493519caaff63a76241b220579f data/petrock/tags/item/petrock_clay_variant.json
+965b6a5353209b6388e04a00dcbd69ab309d1ab9 data/petrock/tags/item/petrock_deepslate_variant.json
+bb23c35771e96cc866b5387d5569746e64c23a4c data/petrock/tags/item/petrock_diorite_variant.json
+9994f212884e8264af96eaba34aa7e89696d8994 data/petrock/tags/item/petrock_end_variant.json
 ed997d10ba7d0461a099d1d03f348af702873869 data/petrock/tags/item/petrock_food.json
+277febcb81e6cdedb2c430d51bcd1850d597779d data/petrock/tags/item/petrock_granite_variant.json
+1612d54664c54df1e3e85037333f01885d32d540 data/petrock/tags/item/petrock_missingno_variant.json
+8a041eecc7b70073db2ba62a874214480fcb7006 data/petrock/tags/item/petrock_nether_variant.json
+f92c41ce4c3dd51d875dafefe81e048bf6b8f9ed data/petrock/tags/item/petrock_stone_variant.json
 65ce974f8e75d5c69cf514b2953fd88f66c79c8b data/petrock/tags/item/raw_materials_stoneium.json

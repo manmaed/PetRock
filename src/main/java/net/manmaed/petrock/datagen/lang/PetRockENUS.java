@@ -58,12 +58,14 @@ public class PetRockENUS extends LanguageProvider {
         add(getName(2, "stone_legs"), "Stone Legs");
         add(getName(2, "raw_stoneium"), "Raw Stoneium");
         add(getName(2, "ultimate_stoneium"), "Ultimate Stoneium");
+        add(getName(2, "missingno"), "MissingNo");
 
         //Item Tooltips 2
         add(getName(2, "stoneium.tooltip"), "Used to tame a PetRock and for crafting Rock kibble");
         add(getName(2, "kibble.tooltip"), "For PetRock consumption only!");
         add(getName(2, "stone_legs.tooltip"), "Used only for crafting");
         add(getName(2, "ultimate_stoneium.tooltip"), "Instant Taming for PetRocks");
+        add(getName(2, "missingno.tooltip"), "MissingNo");
 
         //Entity 3
         add(getName(3, "petrock"), "PetRock");
