@@ -41,6 +41,8 @@ import java.util.regex.Pattern;
 public class EntityPetRock extends TamableAnimal {
 
     private static final EntityDataAccessor<Integer> VARIANT_ID = SynchedEntityData.defineId(EntityPetRock.class, EntityDataSerializers.INT);
+    private static final EntityDataAccessor<String> HAT_DATA = SynchedEntityData.defineId(EntityPetRock.class, EntityDataSerializers.STRING);
+    private static final EntityDataAccessor<Boolean> IS_SLOWPOKE = SynchedEntityData.defineId(EntityPetRock.class, EntityDataSerializers.BOOLEAN);
 
 
     protected EntityPetRock(EntityType<? extends TamableAnimal> type, Level worldIn) {
@@ -67,12 +69,16 @@ public class EntityPetRock extends TamableAnimal {
         super.defineSynchedData(synceddata);
         //synceddata.define(VARIANT_ID, random.nextInt(6)); //Randomly set the rocks variant
         synceddata.define(VARIANT_ID, 0);
+        synceddata.define(HAT_DATA, "");
+        synceddata.define(IS_SLOWPOKE, false);
     }
 
     @Override
     public void addAdditionalSaveData(CompoundTag compoundTag) {
         super.addAdditionalSaveData(compoundTag);
         compoundTag.putInt("rock_variant", this.getVariant());
+        compoundTag.putString("hat_data", this.getHatData());
+        compoundTag.putBoolean("is_slowpoke", this.getSlowpoke());
     }
 
     @Override
@@ -80,6 +86,12 @@ public class EntityPetRock extends TamableAnimal {
         super.readAdditionalSaveData(compoundTag);
         if (compoundTag.contains("rock_variant")) {
             this.setVariant(compoundTag.getInt("rock_variant"));
+        }
+        if(compoundTag.contains("hat_data")) {
+            this.setHatData(compoundTag.getString("hat_data"));
+        }
+        if (compoundTag.contains("is_slowpoke")) {
+            this.setSlowpoke(compoundTag.getBoolean("is_slowpoke"));
         }
     }
 
@@ -239,6 +251,22 @@ public class EntityPetRock extends TamableAnimal {
 
     public Integer getVariant() {
         return this.entityData.get(VARIANT_ID);
+    }
+
+    public void setHatData(String hatData) {
+        this.entityData.set(HAT_DATA, hatData);
+    }
+
+    public String getHatData() {
+        return this.entityData.get(HAT_DATA);
+    }
+
+    public void setSlowpoke(Boolean slowpoke) {
+        this.entityData.set(IS_SLOWPOKE, slowpoke);
+    }
+
+    public Boolean getSlowpoke() {
+        return this.entityData.get(IS_SLOWPOKE);
     }
 
     public String getVariantName(){
