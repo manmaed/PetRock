@@ -4,7 +4,6 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.manmaed.petrock.client.model.PRModels;
 import net.manmaed.petrock.client.render.model.ModelTNTSides;
-import net.manmaed.petrock.entity.EntityPetRock;
 import net.manmaed.petrock.hats.PRHats;
 import net.minecraft.client.model.geom.EntityModelSet;
 import net.minecraft.client.renderer.MultiBufferSource;
@@ -31,23 +30,7 @@ public class TNTSidesLayer extends RenderLayer {
 
     @Override
     public void render(PoseStack poseStack, MultiBufferSource multiBufferSource, int packedLight, Entity entity, float p_117353_, float p_117354_, float p_117355_, float p_117356_, float p_117357_, float p_117358_) {
-        EntityPetRock entityPetRock = (EntityPetRock)entity;
-        String hatData = entityPetRock.getHatData();
-        if (hatData.equals("tnt")) {
-            poseStack.pushPose();
-            poseStack.scale(0.25F, 0.25F, 0.25F);
-            if(entityPetRock.getSlowpoke()) {
-                poseStack.translate(0F, -1.25F, 0.3F);
-            } else {
-                poseStack.translate(0F, 2.25F, 0F);
-            }
-            VertexConsumer vertexConsumer = multiBufferSource.getBuffer(RenderType.entityCutout(skin));
-            sides.renderToBuffer(poseStack, vertexConsumer, packedLight, OverlayTexture.NO_OVERLAY);
-            top.render(poseStack, multiBufferSource, packedLight, entity,  p_117353_, p_117354_, p_117355_, p_117356_, p_117357_, p_117358_);
-            bottom.render(poseStack, multiBufferSource, packedLight, entity,  p_117353_, p_117354_, p_117355_, p_117356_, p_117357_, p_117358_);
-            poseStack.popPose();
-        }
-        if (PRHats.tnt && hatData.isEmpty()) {
+        if (PRHats.tnt) {
             poseStack.pushPose();
             poseStack.scale(0.25F, 0.25F, 0.25F);
             if(PRHats.slowpoke) {

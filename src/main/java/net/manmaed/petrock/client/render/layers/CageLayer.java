@@ -4,7 +4,6 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.manmaed.petrock.client.model.PRModels;
 import net.manmaed.petrock.client.render.model.ModelCageHat;
-import net.manmaed.petrock.entity.EntityPetRock;
 import net.manmaed.petrock.hats.PRHats;
 import net.manmaed.petrock.libs.RLHelper;
 import net.minecraft.client.model.geom.EntityModelSet;
@@ -32,15 +31,7 @@ public class CageLayer extends RenderLayer {
 
     @Override
     public void render(PoseStack poseStack, MultiBufferSource multiBufferSource, int packedLight, Entity entity, float p_117353_, float p_117354_, float p_117355_, float p_117356_, float p_117357_, float p_117358_) {
-        EntityPetRock entityPetRock = (EntityPetRock)entity;
-        String hatData = entityPetRock.getHatData();
-        if (hatData.equals("loneztar") && !entityPetRock.getSlowpoke()) {
-            poseStack.pushPose();
-            VertexConsumer vertexConsumer = multiBufferSource.getBuffer(RenderType.entityCutoutNoCull(skin));
-            hat.renderToBuffer(poseStack, vertexConsumer, packedLight, OverlayTexture.NO_OVERLAY);
-            poseStack.popPose();
-        }
-        if(PRHats.loneztar && hatData.isEmpty() && !entityPetRock.getSlowpoke()) {
+        if(PRHats.loneztar) {
             poseStack.pushPose();
             VertexConsumer vertexConsumer = multiBufferSource.getBuffer(RenderType.entityCutoutNoCull(skin));
             hat.renderToBuffer(poseStack, vertexConsumer, packedLight, OverlayTexture.NO_OVERLAY);

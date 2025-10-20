@@ -22,12 +22,6 @@ repositories {
     maven {
         url 'https://maven.nanite.dev/'
     }
-    maven {
-        url 'https://maven.ftb.dev/releases'
-    }
-    maven {
-        url 'https://maven.architectury.dev/'
-    }
 }
 
 base {
@@ -69,7 +63,6 @@ dependencies {
     //runtimeOnly "curse.maven:CP-267193:3915811"
     runtimeOnly "curse.maven:architectury-419699:5786327"
     runtimeOnly "curse.maven:toolkit-324888:5521502"
-    runtimeOnly "dev.ftb.mods:ftb-library-neoforge:2100.1.4"
 }
 tasks.withType(ProcessResources).configureEach {
     var replaceProperties = [
