@@ -1,19 +1,23 @@
 {
   "homepage": "https://www.curseforge.com/minecraft/mc-mods/petrock-mod",
   "1.21.1": {
+    "0.18.5": "Tags for setting variants, Hats can now be set to diffent hats when set with nbt",
+    "0.18.4": "Missing Lang Keys",
     "0.18.3": "Sounds, Tags & Troll Commands",
     "0.18.2": "Advancements are back",
     "0.18.1": "Port to 1.21"
   },
   "1.21": {
+    "0.18.5": "Tags for setting variants, Hats can now be set to diffent hats when set with nbt",
+    "0.18.4": "Missing Lang Keys",
     "0.18.3": "Sounds, Tags & Troll Commands",
     "0.18.2": "Advancements are back",
     "0.18.1": "Port to 1.21"
   },
   "promos": {
-    "1.21.1-latest": "0.18.3",
-    "1.21.1-recommended": "0.18.3",
-    "1.21-latest": "0.18.3",
-    "1.21-recommended": "0.18.3"
+    "1.21.1-latest": "0.18.5",
+    "1.21.1-recommended": "0.18.5",
+    "1.21-latest": "0.18.5",
+    "1.21-recommended": "0.18.5"
     }
 }
