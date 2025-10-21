@@ -4,6 +4,7 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.manmaed.petrock.client.model.PRModels;
 import net.manmaed.petrock.client.render.model.ModelSantaHat;
+import net.manmaed.petrock.entity.EntityPetRock;
 import net.manmaed.petrock.hats.PRHats;
 import net.manmaed.petrock.libs.RLHelper;
 import net.minecraft.client.model.geom.EntityModelSet;
@@ -31,7 +32,22 @@ public class ChristmasLayer extends RenderLayer {
 
     @Override
     public void render(PoseStack poseStack, MultiBufferSource multiBufferSource, int packedLight, Entity entity, float p_117353_, float p_117354_, float p_117355_, float p_117356_, float p_117357_, float p_117358_) {
-        if(PRHats.christmas) {
+        EntityPetRock entityPetRock = (EntityPetRock)entity;
+        String hatData = entityPetRock.getHatData();
+        if (hatData.equals("christmas")) {
+            poseStack.pushPose();
+            if(entityPetRock.getSlowpoke()){
+                Float size = 1.5F;
+                poseStack.translate(0F, -2.188F, 0.075F);
+                poseStack.scale(size, size, size);
+            } else {
+                poseStack.translate(0F, -0.5626F, 0F);
+            }
+            VertexConsumer vertexConsumer = multiBufferSource.getBuffer(RenderType.entityCutoutNoCull(skin));
+            hat.renderToBuffer(poseStack, vertexConsumer, packedLight, OverlayTexture.NO_OVERLAY);
+            poseStack.popPose();
+        }
+        if(PRHats.christmas && hatData.isEmpty()) {
             poseStack.pushPose();
             if(PRHats.slowpoke){
                 Float size = 1.5F;

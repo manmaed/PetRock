@@ -2,6 +2,7 @@ package net.manmaed.petrock.client.render.layers;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
+import net.manmaed.petrock.entity.EntityPetRock;
 import net.manmaed.petrock.hats.PRHats;
 import net.minecraft.client.model.PolarBearModel;
 import net.minecraft.client.model.geom.EntityModelSet;
@@ -33,7 +34,19 @@ public class PolarBearLayer extends RenderLayer {
 
     @Override
     public void render(PoseStack poseStack, MultiBufferSource multiBufferSource, int packedLight, Entity entity, float p_117353_, float p_117354_, float p_117355_, float p_117356_, float p_117357_, float p_117358_) {
-        if(PRHats.bear) {
+        EntityPetRock entityPetRock = (EntityPetRock)entity;
+        String hatData = entityPetRock.getHatData();
+        if(hatData.equals("actuallybear") && !entityPetRock.getSlowpoke()) {
+            poseStack.pushPose();
+            poseStack.scale(0.5F, 0.5F, 0.5F);
+            poseStack.translate(0F,0.375F,0F);
+            VertexConsumer vertexConsumer = multiBufferSource.getBuffer(RenderType.entityCutoutNoCull(skin));
+            hat.renderToBuffer(poseStack, vertexConsumer, packedLight, OverlayTexture.NO_OVERLAY);
+            bearLayer.render(poseStack, multiBufferSource, packedLight, entity,  p_117353_, p_117354_, p_117355_, p_117356_, p_117357_, p_117358_);
+            hoodLayer.render(poseStack, multiBufferSource, packedLight, entity,  p_117353_, p_117354_, p_117355_, p_117356_, p_117357_, p_117358_);
+            poseStack.popPose();
+        }
+        if(PRHats.bear && hatData.isEmpty() && !entityPetRock.getSlowpoke()) {
             poseStack.pushPose();
             poseStack.scale(0.5F, 0.5F, 0.5F);
             poseStack.translate(0F,0.375F,0F);
