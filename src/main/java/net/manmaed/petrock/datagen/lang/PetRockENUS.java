@@ -82,7 +82,7 @@ public class PetRockENUS extends LanguageProvider {
         add(getName(4, "sethat.noslow.failure"), "No custom hat set with Slowpoke mode enabled");
         add(getName(4, "sethat.actuallybear.success"), "Happy Birthday ActuallyBear!");
         add(getName(4, "sethat.loneztar.success"), "Happy Birthday Loneztar!");
-        add(getName(4, "sethat.reload.feedback"), "Hats Reloaded!");
+        add(getName(4, "reload.feedback"), "Hats Reloaded!");
 
         //Fun Commands
         add(getName(4, "fun.anotherrunning"), "It seems another fun command is running please wait till that one ends or use /petrock fun stop");
