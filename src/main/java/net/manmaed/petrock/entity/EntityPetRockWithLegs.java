@@ -11,6 +11,7 @@ import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.damagesource.DamageSource;
@@ -33,6 +34,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 
 import javax.annotation.Nullable;
+import java.util.List;
 import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -43,6 +45,7 @@ import java.util.regex.Pattern;
 public class EntityPetRockWithLegs extends TamableAnimal {
 
     private static final EntityDataAccessor<Integer> VARIANT_ID = SynchedEntityData.defineId(EntityPetRockWithLegs.class, EntityDataSerializers.INT);
+
     protected EntityPetRockWithLegs(EntityType<? extends TamableAnimal> type, Level worldIn) {
         super(type, worldIn);
         this.setTame(false, false);
@@ -126,26 +129,20 @@ public class EntityPetRockWithLegs extends TamableAnimal {
         }
     }
 
-    public boolean isRockVariantChangeItem(Item item) {
-        Item[] changeItems = {
-                //Add Items Here For allowed Variant Change
-                //will also need a texture and added to rightClickSetRockVariant & getVariantName
-                Blocks.STONE.asItem(),
-                Blocks.NETHERRACK.asItem(),
-                Blocks.END_STONE.asItem(),
-                Blocks.DEEPSLATE.asItem(),
-                Blocks.DIORITE.asItem(),
-                Blocks.GRANITE.asItem(),
-                Blocks.ANDESITE.asItem(),
-                Blocks.CLAY.asItem(),
-                Blocks.BEDROCK.asItem()
-        };
-        for (Item itemloop: changeItems) {
-            if (item == itemloop) {
-                return true;
-            }
-        }
-        return false;
+    public boolean isRockVariantChangeItem(ItemStack itemStack) {
+        itemStack.is(PRTags.PETROCK_STONE_VARIANT);
+        List<TagKey<Item>> tagKeys = itemStack.getTags().toList();
+        if (tagKeys.contains(PRTags.PETROCK_STONE_VARIANT)) { return true; }
+        else if (tagKeys.contains(PRTags.PETROCK_NETHER_VARIANT)) { return true; }
+        else if (tagKeys.contains(PRTags.PETROCK_END_VARIANT)) { return true; }
+        else if (tagKeys.contains(PRTags.PETROCK_DEEPSLATE_VARIANT)) { return true; }
+        else if (tagKeys.contains(PRTags.PETROCK_DIORITE_VARIANT)) { return true; }
+        else if (tagKeys.contains(PRTags.PETROCK_GRANITE_VARIANT)) { return true; }
+        else if (tagKeys.contains(PRTags.PETROCK_ANDASITE_VARIANT)) { return true; }
+        else if (tagKeys.contains(PRTags.PETROCK_CLAY_VARIANT)) { return true; }
+        else if (tagKeys.contains(PRTags.PETROCK_BEDROCK_VARIANT)) { return true; }
+        else if (tagKeys.contains(PRTags.PETROCK_MISSINGNO_VARIANT)) { return true; }
+        else return false;
     }
 
     @Override
@@ -169,7 +166,7 @@ public class EntityPetRockWithLegs extends TamableAnimal {
                     this.heal(3.0F);
                     return InteractionResult.SUCCESS;
                 }
-                if (isRockVariantChangeItem(item)) {
+                if (isRockVariantChangeItem(itemStack)) {
                     rightClickSetRockVariant(itemStack, player);
                     return InteractionResult.SUCCESS;
                 }
@@ -283,56 +280,17 @@ public class EntityPetRockWithLegs extends TamableAnimal {
     }
 
     private void rightClickSetRockVariant(ItemStack itemStack, Player player) {
-        Item item = itemStack.getItem();
-        String itemName = item.toString();
-        // Use regex to extract the part after the colon
-        String regex = "(?<=:)[^:]+";
-        Pattern pattern = Pattern.compile(regex);
-        Matcher matcher = pattern.matcher(itemName);
-        // Extract the part after the colon
-        String extractedName = "missingno"; //Should allways be replaced
-        if (matcher.find()) {
-            extractedName = matcher.group();
-        }
-        if (!player.getAbilities().instabuild) {
-            itemStack.shrink(1);
-        }
-        //System.out.println("Item We got " + extractedName);
-        switch (extractedName) {
-            case "stone":
-                setVariant(0);
-                break;
-            case "netherrack":
-                setVariant(1);
-                break;
-            case "end_stone":
-                setVariant(2);
-                break;
-            case "deepslate":
-                setVariant(3);
-                break;
-            case "diorite":
-                setVariant(4);
-                break;
-            case "granite":
-                setVariant(5);
-                break;
-            case "andesite":
-                setVariant(6);
-                break;
-            case "clay":
-                setVariant(7);
-                break;
-            case "bedrock":
-                setVariant(8);
-                break;
-            case "missingno":
-                setVariant(-1);
-                break;
-            case "squidgy":
-                setVariant(9);
-                break;
-        }
+        List<TagKey<Item>> tagKeys = itemStack.getTags().toList();
+        if (tagKeys.contains(PRTags.PETROCK_STONE_VARIANT)) { setVariant(0); }
+        else if (tagKeys.contains(PRTags.PETROCK_NETHER_VARIANT)) { setVariant(1); }
+        else if (tagKeys.contains(PRTags.PETROCK_END_VARIANT)) { setVariant(2); }
+        else if (tagKeys.contains(PRTags.PETROCK_DEEPSLATE_VARIANT)) { setVariant(3); }
+        else if (tagKeys.contains(PRTags.PETROCK_DIORITE_VARIANT)) { setVariant(4); }
+        else if (tagKeys.contains(PRTags.PETROCK_GRANITE_VARIANT)) { setVariant(5); }
+        else if (tagKeys.contains(PRTags.PETROCK_ANDASITE_VARIANT)) { setVariant(6); }
+        else if (tagKeys.contains(PRTags.PETROCK_CLAY_VARIANT)) { setVariant(7); }
+        else if (tagKeys.contains(PRTags.PETROCK_BEDROCK_VARIANT)) { setVariant(8); }
+        else if (tagKeys.contains(PRTags.PETROCK_MISSINGNO_VARIANT)) { setVariant(-1); }
     }
 
     @Override
