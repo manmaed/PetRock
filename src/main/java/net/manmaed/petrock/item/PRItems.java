@@ -25,6 +25,7 @@ public class PRItems {
     public static final DeferredItem<Item> STONE_LEGS = ITEMS.register("stone_legs", PRItemWithTooltip::new);
     public static final DeferredItem<Item> RAW_STONEIUM = ITEMS.register("raw_stoneium", () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> ULTIMATE_STONEIUM = ITEMS.register("ultimate_stoneium", UltimateStoneium::new);
+    public static final DeferredItem<Item> MISSING_NO  = ITEMS.register("missingno", PRItemWithTooltip::new);
 
 
 

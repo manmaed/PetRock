@@ -1,6 +1,7 @@
-// 1.21	2025-08-01T22:18:43.1745974	Item Models: petrock
+// 1.21	2025-10-14T22:19:15.4262722	Item Models: petrock
 6b54a8bd52ce289b8a9b19f2c74f9f30686c6a3b assets/petrock/models/item/deepslate_stoneium_ore.json
 45a01ff34c34aeabe6571f837f9a1128aa3c3ba5 assets/petrock/models/item/kibble.json
+16a83d8da603e3b20e0e43187f2fd7cf01237527 assets/petrock/models/item/missingno.json
 c26e59f3899ca3e4f092881c5c1fe04f4dbf8430 assets/petrock/models/item/orderform.json
 2b73241840d5cab6e2c9eff30aac10e12595d11f assets/petrock/models/item/petrockbox.json
 c36e4caf9fd6b37d976b43ddf1bd3007bfce3dd0 assets/petrock/models/item/petrockwithlegsbox.json
