@@ -116,5 +116,12 @@ public class PetRockENUS extends LanguageProvider {
 
         add("entity.petrock.tamed", "PetRock Tamed");
         add("entity.petrock.mating", "Petrock Mating");
+
+        //PetRock Jade Stuff
+        add("config.jade.plugin_petrock.petrock_stats", "PetRock Stats");
+        add("petrock.entity.petrock.variant", "Variant: %d");
+        add("petrock.entity.petrock.hat_data", "Hat: %d");
+        add("petrock.entity.petrock.hat_data.notset", "Hat Set via Event System");
+        add("petrock.entity.petrock.is_slowpoke", "Slowpoke Mode: %d");
     }
 }

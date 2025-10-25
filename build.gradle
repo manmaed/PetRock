@@ -28,6 +28,9 @@ repositories {
     maven {
         url 'https://maven.architectury.dev/'
     }
+    maven {
+        url 'https://api.modrinth.com/maven'
+    }
 }
 
 base {
@@ -70,6 +73,7 @@ dependencies {
     runtimeOnly "curse.maven:architectury-419699:5786327"
     runtimeOnly "curse.maven:toolkit-324888:5521502"
     runtimeOnly "dev.ftb.mods:ftb-library-neoforge:2100.1.4"
+    implementation "maven.modrinth:jade:${jade_version}+neoforge"
 }
 tasks.withType(ProcessResources).configureEach {
     var replaceProperties = [
